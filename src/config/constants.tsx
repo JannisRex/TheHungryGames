@@ -1,3 +1,4 @@
+/* eslint-disable */
 import Layout from '../lib/Layout'
 import { getWeekNumber } from '../lib/date/getWeekNumber'
 import monthArray from '../lib/date/monthArray'

@@ -332,7 +332,7 @@ module.exports = {
     "@typescript-eslint/strict-boolean-expressions": 0,   //Restricts the types allowed in boolean expressions
     // "@typescript-eslint/triple-slash-reference": 0,   //Sets preference level for triple slash directives versus ES6-style import declarations
     "@typescript-eslint/type-annotation-spacing": [1, { "before": false, "after": true }],  //Require consistent spacing around type annotations
-    "@typescript-eslint/typedef": 1,  //Requires type annotations to exist
+    "@typescript-eslint/typedef": 2,  //Requires type annotations to exist
     "@typescript-eslint/unbound-method": 2,   //Enforces unbound methods are called with their expected scope
     "@typescript-eslint/unified-signatures": 1,   //Warns for any two overloads that could be unified into one by using a union or an optional/rest parameter"
     }

@@ -4,16 +4,11 @@ import { getWeekNumber } from '../lib/date/getWeekNumber'
 import monthArray from '../lib/date/monthArray'
 import dayArray from '../lib/date/dayArray'
 
-// /map/*.js
-export const tsbwLat = 54.487223
-export const tsbwLong = 9.050490
-
 // Year, Month and Today (YYYY-MM-DD)
 let date = new Date(); date.setHours(0, 0, 0, 0)
 export const dateTomorrow = new Date(new Date().setDate(new Date().getDate() + 1))
 export const dateOvermorrow = new Date(new Date().setDate(new Date().getDate() + 2))
 export const dateOverovermorrow = new Date(new Date().setDate(new Date().getDate() + 3))
-
 
 export const today: string = date.getFullYear() + '-' + ('0' + (date.getMonth() + 1)).slice(-2) + '-' + ('0' + date.getDate()).slice(-2) // YYYY-MM-DD
 export const year: string = String(date.getFullYear()) // YYYY

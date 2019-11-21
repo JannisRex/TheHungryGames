@@ -16,8 +16,8 @@ HomeStack.navigationOptions = {
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
-      name={"home"}
-      class={"Entypo"}
+      name={'home'}
+      class={'Entypo'}
     />
   )
 }

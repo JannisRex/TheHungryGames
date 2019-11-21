@@ -9,6 +9,8 @@
     "resolveJsonModule": true,
   },
   "types": [
-    "react-native"
+    "react",
+    "react-native",
+    "react-navigation"
   ]
 }

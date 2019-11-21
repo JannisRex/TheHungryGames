@@ -1,13 +1,11 @@
 import React, { Component } from 'react'
-import { View, Text } from 'react-native'
+import { PreloadSwitchNavigator } from './src/navigation/index'
 
 
 class App extends Component {
   render(): JSX.Element {
     return (
-      <View>
-        <Text>a</Text>
-      </View>
+      <PreloadSwitchNavigator />
     )
   }
 }

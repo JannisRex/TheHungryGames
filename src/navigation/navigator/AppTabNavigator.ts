@@ -10,7 +10,7 @@ import strings from '../../config/strings'
 const HomeStack = createStackNavigator({
   Home: {
     screen: HomeStackNavigation,
-    navigationOptions: { header: null}
+    navigationOptions: { header: null }
   }
 })
 
@@ -28,7 +28,7 @@ HomeStack.navigationOptions = {
 const SettingsStack = createStackNavigator({
   Settings: {
     screen: SettingsScreen,
-    navigationOptions: { header: null}
+    navigationOptions: { header: null }
   }
 })
 

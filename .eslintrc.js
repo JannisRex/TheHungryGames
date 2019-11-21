@@ -15,16 +15,13 @@ module.exports = {
         "__PROD__": true
     },
 
-    "extends": [
-      "plugin:@typescript-eslint/recommended",
-    ],
-
     "plugins": ["@typescript-eslint/eslint-plugin", "eslint-plugin-react"],
 
     "parserOptions": {
         "ecmaVersion": 2018,
-        "project": "./tsconfig.json",
         "sourceType": "module",
+        project: './tsconfig.json',
+        tsconfigRootDir: __dirname,
         "ecmaFeatures": {
             "arrowFunctions": true,
             "binaryLiterals": true,
@@ -162,7 +159,7 @@ module.exports = {
     "no-undef": 2, // disallow use of undeclared variables unless mentioned in a /*global */ block
     "no-undef-init": 2, // disallow use of undefined when initializing variables
     // "no-undefined": 2, // disallow use of undefined variable (off by default)
-    "no-unused-vars": 2, // disallow declaration of variables that are not used in the code
+    // "no-unused-vars": 2, // disallow declaration of variables that are not used in the code
     "no-use-before-define": 2, // disallow use of variables before they are defined
 
     //
@@ -258,9 +255,10 @@ module.exports = {
     //
     // Typescript specific linting rules for ESLint
     //
+
     "@typescript-eslint/adjacent-overload-signatures": 2,     //Require that member overloads be consecutive
     "@typescript-eslint/array-type": 1,   //Requires using either T[] or Array<T> for arrays
-    // "@typescript-eslint/await-thenable": 2,   //Disallows awaiting a value that is not a Thenable
+    "@typescript-eslint/await-thenable": 2,   //Disallows awaiting a value that is not a Thenable
     "@typescript-eslint/ban-ts-ignore": 0,    //Bans “// @ts-ignore” comments from being used
     "@typescript-eslint/ban-types": 2,   //Bans specific types from being used
     "@typescript-eslint/brace-style": 2,  //Enforce consistent brace style for blocks
@@ -268,12 +266,12 @@ module.exports = {
     "@typescript-eslint/class-name-casing": 2,    //Require PascalCased class and interface names
     "@typescript-eslint/consistent-type-assertions": [1, { assertionStyle: 'as' }],   //Enforces consistent usage of type assertions.
     "@typescript-eslint/consistent-type-definitions": [1, 'type'],  //Consistent with type definition either interface or type
-    "@typescript-eslint/explicit-function-return-type": 1,    //Require explicit return types on functions and class methods
+    "@typescript-eslint/explicit-function-return-type": 2,    //Require explicit return types on functions and class methods
     "@typescript-eslint/explicit-member-accessibility": [1, { accessibility: 'no-public' }],    //Require explicit accessibility modifiers on class properties and methods
     "@typescript-eslint/func-call-spacing": 0,    //Require or disallow spacing between function identifiers and their invocations
     "@typescript-eslint/generic-type-naming": 0,   //Enforces naming of generic type variables
     // "@typescript-eslint/indent": [1, 2],   //Enforce consistent indentation
-    // "@typescript-eslint/interface-name-prefix": "never",    //Require that interface names should or should not prefixed with I
+    // "@typescript-eslint/interface-name-prefix": [1, "never"],    //Require that interface names should or should not prefixed with I
     "@typescript-eslint/member-delimiter-style":[1, {
             "multiline": {
                 "delimiter": "comma",
@@ -291,7 +289,7 @@ module.exports = {
     "@typescript-eslint/no-empty-function": 2,   //Disallow empty functions
     "@typescript-eslint/no-empty-interface": 0,   //Disallow the declaration of empty interfaces
     "@typescript-eslint/no-explicit-any": 2,  //Disallow usage of the any type
-    "@typescript-eslint/no-extra-non-null-assertion": 2,  //Disallow extra non-null assertion
+    // "@typescript-eslint/no-extra-non-null-assertion": 2,  //Disallow extra non-null assertion
     "@typescript-eslint/no-extra-parens": 0,  //Disallow unnecessary parentheses
     "@typescript-eslint/no-extraneous-class": 2,  //Forbids the use of classes as namespaces
     "@typescript-eslint/no-floating-promises": 2,     //Requires Promise-like values to be handled appropriately.
@@ -310,7 +308,7 @@ module.exports = {
     "@typescript-eslint/no-unnecessary-qualifier": 1,    // Warns when a namespace qualifier is unnecessary
     "@typescript-eslint/no-unnecessary-type-arguments": 1,    //Warns if an explicitly specified type argument is the default for that type parameter
     "@typescript-eslint/no-unnecessary-type-assertion": 1,    //Warns if a type assertion does not change the type of an expression
-    "@typescript-eslint/no-untyped-public-signature": 1,  //Requires that all public method arguments and return type will be explicitly typed
+    // "@typescript-eslint/no-untyped-public-signature": 1,  //Requires that all public method arguments and return type will be explicitly typed
     "@typescript-eslint/no-unused-expressions": 2,   //Disallow unused expressions
     "@typescript-eslint/no-unused-vars": 2,   //Disallow unused variables
     "@typescript-eslint/no-use-before-define": 2,     //Disallow the use of variables before they are defined
@@ -330,7 +328,7 @@ module.exports = {
     "@typescript-eslint/restrict-plus-operands": 2,   //When adding two variables, operands must both be of type number or of type string
     "@typescript-eslint/restrict-template-expressions": 2,   //Enforce template literal expressions to be of string type
     // "@typescript-eslint/semi": [1, "never"],     //Require or disallow semicolons instead of ASI
-    "@typescript-eslint/space-before-function-paren": 2,  //enforce consistent spacing before function definition opening parenthesis
+    "@typescript-eslint/space-before-function-paren": 0,  //enforce consistent spacing before function definition opening parenthesis
     "@typescript-eslint/strict-boolean-expressions": 0,   //Restricts the types allowed in boolean expressions
     // "@typescript-eslint/triple-slash-reference": 0,   //Sets preference level for triple slash directives versus ES6-style import declarations
     "@typescript-eslint/type-annotation-spacing": [1, { "before": false, "after": true }],  //Require consistent spacing around type annotations

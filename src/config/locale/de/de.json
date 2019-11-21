@@ -1,0 +1,13 @@
+{
+  "Navigator": {
+    "homeText": "Home",
+    "settingsText": "Präferenzen"
+  },
+  "HomeScreen": {
+    "title": "The Hungry Games",
+    "pressButton": "Restaurant finden!"
+  },
+  "SettingsScreen": {
+
+  }
+}

@@ -8,7 +8,10 @@ import TabBarIcon from '../../lib/TabBarIcon'
 import strings from '../../config/strings'
 
 const HomeStack = createStackNavigator({
-  Home: HomeStackNavigation
+  Home: {
+    screen: HomeStackNavigation,
+    navigationOptions: { header: null}
+  }
 })
 
 HomeStack.navigationOptions = {
@@ -23,7 +26,10 @@ HomeStack.navigationOptions = {
 }
 
 const SettingsStack = createStackNavigator({
-  SettingsScreen: SettingsScreen
+  Settings: {
+    screen: SettingsScreen,
+    navigationOptions: { header: null}
+  }
 })
 
 SettingsStack.navigationOptions = {
@@ -43,5 +49,5 @@ SettingsStack.navigationOptions = {
 
 export default createBottomTabNavigator({
   HomeStack,
-  SettingsScreen
+  SettingsStack
 })

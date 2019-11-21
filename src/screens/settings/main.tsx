@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import { View, Text } from 'react-native'
-import styles from './styles.ts'
+import styles from './styles'
 
 class SettingsScreen extends Component {
   render(): JSX.Element {
     return (
-      <View styles={styles.container}>
+      <View style={styles.container}>
         <Text>S E T T I N G S</Text>
       </View>
     )

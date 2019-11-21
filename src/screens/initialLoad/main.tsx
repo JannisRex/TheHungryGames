@@ -45,7 +45,7 @@ export default class LoadingScreen extends React.Component<Props, State> {
  _loadResourcesAsync: void = async () => {
    await Promise.all([
      Asset.loadAsync([
-       require('../../assets/logo/Ebay(300-120)')
+       require('../../assets/logo/Ebay(300-120).png')
      ]),
      Font.loadAsync({
        robotoRegular: require('../../../src/assets/font/Roboto-Regular.ttf'),

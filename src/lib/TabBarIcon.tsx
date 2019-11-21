@@ -2,7 +2,15 @@ import React from 'react'
 import { Ionicons, MaterialIcons, MaterialCommunityIcons, EvilIcons, Feather, Entypo, FontAwesome, Foundation } from '@expo/vector-icons'
 import theme from '../config/theme.style'
 
-export default class TabBarIcon extends React.Component {
+type someIcon = {
+  focused: boolean,
+  class: string,
+  name: string,
+  style?: {},
+  color?: string
+}
+
+export default class TabBarIcon extends React.Component<someIcon> {
   render() {
     if (this.props.class === 'MaterialIcons') {
       return (

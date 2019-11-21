@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { View, Text } from 'react-native'
-import styles from './styles.tsx'
+import styles from './styles.ts'
 
 class SettingsScreen extends Component {
   render(): JSX.Element {

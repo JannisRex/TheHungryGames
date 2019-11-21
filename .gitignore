@@ -10,5 +10,10 @@ npm-debug.*
 web-build/
 web-report/
 
+.eslintrc.js
+babel.config.js
+.eslintignore
+package-lock.json
+
 # macOS
 .DS_Store

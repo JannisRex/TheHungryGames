@@ -11,7 +11,7 @@ type someIcon = {
 }
 
 export default class TabBarIcon extends React.Component<someIcon> {
-  render() {
+  render(): JSX.Element {
     if (this.props.class === 'MaterialIcons') {
       return (
         <MaterialIcons

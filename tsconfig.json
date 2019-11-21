@@ -10,8 +10,6 @@
   },
   "types": [
     "react",
-    "react-native",
-    "react-navigation-stack",
-    "react-navigation-tabs"
+    "react-native"
   ]
 }

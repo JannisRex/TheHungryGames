@@ -23,7 +23,7 @@ export default class DynamicScrollView extends Component<Props, State> {
     }
   }
 
-  _handleContentSizeChange = (contentWidth, contentHeight) => {
+  _handleContentSizeChange = (contentWidth: number, contentHeight: number): void => {
     this.setState({ screenHeight: contentHeight })
   }
 
@@ -35,7 +35,7 @@ export default class DynamicScrollView extends Component<Props, State> {
         <StatusBar barStyle='light-content' backgroundColor='#468189' />
         <ScrollView
           style={{ flex: 1 }}
-          contentContainerStyle={styles.scrollview}
+          contentContainerStyle={styles.scrollView}
           scrollEnabled={scrollEnabled}
           onContentSizeChange={this._handleContentSizeChange}
         >

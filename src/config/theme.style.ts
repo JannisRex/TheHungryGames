@@ -23,7 +23,7 @@ export default {
   FONT_WEIGHT_MEDIUM: '600',
   FONT_WEIGHT_HEAVY: '800',
 
-  // Color Schemes (fix Primary, Secondary etc. to switch later)
+  // some basic Colors to use
   COLOR_WHITE: 'rgb(255, 255, 255)',
   COLOR_IVORY: 'rgb(255, 255, 240)',
   COLOR_HONEYDEW: 'rgb(240, 255, 240)',
@@ -32,6 +32,9 @@ export default {
   COLOR_DARKERGRAY: 'rgb(35, 38, 40)',
   COLOR_BUTTON_DARK: '#2E1114',
   COLOR_TINT: '#2f95dc',
+
+  COLOR_HEADER: '#163c4f',
+  COLOR_BACKGROUND: '#2f4047',
 
   // generic Warning/Error message colors
   WARNING_BACKGROUND: '#EAEB5E',

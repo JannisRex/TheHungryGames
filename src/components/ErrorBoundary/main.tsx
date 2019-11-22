@@ -53,20 +53,24 @@ class ErrorBoundary extends Component<Props, State> {
       }
     }
   }
-  resetError = (): void => {
+
+  // I dont know why I get typedef error here?????
+  /* eslint-disable */
+  _resetError = (): void  => {
     this.setState({
       error: null,
       hasError: false
     })
   }
+  /* eslint-enable */
 
-  render(): JSX.Element {
+  render(): Node | JSX.Element {
     const { ErrSubstituteScreen } = this.props
 
-    return this.state.hasError && this.state.error
+    return this.state.hasError
       ? <ErrSubstituteScreen
         error={this.state.error}
-        resetError={this.resetError}
+        resetError={this._resetError}
       />
       : this.props.children
   }

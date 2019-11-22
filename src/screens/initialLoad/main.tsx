@@ -8,7 +8,7 @@ import { Asset } from 'expo-asset'
 // here we fetch AsyncStorage and check,
 // if we stored something earlier, then
 // we save it to state and pass to homeScreen
-const _getPreferences = async (): void => {
+const _getPreferences = async (): Promise<void> => {
   try {
     await AsyncStorage.getItem('@settings').then((result: {}) => {
       if (typeof result === typeof Object) {
@@ -23,13 +23,14 @@ const _getPreferences = async (): void => {
 
 // here we execute everything, thats about loading
 // e.g. => Getting Fonts, Images, fetching Data...
-export default class LoadingScreen extends React.Component<Props, State> {
-  constructor() {
-    super()
+export default class LoadingScreen extends React.Component<{navigation: string}> {
+  constructor(props: any) {
+    super(props)
     this.state = {
       isLoadingComplete: false
     }
     _getPreferences()
+      .catch(Error)
   }
 
   render(): JSX.Element {
@@ -42,7 +43,7 @@ export default class LoadingScreen extends React.Component<Props, State> {
     )
   }
 
- _loadResourcesAsync: void = async () => {
+ _loadResourcesAsync: ()=> Promise<void> = async () => {
    await Promise.all([
      Asset.loadAsync([
        require('../../assets/logo/Ebay(300-120).png')
@@ -57,11 +58,11 @@ export default class LoadingScreen extends React.Component<Props, State> {
    ])
  }
 
- _handleLoadingError: void = (error: Error) => {
+ _handleLoadingError: (error: Error)=> void = (error: Error) => {
    console.log(error)
  }
 
- _handleFinishLoading: void = () => {
+ _handleFinishLoading: ()=> void = () => {
    this.setState({ isLoadingComplete: true })
    this.props.navigation.navigate('App')
  }

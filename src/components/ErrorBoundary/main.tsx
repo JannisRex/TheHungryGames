@@ -15,7 +15,7 @@ type State = {
 }
 
 class ErrorBoundary extends Component<Props, State> {
-  static defaultProps: ErrSubstituteScreen = {
+  static defaultProps: any = {
     ErrSubstituteScreen: ErrSubstituteScreen
   }
 

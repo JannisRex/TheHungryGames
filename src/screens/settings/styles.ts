@@ -1,6 +1,10 @@
-import { StyleSheet } from 'react-native'
+import { StyleSheet, ViewStyle } from 'react-native'
 
-export default StyleSheet.create({
+type Styles = {
+    container: ViewStyle
+}
+
+export default StyleSheet.create<Styles>({
   container: {
     flex: 1,
     justifyContent: 'center',

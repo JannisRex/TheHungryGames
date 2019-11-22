@@ -8,6 +8,7 @@ type Styles = {
   errorContainer: ViewStyle
 }
 
+// TODO fix types
 export default StyleSheet.create<Styles>({
   button: {
     backgroundColor: theme.COLOR_BUTTON_DARK,

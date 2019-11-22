@@ -1,12 +1,18 @@
-import { StyleSheet } from 'react-native'
+import { StyleSheet, ViewStyle } from 'react-native'
 import theme from '../../config/theme.style'
 
-const styles = StyleSheet.create({
+type Styles = {
+  container: ViewStyle,
+  scrollView: ViewStyle,
+  content: ViewStyle
+}
+
+const styles = StyleSheet.create<Styles>({
   container: {
     flex: 1,
     backgroundColor: theme.COLOR_BACKGROUND
   },
-  scrollview: {
+  scrollView: {
     flexGrow: 1
   },
   content: {

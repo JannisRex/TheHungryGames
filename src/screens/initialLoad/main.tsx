@@ -4,6 +4,7 @@ import { AsyncStorage } from 'react-native'
 import { AppLoading } from 'expo'
 import * as Font from 'expo-font'
 import { Asset } from 'expo-asset'
+import { NavigationScreenProp } from 'react-navigation'
 
 // here we fetch AsyncStorage and check,
 // if we stored something earlier, then
@@ -23,7 +24,7 @@ const _getPreferences = async (): Promise<void> => {
 
 // here we execute everything, thats about loading
 // e.g. => Getting Fonts, Images, fetching Data...
-export default class LoadingScreen extends React.Component<{navigation: string}> {
+export default class LoadingScreen extends React.Component<{navigation: NavigationScreenProp<any>}> {
   constructor(props: any) {
     super(props)
     this.state = {

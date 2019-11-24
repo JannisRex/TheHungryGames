@@ -5,6 +5,7 @@ import styles from './styles'
 
 const { height } = Dimensions.get('window')
 
+// TODO: fix types i.e. remove Flow shit
 type Props = {
   children: Node,
   color: string

@@ -26,7 +26,7 @@ export default class DynamicScrollView extends Component<Props, State> {
 
   // TODO, learn how to fuck shit arrow cance rlambda
   // with typescript ???? and typedef : 2
-  _handleContentSizeChange = (contentWidth: number, contentHeight: number): void => {
+  _handleContentSizeChange: any = (contentWidth: number, contentHeight: number): void => {
     this.setState({ screenHeight: contentHeight })
   }
 

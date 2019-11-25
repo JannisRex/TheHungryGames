@@ -16,7 +16,7 @@ const HomeStack = createStackNavigator({
 
 HomeStack.navigationOptions = {
   tabBarLabel: strings.Navigator.homeText,
-  tabBarIcon: ({ focused }: boolean): JSX.Element => (
+  tabBarIcon: ({ focused }: any): JSX.Element => (
     <TabBarIcon
       focused={focused}
       name={'home'}
@@ -34,7 +34,7 @@ const SettingsStack = createStackNavigator({
 
 SettingsStack.navigationOptions = {
   tabBarLabel: strings.Navigator.settingsText,
-  tabBarIcon: ({ focused }: boolean): JSX.Element => (
+  tabBarIcon: ({ focused }: any): JSX.Element => (
     <TabBarIcon
       class='Ionicons'
       focused={focused}

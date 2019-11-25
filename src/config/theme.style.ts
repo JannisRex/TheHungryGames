@@ -34,6 +34,8 @@ export default {
 
   COLOR_HEADER: '#163c4f',
   COLOR_BACKGROUND: '#2f4047',
+  COLOR_NAV_A: '#263339',
+  COLOR_NAV_B: '#1E292E',
 
   // generic Warning/Error message colors
   WARNING_BACKGROUND: '#EAEB5E',

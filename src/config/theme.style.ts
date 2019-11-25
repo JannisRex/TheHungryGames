@@ -1,4 +1,3 @@
-// @flow strict
 import { Platform } from 'react-native'
 const isIOS = Platform.OS === 'ios'
 
@@ -6,7 +5,8 @@ export default {
   // Basic Font Options
   COLOR_TEXT: 'rgb(255, 255, 240)',
   FONT_FAMILY_TITLE: 'impact',
-  FONT_FAMILY_CAPTION: 'lato_lightitalic',
+  FONT_FAMILY_CAPTION: 'latoLightitalic',
+  FONT_FAMILY_THIN: 'latoHairline',
   FONT_FAMILY_TEXT_ANDROID: 'Roboto',
   FONT_FAMILY_TEXT_IOS: 'San Francisco',
   // FONT_FAMILY_TEXT: isIOS ? 'San Francisco' : 'Roboto',
@@ -23,7 +23,7 @@ export default {
   FONT_WEIGHT_MEDIUM: '600',
   FONT_WEIGHT_HEAVY: '800',
 
-  // Color Schemes (fix Primary, Secondary etc. to switch later)
+  // some basic Colors to use
   COLOR_WHITE: 'rgb(255, 255, 255)',
   COLOR_IVORY: 'rgb(255, 255, 240)',
   COLOR_HONEYDEW: 'rgb(240, 255, 240)',
@@ -32,6 +32,11 @@ export default {
   COLOR_DARKERGRAY: 'rgb(35, 38, 40)',
   COLOR_BUTTON_DARK: '#2E1114',
   COLOR_TINT: '#2f95dc',
+
+  COLOR_HEADER: '#163c4f',
+  COLOR_BACKGROUND: '#2f4047',
+  COLOR_NAV_ACTIVE: '#1c4b63',
+  COLOR_NAV_INACTIVE: '#0d242f',
 
   // generic Warning/Error message colors
   WARNING_BACKGROUND: '#EAEB5E',

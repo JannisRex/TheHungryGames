@@ -6,6 +6,7 @@ import HomeStackNavigation from './HomeStackNavigator'
 import SettingsScreen from '../../screens/settings/main'
 import TabBarIcon from '../../lib/TabBarIcon'
 import strings from '../../config/strings'
+import theme from '../../config/theme.style'
 
 const HomeStack = createStackNavigator({
   Home: {
@@ -16,7 +17,7 @@ const HomeStack = createStackNavigator({
 
 HomeStack.navigationOptions = {
   tabBarLabel: strings.Navigator.homeText,
-  tabBarIcon: ({ focused }: boolean): JSX.Element => (
+  tabBarIcon: ({ focused }: any): JSX.Element => (
     <TabBarIcon
       focused={focused}
       name={'home'}
@@ -34,7 +35,7 @@ const SettingsStack = createStackNavigator({
 
 SettingsStack.navigationOptions = {
   tabBarLabel: strings.Navigator.settingsText,
-  tabBarIcon: ({ focused }: boolean): JSX.Element => (
+  tabBarIcon: ({ focused }: any): JSX.Element => (
     <TabBarIcon
       class='Ionicons'
       focused={focused}
@@ -47,7 +48,36 @@ SettingsStack.navigationOptions = {
   )
 }
 
+const TabConfig: any = {
+  defaultNavigationOptions: {
+    header: null
+  },
+  backBehaviour: 'initialRoute',
+  lazy: true,
+  adaptive: true,
+
+  tabBarOptions: {
+    activeBackgroundColor: theme.COLOR_NAV_ACTIVE,
+    inactiveBackgroundColor: theme.COLOR_NAV_INACTIVE,
+    activeTintColor: theme.COLOR_TINT,
+    inactiveTintColor: theme.COLOR_IVORY,
+    labelStyle: {
+      fontSize: theme.FONT_SIZE_TINY,
+      fontFamily: theme.FONT_FAMILY_CAPTION,
+      fontWeight: theme.FONT_WEIGHT_MEDIUM,
+      fontStyle: 'italic',
+      color: theme.COLOR_IVORY,
+      margin: 4,
+      textShadowOffset: {
+        width: 1.75,
+        height: 1.75
+      },
+      textShadowColor: 'rgba(255,255,255,0.2)'
+    }
+  }
+}
+
 export default createBottomTabNavigator({
   HomeStack,
   SettingsStack
-})
+}, TabConfig)

@@ -1,4 +1,4 @@
-import de from './de.json'
+import de from './de/de.json'
 
 export const defaultLocale = 'de'
 

@@ -48,7 +48,7 @@ SettingsStack.navigationOptions = {
   )
 }
 
-const TabConfig = {
+const TabConfig: any = {
   defaultNavigationOptions: {
     header: null
   },

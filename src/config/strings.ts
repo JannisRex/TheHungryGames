@@ -15,7 +15,7 @@ export default {
     pressButton: Localization.HomeScreen.pressButton
   },
   SettingsScreen: {
-    title: Localization.HomeScreen.title
+    title: Localization.SettingsScreen.title
   }
 }
 

@@ -1,3 +1,4 @@
+// @ts-nocheck
 /* eslint-disable */
 // https://stackoverflow.com/questions/6117814/get-week-of-year-in-javascript-like-in-php
 

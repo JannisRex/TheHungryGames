@@ -28,8 +28,8 @@ export default class DynamicScrollView extends Component<Props, State> {
     this.setState({ screenHeight: contentHeight })
   }
 
-  render(): JSX.Element {
-    const color = this.props.color
+  render(): JSX.Element | Node {
+    const { color, children } = this.props
     const scrollEnabled = this.state.screenHeight > height
     return (
       <SafeAreaView style={[styles.container, { backgroundColor: color }]}>
@@ -41,7 +41,7 @@ export default class DynamicScrollView extends Component<Props, State> {
           onContentSizeChange={this._handleContentSizeChange}
         >
           <View style={styles.content}>
-            {this.props.children}
+            {children}
           </View>
         </ScrollView>
       </SafeAreaView>

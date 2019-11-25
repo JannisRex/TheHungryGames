@@ -54,9 +54,7 @@ class ErrorBoundary extends Component<Props, State> {
     }
   }
 
-  // I dont know why I get typedef error here?????
-  /* eslint-disable */
-  _resetError = (): void  => {
+  _resetError: any = (): void => {
     this.setState({
       error: null,
       hasError: false

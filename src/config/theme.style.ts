@@ -5,7 +5,8 @@ export default {
   // Basic Font Options
   COLOR_TEXT: 'rgb(255, 255, 240)',
   FONT_FAMILY_TITLE: 'impact',
-  FONT_FAMILY_CAPTION: 'lato_lightitalic',
+  FONT_FAMILY_CAPTION: 'latoLightitalic',
+  FONT_FAMILY_THIN: 'latoHairline',
   FONT_FAMILY_TEXT_ANDROID: 'Roboto',
   FONT_FAMILY_TEXT_IOS: 'San Francisco',
   // FONT_FAMILY_TEXT: isIOS ? 'San Francisco' : 'Roboto',

@@ -10,7 +10,7 @@ class CustomHeader extends Component {
         style={{ flex: 1 }}
         barStyle='dark-content'
         centerComponent={<Logo />}
-        containerStyle={[styles.container, { backgroundColor: color }]}
+        containerStyle={[styles.container]}
       />
     )
   }

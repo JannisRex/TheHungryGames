@@ -1,26 +1,26 @@
-import { StyleSheet, ViewStyle, ImageStyle } from 'react-native'
+import { StyleSheet, ViewStyle } from 'react-native'
 
 type Styles = {
-  [1]: ViewStyle,
-  [2]: ViewStyle,
-  [3]: ViewStyle,
-  [4]: ViewStyle
+  a1: ViewStyle,
+  a2: ViewStyle,
+  a3: ViewStyle,
+  a4: ViewStyle
 }
 
 export default StyleSheet.create<Styles>({
-  [1]: {
+  a1: {
     flex: 1,
     backgroundColor: 'red'
   },
-  [2]: {
+  a2: {
     flex: 2,
     backgroundColor: 'blue'
   },
-  [3]: {
+  a3: {
     flex: 3,
     backgroundColor: 'green'
   },
-  [4]: {
+  a4: {
     flex: 4,
     backgroundColor: 'yellow'
   }

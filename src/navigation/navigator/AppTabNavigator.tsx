@@ -6,6 +6,7 @@ import HomeStackNavigation from './HomeStackNavigator'
 import SettingsScreen from '../../screens/settings/main'
 import TabBarIcon from '../../lib/TabBarIcon'
 import strings from '../../config/strings'
+import theme from '../../config/theme.style'
 
 const HomeStack = createStackNavigator({
   Home: {
@@ -47,7 +48,38 @@ SettingsStack.navigationOptions = {
   )
 }
 
+const TabConfig = {
+  initialRouteName: HomeStack,
+  defaultNavigationOptions: {
+    header: null
+  },
+  backBehaviour: 'initialRoute',
+  lazy: true,
+  adaptive: true,
+
+  tabBarOptions: {
+    activeBackgroundColor: theme.COLOR_NAV_A,
+    inactiveBackgroundColor: theme.COLOR_NAV_B,
+    activeTintColor: theme.COLOR_TINT,
+    inactiveTintColor: theme.COLOR_IVORY,
+    labelStyle: {
+      fontSize: theme.FONT_SIZE_SMALL,
+      fontFamily: theme.FONT_FAMILY_CAPTION,
+      fontWeight: theme.FONT_WEIGHT_MEDIUM,
+      fontStyle: 'normal',
+      color: theme.COLOR_IVORY,
+      margin: 5,
+      padding: 10,
+      textShadowOffset: {
+        width: 1.75,
+        height: 1.75
+      },
+      textShadowColor: 'rgba(255,255,255,0.2)'
+    }
+  }
+}
+
 export default createBottomTabNavigator({
   HomeStack,
   SettingsStack
-})
+}, TabConfig)

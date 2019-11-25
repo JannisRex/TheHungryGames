@@ -49,7 +49,6 @@ SettingsStack.navigationOptions = {
 }
 
 const TabConfig = {
-  initialRouteName: HomeStack,
   defaultNavigationOptions: {
     header: null
   },
@@ -58,18 +57,17 @@ const TabConfig = {
   adaptive: true,
 
   tabBarOptions: {
-    activeBackgroundColor: theme.COLOR_NAV_A,
-    inactiveBackgroundColor: theme.COLOR_NAV_B,
+    activeBackgroundColor: theme.COLOR_NAV_ACTIVE,
+    inactiveBackgroundColor: theme.COLOR_NAV_INACTIVE,
     activeTintColor: theme.COLOR_TINT,
     inactiveTintColor: theme.COLOR_IVORY,
     labelStyle: {
-      fontSize: theme.FONT_SIZE_SMALL,
+      fontSize: theme.FONT_SIZE_TINY,
       fontFamily: theme.FONT_FAMILY_CAPTION,
       fontWeight: theme.FONT_WEIGHT_MEDIUM,
-      fontStyle: 'normal',
+      fontStyle: 'italic',
       color: theme.COLOR_IVORY,
-      margin: 5,
-      padding: 10,
+      margin: 4,
       textShadowOffset: {
         width: 1.75,
         height: 1.75

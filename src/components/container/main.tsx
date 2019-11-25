@@ -1,9 +1,9 @@
-import React, { Children } from 'react'
+import React from 'react'
 import { View } from 'react-native'
 import styles from './styles'
 
-const Container = ({ children, color }: {children?: typeof Children, color: string}): JSX.Element => (
-  <View style={[styles.container, { backgroundColor: color }]}>
+const Container = ({ children }: {children?: JSX.Element[] | JSX.Element}): JSX.Element => (
+  <View style={styles.container}>
     {children}
   </View>
 )

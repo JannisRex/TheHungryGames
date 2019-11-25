@@ -3,6 +3,7 @@ import theme from '../../config/theme.style'
 
 type Styles = {
   button: ViewStyle,
+  buttonText: TextStyle,
   errorHeader: TextStyle,
   errorInfo: TextStyle,
   errorContainer: ViewStyle
@@ -17,6 +18,11 @@ export default StyleSheet.create<Styles>({
     borderRadius: 50,
     padding: 15
   },
+  buttonText: {
+    color: '#fff',
+    fontWeight: theme.FONT_WEIGHT_MEDIUM,
+    textAlign: 'center'
+  } as TextStyle,
   errorHeader: {
     fontFamily: 'lato_lightitalic',
     fontSize: theme.FONT_SIZE_LARGE,

@@ -1,4 +1,3 @@
-// @flow strict
 import React from 'react'
 import { Text, TouchableOpacity, View } from 'react-native'
 import DynamicScrollView from '../DynamicScrollView/main'
@@ -9,7 +8,6 @@ type Props = {
     resetError: ()=> void
 }
 
-// TODO fix types
 const ErrSubstituteScreen = (props: Props): JSX.Element => (
   <DynamicScrollView color='grey'>
     <View style={styles.errorContainer}>

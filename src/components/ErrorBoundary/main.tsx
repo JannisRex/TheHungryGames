@@ -62,7 +62,7 @@ class ErrorBoundary extends Component<Props, State> {
   }
   /* eslint-enable */
 
-  render(): Node | JSX.Element {
+  render(): React.ReactNode | JSX.Element {
     const { ErrSubstituteScreen } = this.props
 
     return this.state.hasError

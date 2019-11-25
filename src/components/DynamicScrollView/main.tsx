@@ -1,13 +1,11 @@
-// @flow strict
 import React, { Component } from 'react'
 import { SafeAreaView, StatusBar, View, ScrollView, Dimensions } from 'react-native'
 import styles from './styles'
 
 const { height } = Dimensions.get('window')
 
-// TODO: fix types i.e. remove Flow shit
 type Props = {
-  children: Node,
+  children: React.ReactNode,
   color: string
 }
 

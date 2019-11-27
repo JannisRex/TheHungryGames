@@ -114,15 +114,20 @@ render(): JSX.Element {
       </View>
 
       <View style={flex.a2}>
+        {/* Here we have a toggle to either activate */}
+        {/* or deactivate filtering by cost */}
         <View style={{ flex: 1 }}>
           <Text>++ Toggle: Yes/No ++</Text>
+          {/* https://facebook.github.io/react-native/docs/switch ??? */}
+
+          {/* and here we can press the wanted */}
+          {/* priceRange which restaurants should be in */}
           <ButtonGroup
             onPress={this._updateIndex}
             selectedIndex={this.state.selectedIndex}
             buttons={['$', '$$', '$$$']}
             containerStyle={{ height: 100 }}
           />
-          <Text>++ ButtonGroup: [$], [$$], [$$$] ++</Text>
         </View>
       </View>
 

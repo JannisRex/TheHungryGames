@@ -14,6 +14,7 @@ type Props = {}
 // 12 states :ccc
 type State = {
   sliderValue: number,
+  selectedIndex: number,
   checkBoxesFood: {
     cB1: boolean,
     cB2: boolean,
@@ -36,6 +37,7 @@ class SettingsScreen extends Component<Props, State> {
 
     this.state = {
       sliderValue: 0,
+      selectedIndex: 0,
       checkBoxesFood: {
         cB1: false,
         cB2: false,
@@ -52,6 +54,12 @@ class SettingsScreen extends Component<Props, State> {
       }
     }
   }
+
+readonly _updateIndex: any = (newIndex: number): void => {
+  this.setState({
+    selectedIndex: newIndex
+  })
+}
 
   render(): JSX.Element {
     return (
@@ -108,6 +116,12 @@ class SettingsScreen extends Component<Props, State> {
         <View style={flex.a2}>
           <View style={{ flex: 1 }}>
             <Text>++ Toggle: Yes/No ++</Text>
+            <ButtonGroup
+      onPress={this._updateIndex}
+      selectedIndex={this.state.selectedIndex}
+      buttons={['$', '$$', '$$$']}
+      containerStyle={{ height: 100 }}
+/>
             <Text>++ ButtonGroup: [$], [$$], [$$$] ++</Text>
           </View>
         </View>

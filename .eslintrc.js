@@ -283,7 +283,30 @@ module.exports = {
             }
         }],
     "@typescript-eslint/member-naming": [1, { "private": "^_" ,  "protected": "^$" }],    //Enforces naming conventions for class members by visibility
-    "@typescript-eslint/member-ordering": 1,  //Require a consistent member declaration order
+    "@typescript-eslint/member-ordering": [    //Require a consistent member declaration order
+        true,
+        {
+            "order": [
+                "public-static-field",
+                "public-static-method",
+                "public-instance-field",
+                "public-constructor",
+                "public-instance-method",
+
+                "protected-static-field",
+                "protected-static-method",
+                "protected-instance-field",
+                "protected-constructor",
+                "protected-instance-method",
+
+                "private-static-field",
+                "private-static-method",
+                "private-instance-field",
+                "private-constructor",
+                "private-instance-method"
+            ]
+        }
+],
     "@typescript-eslint/no-array-constructor": 2,    //Disallow generic Array constructors
     "@typescript-eslint/no-dynamic-delete": 2,    //Bans usage of the delete operator with computed key expressions
     "@typescript-eslint/no-empty-function": 2,   //Disallow empty functions

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { View, Text, Switch } from 'react-native'
 import { Container, Header } from '../../components/index'
-import { Input, Slider, CheckBox, ButtonGroup } from 'react-native-elements'
+import { Input, Slider, CheckBox, ButtonGroup, Divider } from 'react-native-elements'
 import strings from '../../config/strings'
 import styles from './styles'
 
@@ -87,10 +87,11 @@ class SettingsScreen extends Component<Props, State> {
           <View style={{ flex: 1, flexDirection: 'column' }}>
             {/* First Row */}
             <View style={{ flex: 1, flexDirection: 'row' }}>
-              <CheckBox title='cB1' checked={this.state.checkBoxesFood.cB1}/>
-              <CheckBox title='cB2' checked={this.state.checkBoxesFood.cB2}/>
-              <CheckBox title='cB3' checked={this.state.checkBoxesFood.cB3}/>
-              <CheckBox title='cB4' checked={this.state.checkBoxesFood.cB4}/>
+              <CheckBox title='Brasserie / Café' checked={this.state.checkBoxesFood.cB1}/>
+              <CheckBox title='Takeaway' checked={this.state.checkBoxesFood.cB2}/>
+              <CheckBox title='Restaurant' checked={this.state.checkBoxesFood.cB3}/>
+              <CheckBox title='Family Friendly Diner' checked={this.state.checkBoxesFood.cB4}/>
+              <Divider />
             </View>
             {/* Second Row */}
             <View style={{ flex: 1, flexDirection: 'row' }}>

@@ -57,6 +57,8 @@ class SettingsScreen extends Component<Props, State> {
     }
   }
 
+  // TODO: everything is present, but
+  // everything looks worse than garbage
   render(): JSX.Element {
     return (
       <Container>

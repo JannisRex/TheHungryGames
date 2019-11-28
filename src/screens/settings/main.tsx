@@ -28,7 +28,8 @@ type State = {
     cB10: boolean,
     cB11: boolean,
     cB12: boolean
-  }
+  },
+  toggleValue: boolean
 }
 
 class SettingsScreen extends Component<Props, State> {
@@ -51,13 +52,20 @@ class SettingsScreen extends Component<Props, State> {
         cB10: false,
         cB11: false,
         cB12: false
-      }
+      },
+      toggleValue: false
     }
   }
 
-readonly _updateIndex: any = (newIndex: number): void => {
+private readonly _updateIndex: any = (newIndex: number): void => {
   this.setState({
     selectedIndex: newIndex
+  })
+}
+
+private readonly _updateToggle: any = (newValue: boolean): void => {
+  this.setState({
+    toggleValue: newValue
   })
 }
 
@@ -117,7 +125,10 @@ render(): JSX.Element {
         {/* Here we have a toggle to either activate */}
         {/* or deactivate filtering by cost */}
         <View style={{ flex: 1 }}>
-          <Text>++ Toggle: Yes/No ++</Text>
+          <Switch
+            onValueChange={this._updateToggle}
+            value={this.state.toggleValue}
+          />
           {/* https://facebook.github.io/react-native/docs/switch ??? */}
 
           {/* and here we can press the wanted */}

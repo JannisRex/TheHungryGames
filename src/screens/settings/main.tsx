@@ -71,7 +71,7 @@ render(): JSX.Element {
         {/* and gets according CityName */}
         <View style={{ flex: 1 }}>
           <Input
-            placeholder='Enter Zip-Code'
+            placeholder='Enter Zip-Code...'
           />
         </View>
 

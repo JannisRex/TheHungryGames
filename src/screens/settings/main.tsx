@@ -134,6 +134,21 @@ class SettingsScreen extends Component<Props, State> {
           <View style={{ flex: 1 }}>
             <Text>extras???</Text>
             <Text>Checkboxes: e.g. canOrder alcohol...</Text>
+            <View style={{ flex: 1, flexDirection: 'column' }}>
+              {/* First Row */}
+              <View style={{ flex: 1, flexDirection: 'row' }}>
+                <CheckBox title='cb1' checked={this.state.checkBoxesFood.cB1}/>
+                <CheckBox title='cB2' checked={this.state.checkBoxesFood.cB2}/>
+                <CheckBox title='cB3' checked={this.state.checkBoxesFood.cB3}/>
+              </View>
+              {/* Second Row */}
+              <View style={{ flex: 1, flexDirection: 'row' }}>
+                <CheckBox title='cB5' checked={this.state.checkBoxesFood.cB5}/>
+                <CheckBox title='cB6' checked={this.state.checkBoxesFood.cB6}/>
+                <CheckBox title='cB7' checked={this.state.checkBoxesFood.cB7}/>
+                <CheckBox title='cB8' checked={this.state.checkBoxesFood.cB8}/>
+              </View>
+            </View>
           </View>
         </View>
 

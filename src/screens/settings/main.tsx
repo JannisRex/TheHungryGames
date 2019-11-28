@@ -117,7 +117,6 @@ class SettingsScreen extends Component<Props, State> {
               onValueChange={this._updateToggle}
               value={this.state.toggleValue}
             />
-            {/* https://facebook.github.io/react-native/docs/switch ??? */}
 
             {/* and here we can press the wanted */}
             {/* priceRange which restaurants should be in */}
@@ -132,21 +131,18 @@ class SettingsScreen extends Component<Props, State> {
 
         <View style={flex.a3}>
           <View style={{ flex: 1 }}>
-            <Text>extras???</Text>
-            <Text>Checkboxes: e.g. canOrder alcohol...</Text>
             <View style={{ flex: 1, flexDirection: 'column' }}>
               {/* First Row */}
               <View style={{ flex: 1, flexDirection: 'row' }}>
-                <CheckBox title='cb1' checked={this.state.checkBoxesFood.cB1}/>
-                <CheckBox title='cB2' checked={this.state.checkBoxesFood.cB2}/>
-                <CheckBox title='cB3' checked={this.state.checkBoxesFood.cB3}/>
+                <CheckBox title='can order Alcohol' checked={this.state.checkBoxesFood.cB1}/>
+                <CheckBox title='can order Cigarettes' checked={this.state.checkBoxesFood.cB2}/>
+                <CheckBox title='can order Dessert' checked={this.state.checkBoxesFood.cB3}/>
               </View>
               {/* Second Row */}
               <View style={{ flex: 1, flexDirection: 'row' }}>
-                <CheckBox title='cB5' checked={this.state.checkBoxesFood.cB5}/>
-                <CheckBox title='cB6' checked={this.state.checkBoxesFood.cB6}/>
-                <CheckBox title='cB7' checked={this.state.checkBoxesFood.cB7}/>
-                <CheckBox title='cB8' checked={this.state.checkBoxesFood.cB8}/>
+                <CheckBox title='extraYY' checked={this.state.checkBoxesFood.cB5}/>
+                <CheckBox title='extraXX' checked={this.state.checkBoxesFood.cB6}/>
+                <CheckBox title='extraZZ' checked={this.state.checkBoxesFood.cB7}/>
               </View>
             </View>
           </View>

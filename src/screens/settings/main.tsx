@@ -64,7 +64,6 @@ class SettingsScreen extends Component<Props, State> {
     const maxWidth = Dimensions.get('window').width
     const maxProportion = 100
     const desiredProportion = 75
-    const zeroDecimals = 0
 
     return (
       <View style={{ flex: 1, flexDirection: 'column' }}>
@@ -88,7 +87,7 @@ class SettingsScreen extends Component<Props, State> {
               onValueChange={(value: number): void => this.setState({ sliderValue: value })}
               style={{ alignSelf: 'center', width: (maxWidth / maxProportion) * desiredProportion }}
             />
-            <Text style={{ alignSelf: 'center' }}>Range in km: {this.state.sliderValue.toFixed(zeroDecimals)}</Text>
+            <Text style={{ alignSelf: 'center' }}>Range in km: {(this.state.sliderValue * 100).toFixed(0)}</Text>
           </View>
         </View>
 

@@ -120,13 +120,14 @@ class SettingsScreen extends Component<Props, State> {
           </View>
         </View>
 
-        <View style={{ flex: 1, flexDirection: 'row' }}>
+        <View style={{ flex: 1 }}>
           {/* Here we have a toggle to either activate */}
           {/* or deactivate filtering by cost */}
           <View>
             <Switch
               onValueChange={this._updateToggle}
               value={this.state.toggleValue}
+              style={{ alignSelf: 'center' }}
             />
           </View>
           {/* and here we can press the wanted */}
@@ -136,6 +137,7 @@ class SettingsScreen extends Component<Props, State> {
               onPress={this._updateIndex}
               selectedIndex={this.state.selectedIndex}
               buttons={['$', '$$', '$$$']}
+              containerStyle={{ marginBottom: 15 }}
             />
           </View>
         </View>

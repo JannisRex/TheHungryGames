@@ -87,6 +87,7 @@ class SettingsScreen extends Component<Props, State> {
               onValueChange={(value: number): void => this.setState({ sliderValue: value })}
               style={{ alignSelf: 'center', width: (maxWidth / maxProportion) * desiredProportion }}
             />
+            <Text style={{ alignSelf: 'center' }}>Range: {this.state.sliderValue}</Text>
           </View>
         </View>
 
@@ -100,8 +101,8 @@ class SettingsScreen extends Component<Props, State> {
               <CheckBox title='Takeaway' checked={cBF.cB2} onPress={(): void => this._updateCheckBox('cB2')} />
               <CheckBox title='Restaurant' checked={cBF.cB3} onPress={(): void => this._updateCheckBox('cB3')} />
               <CheckBox title='Family Friendly Diner' checked={cBF.cB4} onPress={(): void => this._updateCheckBox('cB4')} />
-              <Divider />
             </View>
+            <Divider />
             {/* Second Row */}
             <View style={{ flexDirection: 'row' }}>
               <CheckBox title='cB5' checked={cBF.cB5} onPress={(): void => this._updateCheckBox('cB5')} />

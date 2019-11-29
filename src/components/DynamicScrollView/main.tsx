@@ -1,12 +1,11 @@
 import React, { Component } from 'react'
-import { SafeAreaView, StatusBar, View, ScrollView, Dimensions } from 'react-native'
+import { SafeAreaView, View, ScrollView, Dimensions } from 'react-native'
 import styles from './styles'
 
 const { height } = Dimensions.get('window')
 
 type Props = {
-  children: React.ReactNode,
-  color: string
+  children: React.ReactNode
 }
 
 type State = {
@@ -27,11 +26,10 @@ export default class DynamicScrollView extends Component<Props, State> {
   }
 
   render(): JSX.Element | Node {
-    const { color, children } = this.props
+    const { children } = this.props
     const scrollEnabled = this.state.screenHeight > height
     return (
-      <SafeAreaView style={[styles.container, { backgroundColor: color }]}>
-        <StatusBar barStyle='light-content' backgroundColor='#468189' />
+      <SafeAreaView style={styles.container}>
         <ScrollView
           style={{ flex: 1 }}
           contentContainerStyle={styles.scrollView}

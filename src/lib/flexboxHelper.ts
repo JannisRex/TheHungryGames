@@ -13,29 +13,29 @@ export default StyleSheet.create<Styles>({
   a1: {
     flex: 3,
     backgroundColor: 'red',
-    justifyContent: 'center',
-    alignItems: 'center',
-    width
+    // justifyContent: 'center',
+    // alignItems: 'center',
+    // width
   },
   a2: {
     flex: 2,
     backgroundColor: 'blue',
-    justifyContent: 'center',
-    alignItems: 'center',
-    width
+    // justifyContent: 'center',
+    // alignItems: 'center',
+    // width
   },
   a3: {
     flex: 1.5,
     backgroundColor: 'green',
-    justifyContent: 'center',
-    alignItems: 'center',
-    width
+    // justifyContent: 'center',
+    // alignItems: 'center',
+    // width
   },
   a4: {
     flex: 1,
     backgroundColor: 'yellow',
-    justifyContent: 'center',
-    alignItems: 'center',
-    width
+    // justifyContent: 'center',
+    // alignItems: 'center',
+    // width
   }
 })

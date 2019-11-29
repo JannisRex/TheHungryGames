@@ -91,25 +91,25 @@ class SettingsScreen extends Component<Props, State> {
           <View style={{ flex: 1, flexDirection: 'column' }}>
             {/* First Row */}
             <View style={{ flex: 1, flexDirection: 'row' }}>
-              <CheckBox title='Brasserie / Café' checked={cBF.cB1}/>
-              <CheckBox title='Takeaway' checked={cBF.cB2}/>
-              <CheckBox title='Restaurant' checked={cBF.cB3}/>
-              <CheckBox title='Family Friendly Diner' checked={cBF.cB4}/>
+              <CheckBox title='Brasserie / Café' checked={cBF.cB1} onPress={(): void => this._updateCheckBox('cB1')} />
+              <CheckBox title='Takeaway' checked={cBF.cB2} onPress={(): void => this._updateCheckBox('cB2')} />
+              <CheckBox title='Restaurant' checked={cBF.cB3} onPress={(): void => this._updateCheckBox('cB3')} />
+              <CheckBox title='Family Friendly Diner' checked={cBF.cB4} onPress={(): void => this._updateCheckBox('cB4')} />
               <Divider />
             </View>
             {/* Second Row */}
             <View style={{ flex: 1, flexDirection: 'row' }}>
-              <CheckBox title='cB5' checked={cBF.cB5}/>
-              <CheckBox title='cB6' checked={cBF.cB6}/>
-              <CheckBox title='cB7' checked={cBF.cB7}/>
-              <CheckBox title='cB8' checked={cBF.cB8}/>
+              <CheckBox title='cB5' checked={cBF.cB5} onPress={(): void => this._updateCheckBox('cB5')} />
+              <CheckBox title='cB6' checked={cBF.cB6} onPress={(): void => this._updateCheckBox('cB6')} />
+              <CheckBox title='cB7' checked={cBF.cB7} onPress={(): void => this._updateCheckBox('cB7')} />
+              <CheckBox title='cB8' checked={cBF.cB8} onPress={(): void => this._updateCheckBox('cB8')} />
             </View>
             {/* Third Row */}
             <View style={{ flex: 1, flexDirection: 'row' }}>
-              <CheckBox title='cB9' checked={cBF.cB9}/>
-              <CheckBox title='cB10' checked={cBF.cB10}/>
-              <CheckBox title='cB11' checked={cBF.cB11}/>
-              <CheckBox title='cB12' checked={cBF.cB12}/>
+              <CheckBox title='cB9' checked={cBF.cB9} onPress={(): void => this._updateCheckBox('cB9')} />
+              <CheckBox title='cB10' checked={cBF.cB10} onPress={(): void => this._updateCheckBox('cB10')} />
+              <CheckBox title='cB11' checked={cBF.cB11} onPress={(): void => this._updateCheckBox('cB11')} />
+              <CheckBox title='cB12' checked={cBF.cB12} onPress={(): void => this._updateCheckBox('cB12')} />
             </View>
           </View>
         </View>
@@ -139,15 +139,15 @@ class SettingsScreen extends Component<Props, State> {
             <View style={{ flex: 1, flexDirection: 'column' }}>
               {/* First Row */}
               <View style={{ flex: 1, flexDirection: 'row' }}>
-                <CheckBox title='can order Alcohol' checked={cBF.cB1}/>
-                <CheckBox title='can order Cigarettes' checked={cBF.cB2}/>
-                <CheckBox title='can order Dessert' checked={cBF.cB3}/>
+                <CheckBox title='can order Alcohol' checked={cBF.cB1} onPress={(): void => this._updateCheckBox('cB1')} />
+                <CheckBox title='can order Cigarettes' checked={cBF.cB2} onPress={(): void => this._updateCheckBox('cB2')} />
+                <CheckBox title='can order Dessert' checked={cBF.cB3} onPress={(): void => this._updateCheckBox('cB3')} />
               </View>
               {/* Second Row */}
               <View style={{ flex: 1, flexDirection: 'row' }}>
-                <CheckBox title='extraYY' checked={cBF.cB5}/>
-                <CheckBox title='extraXX' checked={cBF.cB6}/>
-                <CheckBox title='extraZZ' checked={cBF.cB7} onPress={(): void => this._updateCheckBox('cB7')} />
+                <CheckBox title='extraYY' checked={cBF.cB4} onPress={(): void => this._updateCheckBox('cB4')} />
+                <CheckBox title='extraXX' checked={cBF.cB5} onPress={(): void => this._updateCheckBox('cB5')} />
+                <CheckBox title='extraZZ' checked={cBF.cB6} onPress={(): void => this._updateCheckBox('cB6')} />
               </View>
             </View>
           </View>

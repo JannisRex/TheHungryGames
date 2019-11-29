@@ -6,7 +6,6 @@ const { height } = Dimensions.get('window')
 
 type Props = {
   children: React.ReactNode,
-  color: string
 }
 
 type State = {
@@ -27,10 +26,10 @@ export default class DynamicScrollView extends Component<Props, State> {
   }
 
   render(): JSX.Element | Node {
-    const { color, children } = this.props
+    const { children } = this.props
     const scrollEnabled = this.state.screenHeight > height
     return (
-      <SafeAreaView style={[styles.container, { backgroundColor: color }]}>
+      <SafeAreaView style={styles.container}>
         <StatusBar barStyle='light-content' backgroundColor='#468189' />
         <ScrollView
           style={{ flex: 1 }}

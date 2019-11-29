@@ -63,7 +63,7 @@ class SettingsScreen extends Component<Props, State> {
     const cBF = this.state.checkBoxesFood
 
     return (
-      <View>
+      <View style={{ flex: 1, flexDirection: 'column' }}>
         <Header />
 
         <View style={flex.a4}>

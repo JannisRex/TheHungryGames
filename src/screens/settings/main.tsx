@@ -13,6 +13,7 @@ type Props = {}
 // or think of something better than
 // 12 states :ccc
 type State = {
+  inputValue: string,
   sliderValue: number,
   selectedIndex: number,
   checkBoxesFood: {
@@ -37,6 +38,7 @@ class SettingsScreen extends Component<Props, State> {
     super(props)
 
     this.state = {
+      inputValue: 'Enter ZIP',
       sliderValue: 0,
       selectedIndex: 0,
       checkBoxesFood: {
@@ -79,8 +81,9 @@ class SettingsScreen extends Component<Props, State> {
                 ref={zipInput}
                 placeholder='Enter Zip-Code...'
                 leftIcon={{ type: 'entypo', name: 'location' }}
+                onChangeText={((text: string): void => this._setInputValue(text))}
               />
-              <Text> {this._getInputValue(zipInput)} </Text>
+              <Text> => {this.state.inputValue} </Text>
             </View>
 
             {/* to set max Range a restaurant */}
@@ -179,17 +182,33 @@ class SettingsScreen extends Component<Props, State> {
     )
   }
 
-private readonly _getInputValue: any = (ref: React.RefObject<Input>): string | null => {
-  try {
-    const val = ref.current.props.value
-    if (val) {
-      return ('=> ' + val)
-    }
-  } catch (e) {
-    return 'Enter ZIP' // when prop.value === null
+// gets called when Input changes
+// gets passed Input and tries to
+// to find CIty with fitting ZIP
+private readonly _setInputValue: any = (text: string): void => {
+  let zip = Number(text)
+  let city = null
+  // DO ZIP LOGIC HERE
+  // TRY TO FIND CITY
+  // AND EVERYTHING IMPORTANT
+  // IF THRE ISNT A CITY WITH
+  // PASSED ZIP, GIVE ERROR
+
+  if (city === null) {
+    this.setState({
+      inputValue: 'BAD zip'
+    })
+  } else {
+    this.setState({
+      inputValue: city
+    })
   }
 
-  return ('BAD zip')
+    if (zip === 25764) {
+    this.setState({
+      inputValue: 'BAD zip'
+    })
+  }
 }
 
 // gets passed the name of the checkBox

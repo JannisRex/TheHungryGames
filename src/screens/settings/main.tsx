@@ -90,7 +90,7 @@ class SettingsScreen extends Component<Props, State> {
           {/* gets layouted by flexBoxes */}
           <View style={{ flex: 1, flexDirection: 'column' }}>
             {/* First Row */}
-            <View style={{ flex: 1, flexDirection: 'row' }}>
+            <View style={{ flexDirection: 'row' }}>
               <CheckBox title='Brasserie / Café' checked={cBF.cB1} onPress={(): void => this._updateCheckBox('cB1')} />
               <CheckBox title='Takeaway' checked={cBF.cB2} onPress={(): void => this._updateCheckBox('cB2')} />
               <CheckBox title='Restaurant' checked={cBF.cB3} onPress={(): void => this._updateCheckBox('cB3')} />
@@ -98,14 +98,14 @@ class SettingsScreen extends Component<Props, State> {
               <Divider />
             </View>
             {/* Second Row */}
-            <View style={{ flex: 1, flexDirection: 'row' }}>
+            <View style={{ flexDirection: 'row' }}>
               <CheckBox title='cB5' checked={cBF.cB5} onPress={(): void => this._updateCheckBox('cB5')} />
               <CheckBox title='cB6' checked={cBF.cB6} onPress={(): void => this._updateCheckBox('cB6')} />
               <CheckBox title='cB7' checked={cBF.cB7} onPress={(): void => this._updateCheckBox('cB7')} />
               <CheckBox title='cB8' checked={cBF.cB8} onPress={(): void => this._updateCheckBox('cB8')} />
             </View>
             {/* Third Row */}
-            <View style={{ flex: 1, flexDirection: 'row' }}>
+            <View style={{ flexDirection: 'row' }}>
               <CheckBox title='cB9' checked={cBF.cB9} onPress={(): void => this._updateCheckBox('cB9')} />
               <CheckBox title='cB10' checked={cBF.cB10} onPress={(): void => this._updateCheckBox('cB10')} />
               <CheckBox title='cB11' checked={cBF.cB11} onPress={(): void => this._updateCheckBox('cB11')} />
@@ -117,7 +117,7 @@ class SettingsScreen extends Component<Props, State> {
         <View style={flex.a2}>
           {/* Here we have a toggle to either activate */}
           {/* or deactivate filtering by cost */}
-          <View style={{ flex: 1 }}>
+          <View>
             <Switch
               onValueChange={this._updateToggle}
               value={this.state.toggleValue}
@@ -125,12 +125,14 @@ class SettingsScreen extends Component<Props, State> {
 
             {/* and here we can press the wanted */}
             {/* priceRange which restaurants should be in */}
-            <ButtonGroup
-              onPress={this._updateIndex}
-              selectedIndex={this.state.selectedIndex}
-              buttons={['$', '$$', '$$$']}
-              containerStyle={{ height: 100 }}
-            />
+            <View>
+              <ButtonGroup
+                onPress={this._updateIndex}
+                selectedIndex={this.state.selectedIndex}
+                buttons={['$', '$$', '$$$']}
+                containerStyle={{ height: 100 }}
+              />
+            </View>
           </View>
         </View>
 
@@ -138,13 +140,13 @@ class SettingsScreen extends Component<Props, State> {
           <View style={{ flex: 1 }}>
             <View style={{ flex: 1, flexDirection: 'column' }}>
               {/* First Row */}
-              <View style={{ flex: 1, flexDirection: 'row' }}>
+              <View style={{ flexDirection: 'row' }}>
                 <CheckBox title='can order Alcohol' checked={cBF.cB1} onPress={(): void => this._updateCheckBox('cB1')} />
                 <CheckBox title='can order Cigarettes' checked={cBF.cB2} onPress={(): void => this._updateCheckBox('cB2')} />
                 <CheckBox title='can order Dessert' checked={cBF.cB3} onPress={(): void => this._updateCheckBox('cB3')} />
               </View>
               {/* Second Row */}
-              <View style={{ flex: 1, flexDirection: 'row' }}>
+              <View style={{ flexDirection: 'row' }}>
                 <CheckBox title='extraYY' checked={cBF.cB4} onPress={(): void => this._updateCheckBox('cB4')} />
                 <CheckBox title='extraXX' checked={cBF.cB5} onPress={(): void => this._updateCheckBox('cB5')} />
                 <CheckBox title='extraZZ' checked={cBF.cB6} onPress={(): void => this._updateCheckBox('cB6')} />

@@ -91,7 +91,7 @@ class SettingsScreen extends Component<Props, State> {
           </View>
         </View>
 
-        <View style={flex.a4}>
+        <View style={{ flex: 4}}>
           {/* essentially just checkBoxes in rows, */}
           {/* gets layouted by flexBoxes */}
           <View style={{ flex: 1, flexDirection: 'column' }}>
@@ -120,7 +120,7 @@ class SettingsScreen extends Component<Props, State> {
           </View>
         </View>
 
-        <View style={flex.a2}>
+        <View style={{ flex: 1 }}>
           {/* Here we have a toggle to either activate */}
           {/* or deactivate filtering by cost */}
           <View>
@@ -142,7 +142,7 @@ class SettingsScreen extends Component<Props, State> {
           </View>
         </View>
 
-        <View style={flex.a3}>
+        <View style={{ flex: 2 }}>
           <View style={{ flex: 1 }}>
             <View style={{ flex: 1, flexDirection: 'column' }}>
               {/* First Row */}

@@ -76,14 +76,14 @@ class SettingsScreen extends Component<Props, State> {
           <View style={{ flex: 2 }}>
             {/* Upper Segment - evaluates ZIP-Code */}
             {/* and gets according CityName */}
-            <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-between' }}>
+            <View style={{ flex: 1 }}>
               <Input
                 ref={zipInput}
+                label={'=> ' + this.state.inputValue}
                 placeholder='Enter Zip-Code...'
                 leftIcon={{ type: 'entypo', name: 'location' }}
                 onChangeText={((text: string): void => this._setInputValue(text))}
               />
-              <Text> => {this.state.inputValue} </Text>
             </View>
 
             {/* to set max Range a restaurant */}

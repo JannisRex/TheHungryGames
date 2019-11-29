@@ -206,7 +206,7 @@ private readonly _setInputValue: any = (text: string): void => {
 
     if (zip === 25764) {
     this.setState({
-      inputValue: 'BAD zip'
+      inputValue: 'Wesselburen'
     })
   }
 }

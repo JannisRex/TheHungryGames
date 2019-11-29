@@ -66,8 +66,9 @@ class SettingsScreen extends Component<Props, State> {
     const desiredProportion = 75
 
     return (
+      <View style={{ flex: 1}}>
+       <Header />
       <DynamicScrollView>
-        <Header />
 
         <View style={{ flex: 2 }}>
           {/* Upper Segment - evaluates ZIP-Code */}
@@ -172,6 +173,7 @@ class SettingsScreen extends Component<Props, State> {
 
         {/* <Text>{strings.SettingsScreen.title}</Text> */}
       </DynamicScrollView>
+      </View>
     )
   }
 

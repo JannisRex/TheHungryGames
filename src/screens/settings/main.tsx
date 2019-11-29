@@ -80,7 +80,9 @@ class SettingsScreen extends Component<Props, State> {
                 placeholder='Enter Zip-Code...'
                 leftIcon={{ type: 'entypo', name: 'location' }}
               />
-              <Text>{zipInput.current.props.value ? '=> ' + zipInput.current.props.value : 'Bad ZIP'}</Text>
+              <Text>
+                {zipInput.current.props.value ? '=> ' + zipInput.current.props.value : 'Bad ZIP'}
+              </Text>
             </View>
 
             {/* to set max Range a restaurant */}
@@ -178,6 +180,20 @@ class SettingsScreen extends Component<Props, State> {
       </View>
     )
   }
+
+private readonly _getInputValue: any = (ref: React.RefObject<Input>): string | null => {
+  try {
+    const val = ref.current.props.value
+    if (val) {
+      return ('=> ' + val)
+    }
+  } catch (e) {
+    console.log(e)
+    return null
+  }
+
+  return ('BAD zip')
+}
 
 // gets passed the name of the checkBox
 // and swaps boolean

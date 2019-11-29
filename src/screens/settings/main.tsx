@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text, Switch } from 'react-native'
+import { View, Text, Switch, Dimensions } from 'react-native'
 import { Container, Header } from '../../components/index'
 import { Input, Slider, CheckBox, ButtonGroup, Divider } from 'react-native-elements'
 import strings from '../../config/strings'
@@ -61,12 +61,13 @@ class SettingsScreen extends Component<Props, State> {
   // everything looks worse than garbage
   render(): JSX.Element {
     const cBF = this.state.checkBoxesFood
+    const maxWidth = Dimensions.get('window').width
 
     return (
       <View style={{ flex: 1, flexDirection: 'column' }}>
         <Header />
 
-        <View style={flex.a4}>
+        <View style={{ flex: 2 }}>
           {/* Upper Segment - evaluates ZIP-Code */}
           {/* and gets according CityName */}
           <View style={{ flex: 1 }}>
@@ -82,6 +83,7 @@ class SettingsScreen extends Component<Props, State> {
             <Slider
               value={this.state.sliderValue}
               onValueChange={(value: number): void => this.setState({ sliderValue: value })}
+              style={{ alignSelf: 'center', width: (maxWidth / 100) * 75 }}
             />
           </View>
         </View>

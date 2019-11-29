@@ -63,7 +63,7 @@ class SettingsScreen extends Component<Props, State> {
     const cBF = this.state.checkBoxesFood
 
     return (
-      <Container>
+      <View>
         <Header />
 
         <View style={flex.a4}>
@@ -157,7 +157,7 @@ class SettingsScreen extends Component<Props, State> {
         </View>
 
         {/* <Text>{strings.SettingsScreen.title}</Text> */}
-      </Container>
+      </View>
     )
   }
 

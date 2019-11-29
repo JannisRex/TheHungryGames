@@ -141,7 +141,7 @@ class SettingsScreen extends Component<Props, State> {
               onPress={this._updateIndex}
               selectedIndex={this.state.selectedIndex}
               buttons={['$', '$$', '$$$']}
-              containerStyle={{ marginBottom: 15 }}
+              containerStyle={{ paddingBottom: 15 }}
             />
           </View>
         </View>

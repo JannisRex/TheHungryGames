@@ -91,6 +91,8 @@ class SettingsScreen extends Component<Props, State> {
           </View>
         </View>
 
+        <Divider style={{ backgroundColor: '#000', height: 2 }}/>
+
         <View style={{ flex: 4 }}>
           {/* essentially just checkBoxes in rows, */}
           {/* gets layouted by flexBoxes */}
@@ -102,7 +104,7 @@ class SettingsScreen extends Component<Props, State> {
               <CheckBox title='Restaurant' checked={cBF.cB3} onPress={(): void => this._updateCheckBox('cB3')} />
               <CheckBox title='Family Friendly Diner' checked={cBF.cB4} onPress={(): void => this._updateCheckBox('cB4')} />
             </View>
-            <Divider style={{ backgroundColor: '#000', height: 2 }}/>
+            <Divider style={{ backgroundColor: '#000', height: 1.5 }}/>
             {/* Second Row */}
             <View style={{ flexDirection: 'row' }}>
               <CheckBox title='Italian' checked={cBF.cB5} onPress={(): void => this._updateCheckBox('cB5')} />
@@ -119,6 +121,8 @@ class SettingsScreen extends Component<Props, State> {
             </View>
           </View>
         </View>
+
+        <Divider style={{ backgroundColor: '#000', height: 2 }}/>
 
         <View style={{ flex: 1 }}>
           {/* Here we have a toggle to either activate */}
@@ -142,6 +146,8 @@ class SettingsScreen extends Component<Props, State> {
           </View>
         </View>
 
+        <Divider style={{ backgroundColor: '#000', height: 2 }}/>
+
         <View style={{ flex: 2 }}>
           <View style={{ flex: 1 }}>
             <View style={{ flex: 1, flexDirection: 'column' }}>
@@ -151,6 +157,9 @@ class SettingsScreen extends Component<Props, State> {
                 <CheckBox title='can order Cigarettes' checked={cBF.cB2} onPress={(): void => this._updateCheckBox('cB2')} />
                 <CheckBox title='can order Dessert' checked={cBF.cB3} onPress={(): void => this._updateCheckBox('cB3')} />
               </View>
+
+              <Divider style={{ backgroundColor: '#000', height: 1 }}/>
+
               {/* Second Row */}
               <View style={{ flexDirection: 'row' }}>
                 <CheckBox title='extraYY' checked={cBF.cB4} onPress={(): void => this._updateCheckBox('cB4')} />

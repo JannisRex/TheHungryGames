@@ -62,6 +62,8 @@ class SettingsScreen extends Component<Props, State> {
   render(): JSX.Element {
     const cBF = this.state.checkBoxesFood
     const maxWidth = Dimensions.get('window').width
+    const maxProportion = 100
+    const desiredProportion = 75
 
     return (
       <View style={{ flex: 1, flexDirection: 'column' }}>
@@ -83,7 +85,7 @@ class SettingsScreen extends Component<Props, State> {
             <Slider
               value={this.state.sliderValue}
               onValueChange={(value: number): void => this.setState({ sliderValue: value })}
-              style={{ alignSelf: 'center', width: (maxWidth / 100) * 75 }}
+              style={{ alignSelf: 'center', width: (maxWidth / maxProportion) * desiredProportion }}
             />
           </View>
         </View>

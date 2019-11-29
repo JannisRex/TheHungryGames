@@ -80,9 +80,7 @@ class SettingsScreen extends Component<Props, State> {
                 placeholder='Enter Zip-Code...'
                 leftIcon={{ type: 'entypo', name: 'location' }}
               />
-              <Text>
-                {zipInput.current.props.value ? '=> ' + zipInput.current.props.value : 'Bad ZIP'}
-              </Text>
+              <Text> {this._getInputValue(zipInput)} </Text>
             </View>
 
             {/* to set max Range a restaurant */}
@@ -188,8 +186,7 @@ private readonly _getInputValue: any = (ref: React.RefObject<Input>): string | n
       return ('=> ' + val)
     }
   } catch (e) {
-    console.log(e)
-    return null
+    return 'Enter ZIP' // when prop.value === null
   }
 
   return ('BAD zip')

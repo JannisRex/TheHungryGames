@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { View, Text, Switch, Dimensions } from 'react-native'
-import { Container, Header } from '../../components/index'
+import { DynamicScrollView, Header } from '../../components/index'
 import { Input, Slider, CheckBox, ButtonGroup, Divider } from 'react-native-elements'
 import strings from '../../config/strings'
 import styles from './styles'
@@ -66,7 +66,7 @@ class SettingsScreen extends Component<Props, State> {
     const desiredProportion = 75
 
     return (
-      <View style={{ flex: 1, flexDirection: 'column' }}>
+      <DynamicScrollView>
         <Header />
 
         <View style={{ flex: 2 }}>
@@ -171,7 +171,7 @@ class SettingsScreen extends Component<Props, State> {
         </View>
 
         {/* <Text>{strings.SettingsScreen.title}</Text> */}
-      </View>
+      </DynamicScrollView>
     )
   }
 

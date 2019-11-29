@@ -72,6 +72,7 @@ class SettingsScreen extends Component<Props, State> {
           <View style={{ flex: 1 }}>
             <Input
               placeholder='Enter Zip-Code...'
+              leftIcon={{ type: 'entypo', name: 'location' }}
             />
           </View>
 

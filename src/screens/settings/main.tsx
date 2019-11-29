@@ -60,6 +60,7 @@ class SettingsScreen extends Component<Props, State> {
   // TODO: everything is present, but
   // everything looks worse than garbage
   render(): JSX.Element {
+    const zipInput = React.createRef<Input>()
     const cBF = this.state.checkBoxesFood
     const maxWidth = Dimensions.get('window').width
     const maxProportion = 100
@@ -73,11 +74,13 @@ class SettingsScreen extends Component<Props, State> {
           <View style={{ flex: 2 }}>
             {/* Upper Segment - evaluates ZIP-Code */}
             {/* and gets according CityName */}
-            <View style={{ flex: 1 }}>
+            <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-between' }}>
               <Input
+                ref={zipInput}
                 placeholder='Enter Zip-Code...'
                 leftIcon={{ type: 'entypo', name: 'location' }}
               />
+              <Text>{} => {}</Text>
             </View>
 
             {/* to set max Range a restaurant */}

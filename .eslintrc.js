@@ -358,7 +358,7 @@ module.exports = {
         "@typescript-eslint/no-floating-promises": 2, //Requires Promise-like values to be handled appropriately.
         "@typescript-eslint/no-for-in-array": 0, //Disallow iterating over an array with a for-in loop
         "@typescript-eslint/no-inferrable-types": 2, //Disallows explicit type declarations for variables or parameters initialized to a number, string, or boolean
-        "@typescript-eslint/no-magic-numbers": 1, //Disallows magic numbers
+        "@typescript-eslint/no-magic-numbers": 0, //Disallows magic numbers
         "@typescript-eslint/no-misused-new": 2, //Enforce valid definition of new and constructor
         "@typescript-eslint/no-misused-promises": 2, //Avoid using promises in places not designed to handle them
         "@typescript-eslint/no-namespace": 2, //Disallow the use of custom TypeScript modules and namespaces

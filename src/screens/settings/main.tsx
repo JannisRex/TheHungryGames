@@ -102,7 +102,7 @@ class SettingsScreen extends Component<Props, State> {
               <CheckBox title='Restaurant' checked={cBF.cB3} onPress={(): void => this._updateCheckBox('cB3')} />
               <CheckBox title='Family Friendly Diner' checked={cBF.cB4} onPress={(): void => this._updateCheckBox('cB4')} />
             </View>
-            <Divider style={{ backgroundColor: '#000' }}/>
+            <Divider style={{ backgroundColor: '#000', height: 2 }}/>
             {/* Second Row */}
             <View style={{ flexDirection: 'row' }}>
               <CheckBox title='cB5' checked={cBF.cB5} onPress={(): void => this._updateCheckBox('cB5')} />

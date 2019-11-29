@@ -91,7 +91,7 @@ class SettingsScreen extends Component<Props, State> {
           </View>
         </View>
 
-        <View style={{ flex: 4}}>
+        <View style={{ flex: 4 }}>
           {/* essentially just checkBoxes in rows, */}
           {/* gets layouted by flexBoxes */}
           <View style={{ flex: 1, flexDirection: 'column' }}>
@@ -120,7 +120,7 @@ class SettingsScreen extends Component<Props, State> {
           </View>
         </View>
 
-        <View style={{ flex: 1 }}>
+        <View style={{ flex: 1, flexDirection: 'row' }}>
           {/* Here we have a toggle to either activate */}
           {/* or deactivate filtering by cost */}
           <View>
@@ -128,17 +128,15 @@ class SettingsScreen extends Component<Props, State> {
               onValueChange={this._updateToggle}
               value={this.state.toggleValue}
             />
-
-            {/* and here we can press the wanted */}
-            {/* priceRange which restaurants should be in */}
-            <View>
-              <ButtonGroup
-                onPress={this._updateIndex}
-                selectedIndex={this.state.selectedIndex}
-                buttons={['$', '$$', '$$$']}
-                containerStyle={{ marginBottom: 5 }}
-              />
-            </View>
+          </View>
+          {/* and here we can press the wanted */}
+          {/* priceRange which restaurants should be in */}
+          <View>
+            <ButtonGroup
+              onPress={this._updateIndex}
+              selectedIndex={this.state.selectedIndex}
+              buttons={['$', '$$', '$$$']}
+            />
           </View>
         </View>
 

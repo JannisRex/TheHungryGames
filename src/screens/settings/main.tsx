@@ -60,6 +60,8 @@ class SettingsScreen extends Component<Props, State> {
   // TODO: everything is present, but
   // everything looks worse than garbage
   render(): JSX.Element {
+    const cBF = this.state.checkBoxesFood
+
     return (
       <Container>
         <Header />
@@ -89,25 +91,25 @@ class SettingsScreen extends Component<Props, State> {
           <View style={{ flex: 1, flexDirection: 'column' }}>
             {/* First Row */}
             <View style={{ flex: 1, flexDirection: 'row' }}>
-              <CheckBox title='Brasserie / Café' checked={this.state.checkBoxesFood.cB1}/>
-              <CheckBox title='Takeaway' checked={this.state.checkBoxesFood.cB2}/>
-              <CheckBox title='Restaurant' checked={this.state.checkBoxesFood.cB3}/>
-              <CheckBox title='Family Friendly Diner' checked={this.state.checkBoxesFood.cB4}/>
+              <CheckBox title='Brasserie / Café' checked={cBF.cB1}/>
+              <CheckBox title='Takeaway' checked={cBF.cB2}/>
+              <CheckBox title='Restaurant' checked={cBF.cB3}/>
+              <CheckBox title='Family Friendly Diner' checked={cBF.cB4}/>
               <Divider />
             </View>
             {/* Second Row */}
             <View style={{ flex: 1, flexDirection: 'row' }}>
-              <CheckBox title='cB5' checked={this.state.checkBoxesFood.cB5}/>
-              <CheckBox title='cB6' checked={this.state.checkBoxesFood.cB6}/>
-              <CheckBox title='cB7' checked={this.state.checkBoxesFood.cB7}/>
-              <CheckBox title='cB8' checked={this.state.checkBoxesFood.cB8}/>
+              <CheckBox title='cB5' checked={cBF.cB5}/>
+              <CheckBox title='cB6' checked={cBF.cB6}/>
+              <CheckBox title='cB7' checked={cBF.cB7}/>
+              <CheckBox title='cB8' checked={cBF.cB8}/>
             </View>
             {/* Third Row */}
             <View style={{ flex: 1, flexDirection: 'row' }}>
-              <CheckBox title='cB9' checked={this.state.checkBoxesFood.cB9}/>
-              <CheckBox title='cB10' checked={this.state.checkBoxesFood.cB10}/>
-              <CheckBox title='cB11' checked={this.state.checkBoxesFood.cB11}/>
-              <CheckBox title='cB12' checked={this.state.checkBoxesFood.cB12}/>
+              <CheckBox title='cB9' checked={cBF.cB9}/>
+              <CheckBox title='cB10' checked={cBF.cB10}/>
+              <CheckBox title='cB11' checked={cBF.cB11}/>
+              <CheckBox title='cB12' checked={cBF.cB12}/>
             </View>
           </View>
         </View>
@@ -137,15 +139,15 @@ class SettingsScreen extends Component<Props, State> {
             <View style={{ flex: 1, flexDirection: 'column' }}>
               {/* First Row */}
               <View style={{ flex: 1, flexDirection: 'row' }}>
-                <CheckBox title='can order Alcohol' checked={this.state.checkBoxesFood.cB1}/>
-                <CheckBox title='can order Cigarettes' checked={this.state.checkBoxesFood.cB2}/>
-                <CheckBox title='can order Dessert' checked={this.state.checkBoxesFood.cB3}/>
+                <CheckBox title='can order Alcohol' checked={cBF.cB1}/>
+                <CheckBox title='can order Cigarettes' checked={cBF.cB2}/>
+                <CheckBox title='can order Dessert' checked={cBF.cB3}/>
               </View>
               {/* Second Row */}
               <View style={{ flex: 1, flexDirection: 'row' }}>
-                <CheckBox title='extraYY' checked={this.state.checkBoxesFood.cB5}/>
-                <CheckBox title='extraXX' checked={this.state.checkBoxesFood.cB6}/>
-                <CheckBox title='extraZZ' checked={this.state.checkBoxesFood.cB7}/>
+                <CheckBox title='extraYY' checked={cBF.cB5}/>
+                <CheckBox title='extraXX' checked={cBF.cB6}/>
+                <CheckBox title='extraZZ' checked={cBF.cB7} onPress={(): void => this._updateCheckBox('cB7')} />
               </View>
             </View>
           </View>
@@ -156,12 +158,25 @@ class SettingsScreen extends Component<Props, State> {
     )
   }
 
+// gets passed the name of the checkBox
+// and swaps boolean
+private readonly _updateCheckBox: any = (name: string): void => {
+  this.setState((prevState: State) => ({
+    checkBoxesFood: {
+      ...prevState.checkBoxesFood,
+      [name]: !prevState.checkBoxesFood[name]
+    }
+  }))
+}
+
+// updates index for buttonGroup
 private readonly _updateIndex: any = (newIndex: number): void => {
   this.setState({
     selectedIndex: newIndex
   })
 }
 
+// switches value of Toggle
 private readonly _updateToggle: any = (newValue: boolean): void => {
   this.setState({
     toggleValue: newValue

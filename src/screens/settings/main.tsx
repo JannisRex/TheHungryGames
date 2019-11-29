@@ -66,113 +66,113 @@ class SettingsScreen extends Component<Props, State> {
     const desiredProportion = 75
 
     return (
-      <View style={{ flex: 1}}>
-       <Header />
-      <DynamicScrollView>
+      <View style={{ flex: 1 }}>
+        <Header />
+        <DynamicScrollView>
 
-        <View style={{ flex: 2 }}>
-          {/* Upper Segment - evaluates ZIP-Code */}
-          {/* and gets according CityName */}
-          <View style={{ flex: 1 }}>
-            <Input
-              placeholder='Enter Zip-Code...'
-              leftIcon={{ type: 'entypo', name: 'location' }}
-            />
-          </View>
-
-          {/* to set max Range a restaurant */}
-          {/* is allowed to have as distance */}
-          <View style={{ flex: 1 }}>
-            <Slider
-              value={this.state.sliderValue}
-              onValueChange={(value: number): void => this.setState({ sliderValue: value })}
-              style={{ alignSelf: 'center', width: (maxWidth / maxProportion) * desiredProportion }}
-            />
-            <Text style={{ alignSelf: 'center' }}>Range in km: {(this.state.sliderValue * 100).toFixed(0)}</Text>
-          </View>
-        </View>
-
-        <Divider style={{ backgroundColor: '#000', height: 2 }}/>
-
-        <View style={{ flex: 4 }}>
-          {/* essentially just checkBoxes in rows, */}
-          {/* gets layouted by flexBoxes */}
-          <View style={{ flex: 1, flexDirection: 'column' }}>
-            {/* First Row */}
-            <View style={{ flexDirection: 'row' }}>
-              <CheckBox title='Café' checked={cBF.cB1} onPress={(): void => this._updateCheckBox('cB1')} />
-              <CheckBox title='Takeaway' checked={cBF.cB2} onPress={(): void => this._updateCheckBox('cB2')} />
-              <CheckBox title='Restaurant' checked={cBF.cB3} onPress={(): void => this._updateCheckBox('cB3')} />
-              <CheckBox title='Family Friendly Diner' checked={cBF.cB4} onPress={(): void => this._updateCheckBox('cB4')} />
+          <View style={{ flex: 2 }}>
+            {/* Upper Segment - evaluates ZIP-Code */}
+            {/* and gets according CityName */}
+            <View style={{ flex: 1 }}>
+              <Input
+                placeholder='Enter Zip-Code...'
+                leftIcon={{ type: 'entypo', name: 'location' }}
+              />
             </View>
-            <Divider style={{ backgroundColor: '#000', height: 1.5 }}/>
-            {/* Second Row */}
-            <View style={{ flexDirection: 'row' }}>
-              <CheckBox title='Italian' checked={cBF.cB5} onPress={(): void => this._updateCheckBox('cB5')} />
-              <CheckBox title='Chinese' checked={cBF.cB6} onPress={(): void => this._updateCheckBox('cB6')} />
-              <CheckBox title='Mongolian' checked={cBF.cB7} onPress={(): void => this._updateCheckBox('cB7')} />
-              <CheckBox title='Greek' checked={cBF.cB8} onPress={(): void => this._updateCheckBox('cB8')} />
-            </View>
-            {/* Third Row */}
-            <View style={{ flexDirection: 'row' }}>
-              <CheckBox title='Sushi' checked={cBF.cB9} onPress={(): void => this._updateCheckBox('cB9')} />
-              <CheckBox title='Pizza' checked={cBF.cB10} onPress={(): void => this._updateCheckBox('cB10')} />
-              <CheckBox title='Pasta' checked={cBF.cB11} onPress={(): void => this._updateCheckBox('cB11')} />
-              <CheckBox title='Burger' checked={cBF.cB12} onPress={(): void => this._updateCheckBox('cB12')} />
+
+            {/* to set max Range a restaurant */}
+            {/* is allowed to have as distance */}
+            <View style={{ flex: 1 }}>
+              <Slider
+                value={this.state.sliderValue}
+                onValueChange={(value: number): void => this.setState({ sliderValue: value })}
+                style={{ alignSelf: 'center', width: (maxWidth / maxProportion) * desiredProportion }}
+              />
+              <Text style={{ alignSelf: 'center' }}>Range in km: {(this.state.sliderValue * 100).toFixed(0)}</Text>
             </View>
           </View>
-        </View>
 
-        <Divider style={{ backgroundColor: '#000', height: 2 }}/>
+          <Divider style={{ backgroundColor: '#000', height: 2 }}/>
 
-        <View style={{ flex: 1 }}>
-          {/* Here we have a toggle to either activate */}
-          {/* or deactivate filtering by cost */}
-          <View>
-            <Switch
-              onValueChange={this._updateToggle}
-              value={this.state.toggleValue}
-              style={{ alignSelf: 'center' }}
-            />
-          </View>
-          {/* and here we can press the wanted */}
-          {/* priceRange which restaurants should be in */}
-          <View>
-            <ButtonGroup
-              onPress={this._updateIndex}
-              selectedIndex={this.state.selectedIndex}
-              buttons={['$', '$$', '$$$']}
-              containerStyle={{ paddingBottom: 15 }}
-            />
-          </View>
-        </View>
-
-        <Divider style={{ backgroundColor: '#000', height: 2 }}/>
-
-        <View style={{ flex: 2 }}>
-          <View style={{ flex: 1 }}>
+          <View style={{ flex: 4 }}>
+            {/* essentially just checkBoxes in rows, */}
+            {/* gets layouted by flexBoxes */}
             <View style={{ flex: 1, flexDirection: 'column' }}>
               {/* First Row */}
               <View style={{ flexDirection: 'row' }}>
-                <CheckBox title='can order Alcohol' checked={cBF.cB1} onPress={(): void => this._updateCheckBox('cB1')} />
-                <CheckBox title='can order Cigarettes' checked={cBF.cB2} onPress={(): void => this._updateCheckBox('cB2')} />
-                <CheckBox title='can order Dessert' checked={cBF.cB3} onPress={(): void => this._updateCheckBox('cB3')} />
+                <CheckBox title='Café' checked={cBF.cB1} onPress={(): void => this._updateCheckBox('cB1')} />
+                <CheckBox title='Takeaway' checked={cBF.cB2} onPress={(): void => this._updateCheckBox('cB2')} />
+                <CheckBox title='Restaurant' checked={cBF.cB3} onPress={(): void => this._updateCheckBox('cB3')} />
+                <CheckBox title='Family Friendly Diner' checked={cBF.cB4} onPress={(): void => this._updateCheckBox('cB4')} />
               </View>
-
-              <Divider style={{ backgroundColor: '#000', height: 1 }}/>
-
+              <Divider style={{ backgroundColor: '#000', height: 1.5 }}/>
               {/* Second Row */}
               <View style={{ flexDirection: 'row' }}>
-                <CheckBox title='extraYY' checked={cBF.cB4} onPress={(): void => this._updateCheckBox('cB4')} />
-                <CheckBox title='extraXX' checked={cBF.cB5} onPress={(): void => this._updateCheckBox('cB5')} />
-                <CheckBox title='extraZZ' checked={cBF.cB6} onPress={(): void => this._updateCheckBox('cB6')} />
+                <CheckBox title='Italian' checked={cBF.cB5} onPress={(): void => this._updateCheckBox('cB5')} />
+                <CheckBox title='Chinese' checked={cBF.cB6} onPress={(): void => this._updateCheckBox('cB6')} />
+                <CheckBox title='Mongolian' checked={cBF.cB7} onPress={(): void => this._updateCheckBox('cB7')} />
+                <CheckBox title='Greek' checked={cBF.cB8} onPress={(): void => this._updateCheckBox('cB8')} />
+              </View>
+              {/* Third Row */}
+              <View style={{ flexDirection: 'row' }}>
+                <CheckBox title='Sushi' checked={cBF.cB9} onPress={(): void => this._updateCheckBox('cB9')} />
+                <CheckBox title='Pizza' checked={cBF.cB10} onPress={(): void => this._updateCheckBox('cB10')} />
+                <CheckBox title='Pasta' checked={cBF.cB11} onPress={(): void => this._updateCheckBox('cB11')} />
+                <CheckBox title='Burger' checked={cBF.cB12} onPress={(): void => this._updateCheckBox('cB12')} />
               </View>
             </View>
           </View>
-        </View>
 
-        {/* <Text>{strings.SettingsScreen.title}</Text> */}
-      </DynamicScrollView>
+          <Divider style={{ backgroundColor: '#000', height: 2 }}/>
+
+          <View style={{ flex: 1 }}>
+            {/* Here we have a toggle to either activate */}
+            {/* or deactivate filtering by cost */}
+            <View>
+              <Switch
+                onValueChange={this._updateToggle}
+                value={this.state.toggleValue}
+                style={{ alignSelf: 'center' }}
+              />
+            </View>
+            {/* and here we can press the wanted */}
+            {/* priceRange which restaurants should be in */}
+            <View>
+              <ButtonGroup
+                onPress={this._updateIndex}
+                selectedIndex={this.state.selectedIndex}
+                buttons={['$', '$$', '$$$']}
+                containerStyle={{ paddingBottom: 15 }}
+              />
+            </View>
+          </View>
+
+          <Divider style={{ backgroundColor: '#000', height: 2 }}/>
+
+          <View style={{ flex: 2 }}>
+            <View style={{ flex: 1 }}>
+              <View style={{ flex: 1, flexDirection: 'column' }}>
+                {/* First Row */}
+                <View style={{ flexDirection: 'row' }}>
+                  <CheckBox title='can order Alcohol' checked={cBF.cB1} onPress={(): void => this._updateCheckBox('cB1')} />
+                  <CheckBox title='can order Cigarettes' checked={cBF.cB2} onPress={(): void => this._updateCheckBox('cB2')} />
+                  <CheckBox title='can order Dessert' checked={cBF.cB3} onPress={(): void => this._updateCheckBox('cB3')} />
+                </View>
+
+                <Divider style={{ backgroundColor: '#000', height: 1 }}/>
+
+                {/* Second Row */}
+                <View style={{ flexDirection: 'row' }}>
+                  <CheckBox title='extraYY' checked={cBF.cB4} onPress={(): void => this._updateCheckBox('cB4')} />
+                  <CheckBox title='extraXX' checked={cBF.cB5} onPress={(): void => this._updateCheckBox('cB5')} />
+                  <CheckBox title='extraZZ' checked={cBF.cB6} onPress={(): void => this._updateCheckBox('cB6')} />
+                </View>
+              </View>
+            </View>
+          </View>
+
+          {/* <Text>{strings.SettingsScreen.title}</Text> */}
+        </DynamicScrollView>
       </View>
     )
   }

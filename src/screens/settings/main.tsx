@@ -38,7 +38,7 @@ class SettingsScreen extends Component<Props, State> {
     super(props)
 
     this.state = {
-      inputValue: 'Enter ZIP',
+      inputValue: 'Please enter ZIP of your Location',
       sliderValue: 0,
       selectedIndex: 0,
       checkBoxesFood: {
@@ -79,7 +79,7 @@ class SettingsScreen extends Component<Props, State> {
             <View style={{ flex: 1 }}>
               <Input
                 ref={zipInput}
-                label={'=> ' + this.state.inputValue}
+                label={this.state.inputValue}
                 placeholder='Enter Zip-Code...'
                 leftIcon={{ type: 'entypo', name: 'location' }}
                 onChangeText={((text: string): void => this._setInputValue(text))}
@@ -196,7 +196,7 @@ private readonly _setInputValue: any = (text: string): void => {
 
   if (city === null) {
     this.setState({
-      inputValue: 'BAD zip'
+      inputValue: 'Please Enter a valid ZIP'
     })
   } else {
     this.setState({
@@ -204,7 +204,8 @@ private readonly _setInputValue: any = (text: string): void => {
     })
   }
 
-    if (zip === 25764) {
+  // test case :)))
+   if (zip === 25764) {
     this.setState({
       inputValue: 'Wesselburen'
     })

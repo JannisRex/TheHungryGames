@@ -69,8 +69,8 @@ class SettingsScreen extends Component<Props, State> {
     return (
       <View style={{ flex: 1 }}>
         <Header />
-        <DynamicScrollView>
 
+        <DynamicScrollView>
           <View style={{ flex: 2 }}>
             {/* Upper Segment - evaluates ZIP-Code */}
             {/* and gets according CityName */}
@@ -80,7 +80,7 @@ class SettingsScreen extends Component<Props, State> {
                 placeholder='Enter Zip-Code...'
                 leftIcon={{ type: 'entypo', name: 'location' }}
               />
-              <Text>{} => {}</Text>
+              <Text>{zipInput.current.props.value ? '=> ' + zipInput.current.props.value : 'Bad ZIP'}</Text>
             </View>
 
             {/* to set max Range a restaurant */}
@@ -173,7 +173,6 @@ class SettingsScreen extends Component<Props, State> {
               </View>
             </View>
           </View>
-
           {/* <Text>{strings.SettingsScreen.title}</Text> */}
         </DynamicScrollView>
       </View>

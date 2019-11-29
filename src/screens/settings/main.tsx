@@ -102,7 +102,7 @@ class SettingsScreen extends Component<Props, State> {
               <CheckBox title='Restaurant' checked={cBF.cB3} onPress={(): void => this._updateCheckBox('cB3')} />
               <CheckBox title='Family Friendly Diner' checked={cBF.cB4} onPress={(): void => this._updateCheckBox('cB4')} />
             </View>
-            <Divider />
+            <Divider style={{ backgroundColor: '#000' }}/>
             {/* Second Row */}
             <View style={{ flexDirection: 'row' }}>
               <CheckBox title='cB5' checked={cBF.cB5} onPress={(): void => this._updateCheckBox('cB5')} />
@@ -136,7 +136,7 @@ class SettingsScreen extends Component<Props, State> {
                 onPress={this._updateIndex}
                 selectedIndex={this.state.selectedIndex}
                 buttons={['$', '$$', '$$$']}
-                containerStyle={{ height: 55 }}
+                containerStyle={{ marginBottom: 5 }}
               />
             </View>
           </View>

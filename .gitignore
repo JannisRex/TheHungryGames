@@ -13,7 +13,6 @@ web-report/
 babel.config.js
 .eslintignore
 .eslintrc.js
-.eslintrc.ts
 package-lock.json
 
 # macOS

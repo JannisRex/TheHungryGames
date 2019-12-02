@@ -85,6 +85,13 @@ module.exports = {
         "use-isnan": 2, // disallow comparisons with the value NaN
         "valid-jsdoc": 2, // Ensure JSDoc comments are valid (off by default)
         "valid-typeof": 2, // Ensure that the results of typeof are compared against a valid string
+        "prefer-const": // Enforces const use, when variable is not reassigned
+            ["error", {
+                "destructuring": "any",
+                "ignoreReadBeforeAssign": false
+            }]
+        },
+
 
         //
         // Best Practices

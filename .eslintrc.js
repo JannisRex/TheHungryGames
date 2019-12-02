@@ -85,13 +85,6 @@ module.exports = {
         "use-isnan": 2, // disallow comparisons with the value NaN
         "valid-jsdoc": 2, // Ensure JSDoc comments are valid (off by default)
         "valid-typeof": 2, // Ensure that the results of typeof are compared against a valid string
-        "prefer-const": // Enforces const use, when variable is not reassigned
-            ["error", {
-                "destructuring": "any",
-                "ignoreReadBeforeAssign": false
-            }]
-        },
-
 
         //
         // Best Practices
@@ -100,6 +93,7 @@ module.exports = {
         // They either prescribe a better way of doing something or help you avoid footguns.
         //
         "block-scoped-var": 0, // treat var statements as if they were block scoped (off by default). 0: deep destructuring is not compatible https://github.com/eslint/eslint/issues/1863
+        "prefer-const": 2, // Enforces const use, when variable is not reassigned
         "complexity": 0, // specify the maximum cyclomatic complexity allowed in a program (off by default)
         "consistent-return": 2, // require return statements to either always or never specify values
         "curly": 2, // specify curly brace conventions for all control statements

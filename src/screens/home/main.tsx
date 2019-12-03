@@ -115,7 +115,6 @@ class HomeScreen extends Component<Props, State> {
     let foundRestaurant = null
     foundRestaurant = 'Ligma'
 
-    console.log('button pressed')
     if (foundRestaurant) {
       this.setState({ foundRestaurant })
     } else {

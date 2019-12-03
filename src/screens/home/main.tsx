@@ -5,13 +5,40 @@ import strings from '../../config/strings'
 import theme from '../../config/theme.style'
 import styles from './styles'
 
-class HomeScreen extends Component {
+type Props = {}
+
+type State = {
+      zipCode: number | null,
+      prefDistance: number | null,
+      prefPrice: -1 | 0 | 1 | 2 | null, // or do an Enum for OFF-Cheap-Moderate-Expensive
+      restaurantType: {
+        typeA: boolean | null, // Café
+        typeB: boolean | null, // Takeaway
+        typeC: boolean | null, // Restaurant
+        typeD: boolean | null // Family Friendly Diner
+      },
+      foodType: {
+
+      },
+      foodOrigin: {
+
+      }
+}
+
+class HomeScreen extends Component<Props, State> {
   constructor(props: any) {
     super(props)
 
     this.state = {
-      restaurantType: {
+      zipCode: null,
+      prefDistance: null,
+      prefPrice: null,
 
+      restaurantType: {
+        typeA: null, // Café
+        typeB: null, // Takeaway
+        typeC: null, // Restaurant
+        typeD: null // Family Friendly Diner
       },
       foodType: {
 

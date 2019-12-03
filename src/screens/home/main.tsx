@@ -13,8 +13,9 @@ class HomeScreen extends Component {
       <Container>
         <Header />
         <View style={styles.container}>
+          <Text>{strings.HomeScreen.title}</Text>
           <View style={[styles.container, { flex: 2 }]}>
-            <Text>~~Flavour Text~~</Text>
+            <Text>{strings.HomeScreen.flavor}</Text>
           </View>
 
           <View style={[styles.container, { flex: 3 }]}>
@@ -27,14 +28,12 @@ class HomeScreen extends Component {
           <View style={[styles.container, { flex: 1.5 }]}>
             <View style={{ flex: 1 }}>
               <Button
-                title='Get Food'
+                title={strings.HomeScreen.pressButton}
                 color={true ? '#cc00cc' : theme.COLOR_BUTTON_COMP}
                 onPress={this._handleButtonPress}
               />
             </View>
           </View>
-          {/* <Text>{strings.HomeScreen.title}</Text> */}
-          {/* <Text>Button: {strings.HomeScreen.pressButton}</Text> */}
         </View>
       </Container>
     )

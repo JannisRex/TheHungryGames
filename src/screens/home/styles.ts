@@ -15,12 +15,21 @@ export default StyleSheet.create<Styles>({
     alignItems: 'center'
   },
   textTitle: {
-
+    fontSize: theme.FONT_SIZE_LARGE,
+    fontFamily: theme.FONT_FAMILY_TITLE,
+    fontWeight: theme.FONT_WEIGHT_LIGHT,
+    color: theme.COLOR_IVORY
   },
   textFlavor: {
-
+    fontSize: theme.FONT_SIZE_MEDIUM,
+    fontFamily: theme.FONT_FAMILY_CAPTION,
+    fontWeight: theme.FONT_WEIGHT_MEDIUM,
+    color: theme.COLOR_IVORY
   },
   textRestaurant: {
-
+    fontSize: theme.FONT_SIZE_MEDIUM,
+    fontFamily: theme.FONT_FAMILY_THIN,
+    fontWeight: theme.FONT_WEIGHT_HEAVY,
+    color: theme.COLOR_IVORY
   }
 })

@@ -39,7 +39,7 @@ class HomeScreen extends Component {
     )
   }
 
-  private readonly _handleButton = () => {
+  private readonly _handleButton: any = (): void => {
     console.log('button pressed')
   }
 }

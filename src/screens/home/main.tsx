@@ -24,7 +24,10 @@ type State = {
         originD: boolean | null // Greek
       },
       foodType: {
-
+        typeA: boolean | null, // Sushi
+        typeB: boolean | null, // Pizza
+        typeC: boolean | null, // Pasta
+        typeD: boolean | null // Burger
       }
 }
 
@@ -50,7 +53,10 @@ class HomeScreen extends Component<Props, State> {
         originD: null // Greek
       },
       foodType: {
-
+        typeA: null, // Sushi
+        typeB: null, // Pizza
+        typeC: null, // Pasta
+        typeD: null // Burger
       }
     }
   }

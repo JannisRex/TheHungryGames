@@ -112,9 +112,15 @@ class HomeScreen extends Component<Props, State> {
   // then try to pick a fitting restaurant, matching the criterias
   private readonly _handleButtonPress: any = (): void => {
     this.setState((prevState: State) => ({ isButtonFuchsia: !prevState.isButtonFuchsia })) // flipping button Color :)
+    let foundRestaurant = null
+    foundRestaurant = 'Ligma'
 
     console.log('button pressed')
-    this.setState({})
+    if (foundRestaurant) {
+      this.setState({ foundRestaurant })
+    } else {
+      this.setState({ foundRestaurant: 'Es konnte leider kein passendes Restaurant gefunden werden >:(' })
+    }
   }
 }
 

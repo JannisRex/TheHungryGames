@@ -5,8 +5,6 @@ import strings from '../../config/strings'
 import theme from '../../config/theme.style'
 import styles from './styles'
 
-import flex from '../../lib/flexboxHelper'
-
 class HomeScreen extends Component {
   render(): JSX.Element {
     return (

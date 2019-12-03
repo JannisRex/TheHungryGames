@@ -15,27 +15,27 @@ export default StyleSheet.create<Styles>({
     backgroundColor: 'red',
     // justifyContent: 'center',
     // alignItems: 'center',
-    // width
+    width
   },
   a2: {
     flex: 2,
     backgroundColor: 'blue',
     // justifyContent: 'center',
     // alignItems: 'center',
-    // width
+    width
   },
   a3: {
     flex: 1.5,
     backgroundColor: 'green',
     // justifyContent: 'center',
     // alignItems: 'center',
-    // width
+    width
   },
   a4: {
     flex: 1,
     backgroundColor: 'yellow',
     // justifyContent: 'center',
     // alignItems: 'center',
-    // width
+    width
   }
 })

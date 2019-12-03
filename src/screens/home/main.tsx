@@ -12,7 +12,9 @@ class HomeScreen extends Component {
       <Container>
         <Header />
         <View style={styles.container}>
-          <View style={flex.a2}><Text>~~Flavour Text~~</Text></View>
+          <View style={flex.a2}>
+            <Text>~~Flavour Text~~</Text>
+          </View>
 
           <View style={flex.a1}>
             <Text>++++++++++++++++</Text>

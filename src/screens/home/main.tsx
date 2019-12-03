@@ -81,15 +81,15 @@ class HomeScreen extends Component<Props, State> {
       <Container>
         <Header />
         <View style={styles.container}>
-          <Text>{strings.HomeScreen.title}</Text>
+          <Text style={styles.textTitle}>{strings.HomeScreen.title}</Text>
           <View style={[styles.container, { flex: 2 }]}>
-            <Text>{strings.HomeScreen.flavor}</Text>
+            <Text style={styles.textFlavor}>{strings.HomeScreen.flavor}</Text>
           </View>
 
           <View style={[styles.container, { flex: 3 }]}>
             <Text>++++++++++++++++</Text>
             <Text>Room for</Text>
-            <Text>{foundRestaurant !== null ? foundRestaurant : ''}</Text>
+            <Text style={styles.textRestaurant}>{foundRestaurant !== null ? foundRestaurant : ''}</Text>
             <Text>sick visualization</Text>
             <Text>++++++++++++++++</Text>
           </View>

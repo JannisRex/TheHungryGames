@@ -24,13 +24,23 @@ class HomeScreen extends Component {
           </View>
 
           <View style={[styles.container, { flex: 1.5 }]}>
-            <Text>[BUTTON: Yeet]</Text>
+            <View style={{ flex: 1 }}>
+              <Button
+                title='Get Food'
+                color='#cc00cc'
+                onPress={this._handleButton}
+              />
+            </View>
           </View>
           {/* <Text>{strings.HomeScreen.title}</Text> */}
           {/* <Text>Button: {strings.HomeScreen.pressButton}</Text> */}
         </View>
       </Container>
     )
+  }
+
+  private readonly _handleButton = () => {
+    console.log('button pressed')
   }
 }
 

@@ -62,6 +62,17 @@ class HomeScreen extends Component<Props, State> {
       }
     }
   }
+
+  componentDidMount(): void {
+  // AsyncStorage Logic Here
+  // Check if Settings are fetchable
+  // Fetch Or set defaultValues to State
+  // Also have an indicator if or if not
+  // settings have changed and require reload
+  // prevent reload on every screenSwitch, also
+  // use PureComponent and good safety for AS.
+  }
+
   render(): JSX.Element {
     return (
       <Container>

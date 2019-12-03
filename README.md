@@ -18,6 +18,9 @@
 
 #### ehehehehe
 
-           * #163c4f
-           
-           * #2f4047
+           * #163c4f -Header
+           * #2f4047 -BackGround
+           * #1c4b63 -NavActive
+           * #0d242f -NavInactive
+           * #47362f -ButtonComp
+           * #cc00cc -ButtonFuchsia

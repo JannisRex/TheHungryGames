@@ -29,7 +29,7 @@ class HomeScreen extends Component {
               <Button
                 title='Get Food'
                 color={true ? '#cc00cc' : theme.COLOR_BUTTON_COMP}
-                onPress={this._handleButton}
+                onPress={this._handleButtonPress}
               />
             </View>
           </View>
@@ -40,7 +40,7 @@ class HomeScreen extends Component {
     )
   }
 
-  private readonly _handleButton: any = (): void => {
+  private readonly _handleButtonPress: any = (): void => {
     console.log('button pressed')
   }
 }

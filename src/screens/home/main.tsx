@@ -6,6 +6,21 @@ import theme from '../../config/theme.style'
 import styles from './styles'
 
 class HomeScreen extends Component {
+  constructor(props: any) {
+    super(props)
+
+    this.state = {
+      restaurantType: {
+
+      },
+      foodType: {
+
+      },
+      foodOrigin: {
+
+      }
+    }
+  }
   render(): JSX.Element {
     return (
       <Container>

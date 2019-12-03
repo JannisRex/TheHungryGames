@@ -9,6 +9,7 @@ type Props = {}
 
 type State = {
       isButtonFuchsia: boolean,
+      foundRestaurant: string | null,
       zipCode: number | null,
       prefDistance: number | null,
       prefPrice: -1 | 0 | 1 | 2 | null, // or do an Enum for |OFF-Cheap-Moderate-Expensive|
@@ -38,6 +39,7 @@ class HomeScreen extends Component<Props, State> {
 
     this.state = {
       isButtonFuchsia: true,
+      foundRestaurant: null,
       zipCode: null,
       prefDistance: null,
       prefPrice: null,
@@ -108,7 +110,9 @@ class HomeScreen extends Component<Props, State> {
   // then try to pick a fitting restaurant, matching the criterias
   private readonly _handleButtonPress: any = (): void => {
     this.setState((prevState: State) => ({ isButtonFuchsia: !prevState.isButtonFuchsia })) // flipping button Color :)
+
     console.log('button pressed')
+    this.setState({})
   }
 }
 

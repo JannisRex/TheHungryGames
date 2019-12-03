@@ -19,17 +19,17 @@ export default StyleSheet.create<Styles>({
     fontFamily: theme.FONT_FAMILY_TITLE,
     fontWeight: theme.FONT_WEIGHT_LIGHT,
     color: theme.COLOR_IVORY
-  },
+  } as TextStyle,
   textFlavor: {
     fontSize: theme.FONT_SIZE_MEDIUM,
     fontFamily: theme.FONT_FAMILY_CAPTION,
     fontWeight: theme.FONT_WEIGHT_MEDIUM,
     color: theme.COLOR_IVORY
-  },
+  } as TextStyle,
   textRestaurant: {
     fontSize: theme.FONT_SIZE_MEDIUM,
     fontFamily: theme.FONT_FAMILY_THIN,
     fontWeight: theme.FONT_WEIGHT_HEAVY,
     color: theme.COLOR_IVORY
-  }
+  } as TextStyle
 })

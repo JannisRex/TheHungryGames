@@ -5,6 +5,7 @@
   },
   "HomeScreen": {
     "title": "The Hungry Games",
+    "flavor": "Was wird es Heute nur geben?",
     "pressButton": "Restaurant finden!"
   },
   "SettingsScreen": {

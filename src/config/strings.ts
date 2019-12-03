@@ -12,6 +12,7 @@ export default {
   },
   HomeScreen: {
     title: Localization.HomeScreen.title,
+    flavor: Localization.HomeScreen.flavor,
     pressButton: Localization.HomeScreen.pressButton
   },
   SettingsScreen: {

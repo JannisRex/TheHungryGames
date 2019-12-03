@@ -12,18 +12,18 @@ class HomeScreen extends Component {
       <Container>
         <Header />
         <View style={styles.container}>
-          <View style={{ flex: 2, }}>
+          <View style={[styles.container, { flex: 2 }]}>
             <Text>~~Flavour Text~~</Text>
           </View>
 
-          <View style={{ flex: 3 }}>
+          <View style={[styles.container, { flex: 3 }]}>
             <Text>++++++++++++++++</Text>
             <Text>Room for</Text>
             <Text>sick visualization</Text>
             <Text>++++++++++++++++</Text>
           </View>
 
-          <View style={{ flex: 1.5 }}>
+          <View style={[styles.container, { flex: 1.5 }]}>
             <Text>[BUTTON: Yeet]</Text>
           </View>
           {/* <Text>{strings.HomeScreen.title}</Text> */}

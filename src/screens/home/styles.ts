@@ -8,7 +8,6 @@ export default StyleSheet.create<Styles>({
   container: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'fuchsia'
+    alignItems: 'center'
   }
 })

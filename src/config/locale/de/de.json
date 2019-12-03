@@ -5,7 +5,9 @@
   },
   "HomeScreen": {
     "title": "The Hungry Games",
-    "pressButton": "Restaurant finden!"
+    "flavor": "Was wird es Heute nur geben?",
+    "pressButton": "Restaurant finden!",
+    "noRestaurant": "Es konnte leider kein passendes Restaurant gefunden werden >:("
   },
   "SettingsScreen": {
     "title": "S E T T I N G S",

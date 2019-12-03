@@ -4,16 +4,15 @@
 
 
 ### todo: 
-            * get basic Screens
-              => [Home: pressButon, see Result, be able to navigate]
-                 [Settings: choose zip code, distance, type of food etc.]
-                 
-            * implement Settings with rn-elements
+            * Store Settings from State with AsyncStorage
+            * Fetch Settings to State with AsyncStorage
             
-            * Get Global State (mix Redux + AsyncStorage to achieve)
+            * Consider Settings when using Button => onPress()
+                 => rework ButtonLogic as a Whole
             
-            * Take some Dummy Data and populate Screens
-
+            * Take some Dummy Data to test results of Logic (Button + Settings)
+            
+            * Get Animation for Button
 ---
 
 

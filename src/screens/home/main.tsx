@@ -81,17 +81,19 @@ class HomeScreen extends Component<Props, State> {
       <Container>
         <Header />
         <View style={styles.container}>
-          <Text>{strings.HomeScreen.title}</Text>
+          <Text style={styles.textTitle}>{strings.HomeScreen.title}</Text>
           <View style={[styles.container, { flex: 2 }]}>
-            <Text>{strings.HomeScreen.flavor}</Text>
+            <Text style={styles.textFlavor}>{strings.HomeScreen.flavor}</Text>
           </View>
 
           <View style={[styles.container, { flex: 3 }]}>
-            <Text>++++++++++++++++</Text>
-            <Text>Room for</Text>
-            <Text>{foundRestaurant !== null ? foundRestaurant : ''}</Text>
-            <Text>sick visualization</Text>
-            <Text>++++++++++++++++</Text>
+            <Text style={styles.text}>++++++++++++++++</Text>
+            <Text style={styles.text}>Room for</Text>
+            <View>
+              <Text style={styles.textRestaurant}>{foundRestaurant !== null ? foundRestaurant : ''}</Text>
+            </View>
+            <Text style={styles.text}>sick visualization</Text>
+            <Text style={styles.text}>++++++++++++++++</Text>
           </View>
 
           <View style={[styles.container, { flex: 1.5 }]}>

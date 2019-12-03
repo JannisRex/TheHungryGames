@@ -119,7 +119,7 @@ class HomeScreen extends Component<Props, State> {
     if (foundRestaurant) {
       this.setState({ foundRestaurant })
     } else {
-      this.setState({ foundRestaurant: 'Es konnte leider kein passendes Restaurant gefunden werden >:(' })
+      this.setState({ foundRestaurant: strings.HomeScreen.noRestaurant })
     }
   }
 }

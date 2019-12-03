@@ -76,6 +76,7 @@ class HomeScreen extends Component<Props, State> {
   }
 
   render(): JSX.Element {
+    const { foundRestaurant } = this.state
     return (
       <Container>
         <Header />
@@ -88,6 +89,7 @@ class HomeScreen extends Component<Props, State> {
           <View style={[styles.container, { flex: 3 }]}>
             <Text>++++++++++++++++</Text>
             <Text>Room for</Text>
+            <Text>{foundRestaurant !== null ? foundRestaurant : ''}</Text>
             <Text>sick visualization</Text>
             <Text>++++++++++++++++</Text>
           </View>

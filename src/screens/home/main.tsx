@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { View, Text, Button } from 'react-native'
 import { Container, Header } from '../../components/index'
 import strings from '../../config/strings'
+import theme from '../../config/theme.style'
 import styles from './styles'
 
 import flex from '../../lib/flexboxHelper'
@@ -27,7 +28,7 @@ class HomeScreen extends Component {
             <View style={{ flex: 1 }}>
               <Button
                 title='Get Food'
-                color='#cc00cc'
+                color={true ? '#cc00cc' : theme.COLOR_BUTTON_COMP}
                 onPress={this._handleButton}
               />
             </View>

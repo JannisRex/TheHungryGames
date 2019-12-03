@@ -17,10 +17,13 @@ type State = {
         typeC: boolean | null, // Restaurant
         typeD: boolean | null // Family Friendly Diner
       },
-      foodType: {
-
-      },
       foodOrigin: {
+        originA: boolean | null, // Italian
+        originB: boolean | null, // Chinese
+        originC: boolean | null, // Mongolian
+        originD: boolean | null // Greek
+      },
+      foodType: {
 
       }
 }
@@ -40,10 +43,13 @@ class HomeScreen extends Component<Props, State> {
         typeC: null, // Restaurant
         typeD: null // Family Friendly Diner
       },
-      foodType: {
-
-      },
       foodOrigin: {
+        originA: null, // Italian
+        originB: null, // Chinese
+        originC: null, // Mongolian
+        originD: null // Greek
+      },
+      foodType: {
 
       }
     }

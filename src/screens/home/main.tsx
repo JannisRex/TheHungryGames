@@ -8,7 +8,7 @@ import styles from './styles'
 type Props = {}
 
 type State = {
-      e: boolean,
+      isButtonFuchsia: boolean,
       zipCode: number | null,
       prefDistance: number | null,
       prefPrice: -1 | 0 | 1 | 2 | null, // or do an Enum for |OFF-Cheap-Moderate-Expensive|
@@ -37,7 +37,7 @@ class HomeScreen extends Component<Props, State> {
     super(props)
 
     this.state = {
-      e: true,
+      isButtonFuchsia: true,
       zipCode: null,
       prefDistance: null,
       prefPrice: null,
@@ -94,7 +94,7 @@ class HomeScreen extends Component<Props, State> {
             <View style={{ flex: 1 }}>
               <Button
                 title={strings.HomeScreen.pressButton}
-                color={this.state.e ? '#cc00cc' : theme.COLOR_BUTTON_COMP}
+                color={this.state.isButtonFuchsia ? theme.COLOR_BUTTON : theme.COLOR_BUTTON_COMP}
                 onPress={this._handleButtonPress}
               />
             </View>
@@ -107,7 +107,7 @@ class HomeScreen extends Component<Props, State> {
   // check state, if smth null then refetch list
   // then try to pick a fitting restaurant, matching the criterias
   private readonly _handleButtonPress: any = (): void => {
-    this.setState((prevState: State) => ({ e: !prevState.e })) // flipping button Color :)
+    this.setState((prevState: State) => ({ isButtonFuchsia: !prevState.isButtonFuchsia })) // flipping button Color :)
     console.log('button pressed')
   }
 }

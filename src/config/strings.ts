@@ -13,7 +13,8 @@ export default {
   HomeScreen: {
     title: Localization.HomeScreen.title,
     flavor: Localization.HomeScreen.flavor,
-    pressButton: Localization.HomeScreen.pressButton
+    pressButton: Localization.HomeScreen.pressButton,
+    noRestaurant: Localization.HomeScreen.noRestaurant
   },
   SettingsScreen: {
     title: Localization.SettingsScreen.title

@@ -30,6 +30,7 @@ export default {
   COLOR_LIGHTGRAY: 'rgb(159,161,163)',
   COLOR_DARKGRAY: 'rgb(55, 58, 60)',
   COLOR_DARKERGRAY: 'rgb(35, 38, 40)',
+  COLOR_BUTTON: '##cc00cc',
   COLOR_BUTTON_COMP: '#47362f',
   COLOR_BUTTON_DARK: '#2E1114',
   COLOR_TINT: '#2f95dc',

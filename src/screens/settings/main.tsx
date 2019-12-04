@@ -200,6 +200,20 @@ private readonly _storeItem: any = async (key: string, item: {}): Promise<void> 
   return null
 }
 
+private readonly _returnItem: any = async (key: string): Promise<{}> => {
+  try {
+    const item: {} = await AsyncStorage.getItem(key)
+
+    if (item !== null) {
+      return item
+    }
+  } catch (e) {
+    console.log(e)
+  }
+
+  return null
+}
+
 // gets called when Input changes
 // gets passed Input and tries to
 // to find CIty with fitting ZIP

@@ -189,11 +189,13 @@ class SettingsScreen extends Component<Props, State> {
   }
 
 // AsyncStorage Basic Store Function
-private readonly _storeItem = async (key: string, item: {}) => {
+private readonly _storeItem: any = async (key: string, item: {}): Promise<void> => {
   try {
-    let json = await AsyncStorage.setItem(key, JSON.stringify(item))
+    const json = await AsyncStorage.setItem(key, JSON.stringify(item))
     return json
-  } catch (e) { console.log(e) }
+  } catch (e) {
+    console.log(e)
+  }
 
   return null
 }
@@ -202,8 +204,8 @@ private readonly _storeItem = async (key: string, item: {}) => {
 // gets passed Input and tries to
 // to find CIty with fitting ZIP
 private readonly _setInputValue: any = (text: string): void => {
-  let zip = Number(text)
-  let city = null
+  const zip = Number(text)
+  const city = null
   // DO ZIP LOGIC HERE
   // TRY TO FIND CITY
   // AND EVERYTHING IMPORTANT

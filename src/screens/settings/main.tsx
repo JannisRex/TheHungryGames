@@ -65,6 +65,10 @@ class SettingsScreen extends Component<Props, State> {
     }
   }
 
+componentDidMount() {
+
+}
+
   // TODO: everything is present, but
   // everything looks worse than garbage
   render(): JSX.Element {
@@ -251,20 +255,20 @@ class SettingsScreen extends Component<Props, State> {
         ...prevState.checkBoxesFood,
         [name]: !prevState.checkBoxesFood[name]
       }
-    }))
+    }), this._storeItem('checkBoxes', this.state.checkBoxesFood))
   }
 
   // updates index for buttonGroup
-  private readonly _updateIndex: any = (newIndex: number): void => {
+  private readonly _updateIndex: any = (selectedIndex: number): void => {
     this.setState({
-      selectedIndex: newIndex
+      selectedIndex
     })
   }
 
   // switches value of Toggle
-  private readonly _updateToggle: any = (newValue: boolean): void => {
+  private readonly _updateToggle: any = (toggleValue: boolean): void => {
     this.setState({
-      toggleValue: newValue
+      toggleValue
     })
   }
 

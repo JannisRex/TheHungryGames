@@ -30,7 +30,10 @@ type State = {
     cB11: boolean,
     cB12: boolean
   },
-  toggleValue: boolean
+  toggleValue: boolean,
+
+  loadedItems: boolean,
+  savedItems: boolean
 }
 
 class SettingsScreen extends Component<Props, State> {
@@ -55,7 +58,10 @@ class SettingsScreen extends Component<Props, State> {
         cB11: false,
         cB12: false
       },
-      toggleValue: false
+      toggleValue: false,
+
+      loadedItems: false,
+      savedItems: false
     }
   }
 

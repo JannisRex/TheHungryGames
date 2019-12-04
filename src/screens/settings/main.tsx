@@ -188,6 +188,16 @@ class SettingsScreen extends Component<Props, State> {
     )
   }
 
+// AsyncStorage Basic Store Function
+private readonly _storeItem = async (key: string, item: {}) => {
+  try {
+    let json = await AsyncStorage.setItem(key, JSON.stringify(item))
+    return json
+  } catch (e) { console.log(e) }
+
+  return null
+}
+
 // gets called when Input changes
 // gets passed Input and tries to
 // to find CIty with fitting ZIP

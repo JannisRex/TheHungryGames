@@ -219,21 +219,22 @@ private readonly _returnItem: any = async (key: string): Promise<{}> => {
 // to find CIty with fitting ZIP
 private readonly _setInputValue: any = (text: string): void => {
   const zip = Number(text)
-  const city = null
+  this._storeItem('cityZip', zip)
+
   // DO ZIP LOGIC HERE
   // TRY TO FIND CITY
   // AND EVERYTHING IMPORTANT
   // IF THRE ISNT A CITY WITH
   // PASSED ZIP, GIVE ERROR
-
+  const city = null
   if (city === null) {
     this.setState({
       inputValue: 'Please Enter a valid ZIP'
-    })
+    }, this._storeItem('cityName', null))
   } else {
     this.setState({
       inputValue: city
-    }, this._storeItem(''))
+    }, this._storeItem('cityName', city))
   }
 
   // test case :)))

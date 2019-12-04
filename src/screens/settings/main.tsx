@@ -65,9 +65,19 @@ class SettingsScreen extends Component<Props, State> {
     }
   }
 
-componentDidMount() {
-
-}
+  async componentDidMount(): Promise<void> {
+    try {
+      await AsyncStorage.getAllKeys().then(async (keys: string[]) => {
+        const result = await AsyncStorage.multiGet(keys)
+        return result.map((req: string[]) => {
+          console.log('0: ', JSON.parse(req[0]))
+          console.log('1: ', JSON.parse(req[1]))
+        })
+      })
+    } catch (e) {
+      console.log(e)
+    }
+  }
 
   // TODO: everything is present, but
   // everything looks worse than garbage

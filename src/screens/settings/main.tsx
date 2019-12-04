@@ -65,6 +65,9 @@ class SettingsScreen extends Component<Props, State> {
     }
   }
 
+  // Here we are getting all the stored keyNames
+  // with those we fetch the values matched
+  // TODO: => Save those values to state
   async componentDidMount(): Promise<void> {
     try {
       await AsyncStorage.getAllKeys().then(async (keys: string[]) => {

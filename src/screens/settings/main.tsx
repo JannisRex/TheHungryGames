@@ -221,12 +221,17 @@ private readonly _setInputValue: any = (text: string): void => {
   const zip = Number(text)
   this._storeItem('cityZip', zip)
 
+  let city = null
   // DO ZIP LOGIC HERE
   // TRY TO FIND CITY
   // AND EVERYTHING IMPORTANT
   // IF THRE ISNT A CITY WITH
   // PASSED ZIP, GIVE ERROR
-  const city = null
+
+  if (zip === 25764) {
+    city = 'Wesselburen'
+  }
+
   if (city === null) {
     this.setState({
       inputValue: 'Please Enter a valid ZIP'
@@ -237,12 +242,7 @@ private readonly _setInputValue: any = (text: string): void => {
     }, this._storeItem('cityName', city))
   }
 
-  // test case :)))
-  if (zip === 25764) {
-    this.setState({
-      inputValue: 'Wesselburen'
-    })
-  }
+
 }
 
 // gets passed the name of the checkBox

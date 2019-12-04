@@ -189,7 +189,7 @@ class SettingsScreen extends Component<Props, State> {
   }
 
 // AsyncStorage Basic Store Function
-private readonly _storeItem: any = async (key: string, item: {}): Promise<void> => {
+private readonly _storeItem: any = async (key: string, item: {} | number): Promise<void> => {
   try {
     const json = await AsyncStorage.setItem(key, JSON.stringify(item))
     return json
@@ -233,7 +233,7 @@ private readonly _setInputValue: any = (text: string): void => {
   } else {
     this.setState({
       inputValue: city
-    })
+    }, this._storeItem(''))
   }
 
   // test case :)))

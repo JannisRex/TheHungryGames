@@ -188,87 +188,96 @@ class SettingsScreen extends Component<Props, State> {
     )
   }
 
-// AsyncStorage Basic Store Function
-private readonly _storeItem: any = async (key: string, item: {} | number): Promise<void> => {
-  try {
-    const json = await AsyncStorage.setItem(key, JSON.stringify(item))
-    return json
-  } catch (e) {
-    console.log(e)
-  }
-
-  return null
-}
-
-private readonly _returnItem: any = async (key: string): Promise<{}> => {
-  try {
-    const item: {} = await AsyncStorage.getItem(key)
-
-    if (item !== null) {
-      return item
+  // AsyncStorage Basic Store Function
+  private readonly _storeItem: any = async (key: string, item: {} | number): Promise<void> => {
+    try {
+      const json = await AsyncStorage.setItem(key, JSON.stringify(item))
+      return json
+    } catch (e) {
+      console.log(e)
     }
-  } catch (e) {
-    console.log(e)
+
+    return null
   }
 
-  return null
-}
+  private readonly _returnItem: any = async (key: string): Promise<{}> => {
+    try {
+      const item: {} = await AsyncStorage.getItem(key)
 
-// gets called when Input changes
-// gets passed Input and tries to
-// to find CIty with fitting ZIP
-private readonly _setInputValue: any = (text: string): void => {
-  const zip = Number(text)
-  this._storeItem('cityZip', zip)
-
-  let city = null
-  // DO ZIP LOGIC HERE
-  // TRY TO FIND CITY
-  // AND EVERYTHING IMPORTANT
-  // IF THRE ISNT A CITY WITH
-  // PASSED ZIP, GIVE ERROR
-
-  if (zip === 25764) {
-    city = 'Wesselburen'
-  }
-
-  if (city === null) {
-    this.setState({
-      inputValue: 'Please Enter a valid ZIP'
-    }, this._storeItem('cityName', null))
-  } else {
-    this.setState({
-      inputValue: city
-    }, this._storeItem('cityName', city))
-  }
-
-
-}
-
-// gets passed the name of the checkBox
-// and swaps boolean
-private readonly _updateCheckBox: any = (name: string): void => {
-  this.setState((prevState: State) => ({
-    checkBoxesFood: {
-      ...prevState.checkBoxesFood,
-      [name]: !prevState.checkBoxesFood[name]
+      if (item !== null) {
+        return item
+      }
+    } catch (e) {
+      console.log(e)
     }
-  }))
-}
 
-// updates index for buttonGroup
-private readonly _updateIndex: any = (newIndex: number): void => {
-  this.setState({
-    selectedIndex: newIndex
-  })
-}
+    return null
+  }
 
-// switches value of Toggle
-private readonly _updateToggle: any = (newValue: boolean): void => {
-  this.setState({
-    toggleValue: newValue
-  })
-}
+  // gets called when Input changes
+  // gets passed Input and tries to
+  // to find CIty with fitting ZIP
+  private readonly _setInputValue: any = (text: string): void => {
+    const zip = Number(text)
+    this._storeItem('cityZip', zip)
+
+    let city = null
+    // DO ZIP LOGIC HERE
+    // TRY TO FIND CITY
+    // AND EVERYTHING IMPORTANT
+    // IF THRE ISNT A CITY WITH
+    // PASSED ZIP, GIVE ERROR
+
+    if (zip === 25764) {
+      city = 'Wesselburen'
+    }
+
+    if (city === null) {
+      this.setState({
+        inputValue: 'Please Enter a valid ZIP'
+      }, this._storeItem('cityName', null))
+    } else {
+      this.setState({
+        inputValue: city
+      }, this._storeItem('cityName', city))
+    }
+  }
+
+  // gets passed the name of the checkBox
+  // and swaps boolean
+  private readonly _updateCheckBox: any = (name: string): void => {
+    this.setState((prevState: State) => ({
+      checkBoxesFood: {
+        ...prevState.checkBoxesFood,
+        [name]: !prevState.checkBoxesFood[name]
+      }
+    }))
+  }
+
+  // updates index for buttonGroup
+  private readonly _updateIndex: any = (newIndex: number): void => {
+    this.setState({
+      selectedIndex: newIndex
+    })
+  }
+
+  // switches value of Toggle
+  private readonly _updateToggle: any = (newValue: boolean): void => {
+    this.setState({
+      toggleValue: newValue
+    })
+  }
+
+  private readonly _storePriceRange: any = async (): Promise<void> => {
+    const { toggleValue, selectedIndex } = this.state
+
+    // -1=OFF, 0=LOW, 1=MED, 2=HIGH
+    if (toggleValue) {
+      this._storeItem('prefPrice', -1)
+    } else {
+      this._storeItem('prefPrice', selectedIndex)
+    }
+  }
 }
 
 export default SettingsScreen

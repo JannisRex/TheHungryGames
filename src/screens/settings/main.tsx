@@ -205,8 +205,9 @@ class SettingsScreen extends Component<Props, State> {
     )
   }
 
-  _saveToState = () => {
-
+  _saveToState = (smth: {}) => {
+    if (smth !== null) {
+    }
   }
 
   // AsyncStorage Basic Store Function

@@ -212,7 +212,7 @@ class SettingsScreen extends Component<Props, State> {
   }
 
   // AsyncStorage Basic Store Function
-  private readonly _storeItem: any = async (key: string, item: {} | number): Promise<void> => {
+  private readonly _storeItem: any = async (key: string, item: {} | number | string): Promise<void> => {
     try {
       const json = await AsyncStorage.setItem(key, JSON.stringify(item))
       return json

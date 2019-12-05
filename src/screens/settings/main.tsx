@@ -205,7 +205,7 @@ class SettingsScreen extends Component<Props, State> {
     )
   }
 
-  private readonly _saveToState = (smth: {}) => {
+  private readonly _saveToState: any = (smth: {}): void => {
     if (smth !== null) {
       console.log(typeof smth)
     }

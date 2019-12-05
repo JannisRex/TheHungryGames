@@ -225,10 +225,12 @@ class SettingsScreen extends Component<Props, State> {
 
   private readonly _returnItem: any = async (key: string): Promise<{}> => {
     try {
-      const item: {} = await AsyncStorage.getItem(key)
+      const item: string = await AsyncStorage.getItem(key)
 
-      if (item !== null) {
+      if (typeof item === typeof Object) {
         return item
+      } else if (item !== null) {
+        return JSON.parse(item)
       }
     } catch (e) {
       console.log(e)

@@ -205,6 +205,10 @@ class SettingsScreen extends Component<Props, State> {
     )
   }
 
+  _saveToState = () => {
+
+  }
+
   // AsyncStorage Basic Store Function
   private readonly _storeItem: any = async (key: string, item: {} | number): Promise<void> => {
     try {

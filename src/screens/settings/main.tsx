@@ -78,6 +78,8 @@ class SettingsScreen extends Component<Props, State> {
       })
     } catch (e) {
       console.log(e)
+    } finally {
+      this._isFinishedLoading(true)
     }
   }
 
@@ -257,6 +259,13 @@ class SettingsScreen extends Component<Props, State> {
     } else {
       console.log('key: ' + key + ' | typeof: ', typeof val)
     }
+  }
+
+  private readonly _isFinishedLoading = (bool: boolean) => {
+    console.log('FINISHING LOADING')
+    this.setState({
+      loadedItems: bool
+    })
   }
 
   // AsyncStorage Basic Store Function

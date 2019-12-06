@@ -212,8 +212,14 @@ class SettingsScreen extends Component<Props, State> {
     if (typeof val === 'string') {
       switch (key) {
       case 'cityName': {
-        const newVal = val.replace(/^"|"$/g, '')
+        if (val === null) {
+          this.setState({
+            inputName: null
+          })
+          break;
+        }
 
+        const newVal = val.replace(/^"|"$/g, '')
         this.setState({
           inputName: newVal
         })
@@ -221,6 +227,12 @@ class SettingsScreen extends Component<Props, State> {
       }
 
       case 'cityZip': {
+          if (val === null) {
+          this.setState({
+            inputZip: null
+          })
+          break;
+        }
         this.setState({
           inputZip: val
         })

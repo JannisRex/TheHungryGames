@@ -204,18 +204,19 @@ class SettingsScreen extends Component<Props, State> {
     )
   }
 
+  // after all key-value pairs have been fetched, we now
+  // save those to  state to have direct acces @settingsScreen
   private readonly _saveToState: any = (key: string, val: string | number | {}): void => {
     if (typeof val === 'string') {
       switch (key) {
-
       case 'cityName': {
         console.log('switch-cityName')
         this.setState({
           inputValue: val
         })
         break
-
       }
+
       case 'prefDistance': {
         console.log('switch-prefDistance')
         this.setState({
@@ -231,6 +232,11 @@ class SettingsScreen extends Component<Props, State> {
             toggleValue: true,
             selectedIndex: 1
           })
+        } else {
+          this.setState({
+            toggleValue: false,
+            selectedIndex: Number(val)
+          })
         }
         break
       }
@@ -238,13 +244,13 @@ class SettingsScreen extends Component<Props, State> {
       case 'checkBoxes': {
         console.log('switch-checkBoxes')
         this.setState({
-
+          checkBoxesFood: JSON.parse(val)
         })
         break
       }
 
       default: {
-        console.log('SWITCH-DEFAULT ?!?')
+        console.log('SWITCH-DEFAULT ?!? => ' + key)
         break
       }
       }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { View, Text, Switch, Dimensions, AsyncStorage } from 'react-native'
-import { DynamicScrollView, Header } from '../../components/index'
+import { Activity, DynamicScrollView, Header } from '../../components/index'
 import { Input, Slider, CheckBox, ButtonGroup, Divider } from 'react-native-elements'
 import strings from '../../config/strings'
 import styles from './styles'
@@ -202,7 +202,7 @@ class SettingsScreen extends Component<Props, State> {
           {/* <Text>{strings.SettingsScreen.title}</Text> */}
         </DynamicScrollView>
       </View>
-    ) : null
+    ) : <Activity />
   }
 
   // after all key-value pairs have been fetched, we now

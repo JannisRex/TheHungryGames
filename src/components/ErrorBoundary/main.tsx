@@ -3,7 +3,7 @@ import ErrSubstituteScreen from '../ErrSubstituteScreen/main'
 
 // children => Node/any
 type Props = {
-  children: Node,
+  children: JSX.Element,
   ErrSubstituteScreen: typeof ErrSubstituteScreen,
   onError?: (error: Error, stackInfo: string)=> void,
   _handleCatchError: (error: Error)=> void
@@ -19,6 +19,11 @@ class ErrorBoundary extends Component<Props, State> {
     ErrSubstituteScreen: ErrSubstituteScreen
   }
 
+  // fires error Event and catches err
+  static getDerivedStateFromError(error: Error): {error: Error, hasError: boolean} {
+    return { error, hasError: true }
+  }
+
   constructor(props: any) {
     super(props)
 
@@ -26,12 +31,6 @@ class ErrorBoundary extends Component<Props, State> {
       error: null,
       hasError: false
     }
-  }
-
-
-  // fires error Event and catches err
-  static getDerivedStateFromError(error: Error): {error: Error, hasError: boolean} {
-    return { error, hasError: true }
   }
 
   // mb replace return { error, hasError: true }

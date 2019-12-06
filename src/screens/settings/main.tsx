@@ -309,15 +309,12 @@ class SettingsScreen extends Component<Props, State> {
       city = 'Wesselburen'
     }
 
-    if (city === null) {
-      this.setState({
-        inputValue: null
-      }, () => this._storeItem('cityName', null))
-    } else {
-      this.setState({
-        inputValue: city
-      }, () => this._storeItem('cityName', city))
-    }
+    // dont need to nullcheck here
+    // since null now gets handled by
+    // <InputField /> by using alt instead
+    this.setState({
+      inputValue: city
+    }, () => this._storeItem('cityName', city))
   }
 
   // gets passed the name of the checkBox

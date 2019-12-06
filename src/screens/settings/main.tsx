@@ -210,7 +210,13 @@ class SettingsScreen extends Component<Props, State> {
     if (typeof val === 'string') {
       switch (key) {
       case 'cityName': {
-        console.log('switch-cityName')
+        this.setState({
+          inputName: val
+        })
+        break
+      }
+
+      case 'cityZip': {
         this.setState({
           inputName: val
         })
@@ -218,7 +224,6 @@ class SettingsScreen extends Component<Props, State> {
       }
 
       case 'prefDistance': {
-        console.log('switch-prefDistance')
         this.setState({
           sliderValue: (Number(val) / 100)
         })
@@ -226,7 +231,6 @@ class SettingsScreen extends Component<Props, State> {
       }
 
       case 'prefPrice': {
-        console.log('switch-prefPrice')
         if (Number(val) === -1) {
           this.setState({
             toggleValue: true,
@@ -242,7 +246,6 @@ class SettingsScreen extends Component<Props, State> {
       }
 
       case 'checkBoxes': {
-        console.log('switch-checkBoxes')
         this.setState({
           checkBoxesFood: JSON.parse(val)
         })
@@ -250,7 +253,7 @@ class SettingsScreen extends Component<Props, State> {
       }
 
       default: {
-        console.log('SWITCH-DEFAULT ?!? => ' + key)
+        console.log('SWITCH-DEFAULT => ' + key)
         break
       }
       }

@@ -69,7 +69,7 @@ class SettingsScreen extends Component<Props, State> {
       await AsyncStorage.getAllKeys().then(async (keys: string[]) => {
         const result = await AsyncStorage.multiGet(keys)
         return result.map((item: string[]) => {
-          console.log(item[0] + '-: ' + item[1])
+          console.log(item[0] + '-: ' + item[1] + ' | ' + typeof item[1])
           this._saveToState(item[0], item[1])
         })
       })
@@ -353,9 +353,9 @@ class SettingsScreen extends Component<Props, State> {
 
     // -1=OFF, 0=LOW, 1=MED, 2=HIGH
     if (toggleValue) {
-      this._storeItem('prefPrice', '-1')
+      this._storeItem('prefPrice', -1)
     } else {
-      this._storeItem('prefPrice', String(selectedIndex))
+      this._storeItem('prefPrice', selectedIndex)
     }
   }
 }

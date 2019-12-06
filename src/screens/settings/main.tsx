@@ -73,8 +73,8 @@ class SettingsScreen extends Component<Props, State> {
       await AsyncStorage.getAllKeys().then(async (keys: string[]) => {
         const result = await AsyncStorage.multiGet(keys)
         return result.map((item: string[]) => {
-          console.log('0: ', JSON.parse(item[0]))
-          console.log('1: ', JSON.parse(item[1]))
+          console.log('0: ', item[0])
+          console.log('1: ', item[1])
         })
       })
     } catch (e) {

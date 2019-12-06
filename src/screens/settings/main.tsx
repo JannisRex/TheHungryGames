@@ -183,9 +183,9 @@ class SettingsScreen extends Component<Props, State> {
               <View style={{ flex: 1, flexDirection: 'column' }}>
                 {/* First Row */}
                 <View style={{ flexDirection: 'row' }}>
-                  <CheckBox title='can order Alcohol' checked={cBF.cB1} onPress={(): void => this._updateCheckBox('cB1')} />
-                  <CheckBox title='can order Cigarettes' checked={cBF.cB2} onPress={(): void => this._updateCheckBox('cB2')} />
-                  <CheckBox title='can order Dessert' checked={cBF.cB3} onPress={(): void => this._updateCheckBox('cB3')} />
+                  <CheckBox title='Alcohol' checked={cBF.cB1} onPress={(): void => this._updateCheckBox('cB1')} />
+                  <CheckBox title='Cigarettes' checked={cBF.cB2} onPress={(): void => this._updateCheckBox('cB2')} />
+                  <CheckBox title='Dessert' checked={cBF.cB3} onPress={(): void => this._updateCheckBox('cB3')} />
                 </View>
 
                 <Divider style={{ backgroundColor: '#000', height: 1 }}/>

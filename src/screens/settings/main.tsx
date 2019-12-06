@@ -216,7 +216,7 @@ class SettingsScreen extends Component<Props, State> {
           this.setState({
             inputName: null
           })
-          break;
+          break
         }
 
         const newVal = val.replace(/^"|"$/g, '')
@@ -227,11 +227,11 @@ class SettingsScreen extends Component<Props, State> {
       }
 
       case 'cityZip': {
-          if (val === null) {
+        if (val === null) {
           this.setState({
             inputZip: null
           })
-          break;
+          break
         }
         this.setState({
           inputZip: val

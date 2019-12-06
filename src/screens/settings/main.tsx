@@ -205,10 +205,8 @@ class SettingsScreen extends Component<Props, State> {
     )
   }
 
-  private readonly _saveToState: any = (smth: {}): void => {
-    if (smth !== null) {
-      console.log(typeof smth)
-    }
+  private readonly _saveToState: any = (key: string, val: string | number | {}): void => {
+
   }
 
   // AsyncStorage Basic Store Function

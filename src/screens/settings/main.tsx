@@ -244,6 +244,8 @@ class SettingsScreen extends Component<Props, State> {
       break
     }
     }
+  }else {
+    console.log('key: '+ key + ' | typeof: ', typeof val)
   }
   }
 

@@ -1,3 +1,4 @@
+export { default as Activity } from './Activity/main'
 export { default as Container } from './Container/main'
 export { default as DynamicScrollView } from './DynamicScrollView/main'
 export { default as ErrorBoundary } from './ErrorBoundary/main'

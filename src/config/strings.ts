@@ -17,7 +17,11 @@ export default {
     noRestaurant: Localization.HomeScreen.noRestaurant
   },
   SettingsScreen: {
-    title: Localization.SettingsScreen.title
+    title: Localization.SettingsScreen.title,
+    input: {
+      label: Localization.SettingsScreen.input.label,
+      placeholder: Localization.SettingsScreen.input.placeholder
+    }
   }
 }
 

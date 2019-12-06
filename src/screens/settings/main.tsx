@@ -215,6 +215,7 @@ class SettingsScreen extends Component<Props, State> {
   private readonly _storeItem: any = async (key: string, item: {} | number | string): Promise<void> => {
     try {
       const json = await AsyncStorage.setItem(key, JSON.stringify(item))
+      console.log('STORING: ', json)
       return json
     } catch (e) {
       console.log(e)
@@ -260,11 +261,11 @@ class SettingsScreen extends Component<Props, State> {
     if (city === null) {
       this.setState({
         inputValue: 'Please Enter a valid ZIP'
-      }, this._storeItem('cityName', null))
+      }, () => this._storeItem('cityName', null))
     } else {
       this.setState({
         inputValue: city
-      }, this._storeItem('cityName', city))
+      }, () => this._storeItem('cityName', city))
     }
   }
 
@@ -276,21 +277,21 @@ class SettingsScreen extends Component<Props, State> {
         ...prevState.checkBoxesFood,
         [name]: !prevState.checkBoxesFood[name]
       }
-    }), this._storeItem('checkBoxes', this.state.checkBoxesFood))
+    }), () => this._storeItem('checkBoxes', this.state.checkBoxesFood))
   }
 
   // updates index for buttonGroup
   private readonly _updateIndex: any = (selectedIndex: number): void => {
     this.setState({
       selectedIndex
-    }, this._storePriceRange())
+    }, this._storePriceRange)
   }
 
   // switches value of Toggle
   private readonly _updateToggle: any = (toggleValue: boolean): void => {
     this.setState({
       toggleValue
-    }, this._storePriceRange())
+    }, this._storePriceRange)
   }
 
   private readonly _storePriceRange: any = async (): Promise<void> => {

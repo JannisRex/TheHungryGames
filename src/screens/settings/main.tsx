@@ -228,7 +228,8 @@ class SettingsScreen extends Component<Props, State> {
 
       case 'prefDistance': {
         this.setState({
-          sliderValue: 15
+          sliderDistance: Number(val),
+          sliderValue: ((Number(val) / 75) * 100)
         })
         break
       }

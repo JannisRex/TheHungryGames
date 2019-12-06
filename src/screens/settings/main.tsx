@@ -13,7 +13,7 @@ type Props = {}
 // or think of something better than
 // 12 states :ccc
 type State = {
-  inputValue: string,
+  inputValue: string | null,
   sliderValue: number,
   selectedIndex: number,
   checkBoxesFood: {
@@ -41,7 +41,7 @@ class SettingsScreen extends Component<Props, State> {
     super(props)
 
     this.state = {
-      inputValue: 'Please enter ZIP of your Location',
+      inputValue: null,
       sliderValue: 0,
       selectedIndex: 0,
       checkBoxesFood: {
@@ -101,7 +101,7 @@ class SettingsScreen extends Component<Props, State> {
             <View style={{ flex: 1 }}>
               <Input
                 ref={zipInput}
-                label={this.state.inputValue}
+                label={this.state.inputValue ? this.state.inputValue : 'Please enter ZIP of your Location'}
                 placeholder='Enter Zip-Code...'
                 leftIcon={{ type: 'entypo', name: 'location' }}
                 onChangeText={((text: string): void => this._setInputValue(text))}
@@ -205,7 +205,52 @@ class SettingsScreen extends Component<Props, State> {
   }
 
   private readonly _saveToState: any = (key: string, val: string | number | {}): void => {
+    switch (key) {
+    case 'cityName': {
+      if (typeof val === 'string') {
+        this.setState({
+          inputValue: val
+        })
+      }
+      break
+    }
+    case '': {
+      if (typeof val === '') {
+        this.setState({
 
+        })
+      }
+      break
+    }
+    case '': {
+      if (typeof val === '') {
+        this.setState({
+
+        })
+      }
+      break
+    }
+    case '': {
+      if (typeof val === '') {
+        this.setState({
+
+        })
+      }
+      break
+    }
+    case '': {
+      if (typeof val === '') {
+        this.setState({
+
+        })
+      }
+      break
+    }
+    default: {
+      // statements;
+      break
+    }
+    }
   }
 
   // AsyncStorage Basic Store Function

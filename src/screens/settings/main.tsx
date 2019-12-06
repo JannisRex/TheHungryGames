@@ -12,7 +12,8 @@ type Props = {}
 // 12 states :ccc
 type State = {
   loadedItems: boolean,
-  inputValue: string | null,
+  inputZip: string | null,
+  inputName: string | null,
   sliderValue: number,
   selectedIndex: number,
   toggleValue: boolean,
@@ -38,7 +39,8 @@ class SettingsScreen extends Component<Props, State> {
 
     this.state = {
       loadedItems: false,
-      inputValue: null,
+      inputZip: null,
+      inputName: null,
       sliderValue: 0,
       selectedIndex: 0,
       toggleValue: false,
@@ -82,7 +84,7 @@ class SettingsScreen extends Component<Props, State> {
   // everything looks worse than garbage
   render(): JSX.Element {
     const zipInput = React.createRef<Input>()
-    const { checkBoxesFood, loadedItems } = this.state
+    const { checkBoxesFood, loadedItems, inputName, inputZip } = this.state
     const cBF = checkBoxesFood
     const maxWidth = Dimensions.get('window').width
     const maxProportion = 100
@@ -99,8 +101,8 @@ class SettingsScreen extends Component<Props, State> {
             <View style={{ flex: 1 }}>
               <Input
                 ref={zipInput}
-                label={this.state.inputValue ? this.state.inputValue : 'Please enter ZIP of your Location'}
-                placeholder='Enter Zip-Code...'
+                label={inputName ? inputName : 'Please enter ZIP of your Location'}
+                placeholder={inputZip ? inputZip : 'Enter Zip-Code...'}
                 leftIcon={{ type: 'entypo', name: 'location' }}
                 onChangeText={((text: string): void => this._setInputValue(text))}
               />
@@ -210,7 +212,7 @@ class SettingsScreen extends Component<Props, State> {
       case 'cityName': {
         console.log('switch-cityName')
         this.setState({
-          inputValue: val
+          inputName: val
         })
         break
       }
@@ -314,7 +316,7 @@ class SettingsScreen extends Component<Props, State> {
     // since null now gets handled by
     // <InputField /> by using alt instead
     this.setState({
-      inputValue: city
+      inputName: city
     }, () => this._storeItem('cityName', city))
   }
 

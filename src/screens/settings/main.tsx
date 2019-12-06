@@ -261,7 +261,7 @@ class SettingsScreen extends Component<Props, State> {
     }
   }
 
-  private readonly _isFinishedLoading = (bool: boolean) => {
+  private readonly _isFinishedLoading: any = (bool: boolean): void => {
     console.log('FINISHING LOADING')
     this.setState({
       loadedItems: bool

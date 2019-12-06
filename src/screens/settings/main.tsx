@@ -225,7 +225,7 @@ class SettingsScreen extends Component<Props, State> {
 
       case 'prefDistance': {
         this.setState({
-          sliderValue: (Number(val) / 100)
+          sliderValue: 15
         })
         break
       }
@@ -353,7 +353,7 @@ class SettingsScreen extends Component<Props, State> {
 
     // -1=OFF, 0=LOW, 1=MED, 2=HIGH
     if (toggleValue) {
-      this._storeItem('prefPrice', -1)
+      this._storeItem('prefPrice', '-1')
     } else {
       this._storeItem('prefPrice', selectedIndex)
     }

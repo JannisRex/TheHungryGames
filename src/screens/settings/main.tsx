@@ -103,8 +103,8 @@ class SettingsScreen extends Component<Props, State> {
             <View style={{ flex: 1 }}>
               <Input
                 ref={zipInput}
-                label={inputName ? inputName : 'Please enter ZIP of your Location'}
-                placeholder={inputZip ? inputZip : 'Enter Zip-Code...'}
+                label={inputName !== null ? inputName : 'Please enter ZIP of your Location'}
+                placeholder={inputZip !== null ? inputZip : 'Zip-Code...'}
                 leftIcon={{ type: 'entypo', name: 'location' }}
                 onChangeText={((input: string): void => this._setInputValue(input))}
               />
@@ -258,6 +258,8 @@ class SettingsScreen extends Component<Props, State> {
       }
 
       default: {
+        // If I forget to remove old keys
+        // or have typos or anything dumb
         console.log('SWITCH-DEFAULT => ' + key)
         break
       }
@@ -312,30 +314,30 @@ class SettingsScreen extends Component<Props, State> {
   // gets passed Input and tries to
   // to find CIty with fitting ZIP
   private readonly _setInputValue: any = (input: string): void => {
-    const zip = Number(input)
+    if (input.length > 3) {
+      const zip = Number(input)
+      let city = null
+      // DO ZIP LOGIC HERE
+      // TRY TO FIND CITY
+      // AND EVERYTHING IMPORTANT
+      // IF THRE ISNT A CITY WITH
+      // PASSED ZIP, GIVE ERROR
+      if (zip === 25764) {
+        city = 'Wesselburen'
+      }
 
-    let city = null
-    // DO ZIP LOGIC HERE
-    // TRY TO FIND CITY
-    // AND EVERYTHING IMPORTANT
-    // IF THRE ISNT A CITY WITH
-    // PASSED ZIP, GIVE ERROR
+      // dont need to nullcheck here
+      // since null now gets handled by
+      // <InputField /> by using alt instead
+      this.setState({
+        inputName: city
+      }, () => this._storeItem('cityName', city))
 
-    if (zip === 25764) {
-      city = 'Wesselburen'
-    }
-
-    // dont need to nullcheck here
-    // since null now gets handled by
-    // <InputField /> by using alt instead
-    this.setState({
-      inputName: city
-    }, () => this._storeItem('cityName', city))
-
-    if (city) {
-      this._storeItem('cityZip', zip)
-    } else {
-      this._storeItem('cityZip', null)
+      if (city) {
+        this._storeItem('cityZip', zip)
+      } else {
+        this._storeItem('cityZip', null)
+      }
     }
   }
 

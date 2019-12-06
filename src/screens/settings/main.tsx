@@ -86,7 +86,7 @@ class SettingsScreen extends Component<Props, State> {
   // everything looks worse than garbage
   render(): JSX.Element {
     const zipInput = React.createRef<Input>()
-    const { checkBoxesFood, loadedItems, inputName, inputZip, sliderDistance } = this.state
+    const { checkBoxesFood, loadedItems, inputName, inputZip, sliderDistance, sliderValue } = this.state
     const cBF = checkBoxesFood
     const maxWidth = Dimensions.get('window').width
     const maxProportion = 100
@@ -116,7 +116,7 @@ class SettingsScreen extends Component<Props, State> {
               <Slider
                 value={this.state.sliderValue}
                 onValueChange={(value: number): void => this.setState({ sliderValue: value, sliderDistance: parseInt((value * 100).toFixed(0), 10) },
-                  () => this._storeItem('prefDistance', sliderDistance))}
+                  () => this._storeItem('sliderValue', sliderValue))}
                 style={{ alignSelf: 'center', width: (maxWidth / maxProportion) * desiredProportion }}
               />
               <Text style={{ alignSelf: 'center' }}>Range in km: {sliderDistance}</Text>
@@ -229,16 +229,18 @@ class SettingsScreen extends Component<Props, State> {
       case 'prefDistance': {
         const b4 = val
         const after = Number(val)
-        const parsed = parseInt(val, 10)
-        const wrapper = new Number(val)
+        const parsed = parseInt(JSON.stringify(val), 10)
+        const wrapper = new Number(JSON.stringify(val))
+        console.log('len: ', b4.length, ' at0: ', b4.charCodeAt(0))
         console.log(b4 + ' | ' + typeof b4)
+        console.log(JSON.stringify(b4) + ' | ' + typeof JSON.stringify(b4))
         console.log(after, ' | ' + typeof after)
         console.log(parsed, ' | ' + typeof parsed)
-        console.log(wrapper, ' | ' + typeof wrapper)
+        console.log(JSON.stringify(wrapper), ' | ' + typeof wrapper)
 
         this.setState({
-          sliderDistance: Number(val),
-          sliderValue: ((Number(val) / 75) * 100)
+          sliderDistance: parseInt((Number(val) * 100).toFixed(0), 10),
+          sliderValue: Number(val)
         })
         break
       }

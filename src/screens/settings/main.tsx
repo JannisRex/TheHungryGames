@@ -103,8 +103,8 @@ class SettingsScreen extends Component<Props, State> {
             <View style={{ flex: 1 }}>
               <Input
                 ref={zipInput}
-                label={inputName ? inputName : ''}
-                placeholder={inputZip ? inputZip : ''}
+                label={inputName ? inputName : strings.SettingsScreen.input.label}
+                placeholder={inputZip ? inputZip : strings.SettingsScreen.input.placeholder}
                 leftIcon={{ type: 'entypo', name: 'location' }}
                 onChangeText={((input: string): void => this._setInputValue(input))}
               />
@@ -212,7 +212,7 @@ class SettingsScreen extends Component<Props, State> {
     if (typeof val === 'string') {
       switch (key) {
       case 'cityName': {
-        if (val === null) {
+        if (val === 'null') {
           this.setState({
             inputName: null
           })
@@ -227,7 +227,7 @@ class SettingsScreen extends Component<Props, State> {
       }
 
       case 'cityZip': {
-        if (val === null) {
+        if (val === 'null') {
           this.setState({
             inputZip: null
           })
@@ -241,8 +241,6 @@ class SettingsScreen extends Component<Props, State> {
 
       case 'sliderValue': {
         this.setState({
-          // sliderDistance: parseInt((Number(val) * 100).toFixed(0), 10),
-          // sliderValue: Number(val)
           sliderValue: Number(val),
           sliderDistance: parseInt((Number(val) * 100).toFixed(0), 10)
         })

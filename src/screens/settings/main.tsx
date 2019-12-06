@@ -114,7 +114,7 @@ class SettingsScreen extends Component<Props, State> {
             <View style={{ flex: 1 }}>
               <Slider
                 value={this.state.sliderValue}
-                onValueChange={(value: number): void => this.setState({ sliderValue: value }, this._storeItem('prefDistance', (value * 100).toFixed(0)))}
+                onValueChange={(value: number): void => this.setState({ sliderValue: value }, () => this._storeItem('prefDistance', (value * 100).toFixed(0)))}
                 style={{ alignSelf: 'center', width: (maxWidth / maxProportion) * desiredProportion }}
               />
               <Text style={{ alignSelf: 'center' }}>Range in km: {(this.state.sliderValue * 100).toFixed(0)}</Text>

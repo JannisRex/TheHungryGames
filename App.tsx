@@ -11,7 +11,9 @@ class App extends Component {
 
   render(): JSX.Element {
     return (
-      <PreloadSwitchNavigator />
+      <ErrorBoundary>
+        <PreloadSwitchNavigator />
+      </ErrorBoundary>
     )
   }
 }

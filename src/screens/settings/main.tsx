@@ -5,8 +5,6 @@ import { Input, Slider, CheckBox, ButtonGroup, Divider } from 'react-native-elem
 import strings from '../../config/strings'
 import styles from './styles'
 
-import flex from '../../lib/flexboxHelper'
-
 type Props = {}
 
 // TODO: mb add with ...RestOperator
@@ -87,12 +85,13 @@ class SettingsScreen extends Component<Props, State> {
   // everything looks worse than garbage
   render(): JSX.Element {
     const zipInput = React.createRef<Input>()
-    const cBF = this.state.checkBoxesFood
+    const { checkBoxesFood, loadedItems } = this.state
+    const cBF = checkBoxesFood
     const maxWidth = Dimensions.get('window').width
     const maxProportion = 100
     const desiredProportion = 75
 
-    return (
+    return loadedItems ? (
       <View style={{ flex: 1 }}>
         <Header />
 
@@ -203,7 +202,7 @@ class SettingsScreen extends Component<Props, State> {
           {/* <Text>{strings.SettingsScreen.title}</Text> */}
         </DynamicScrollView>
       </View>
-    )
+    ) : null
   }
 
   // after all key-value pairs have been fetched, we now

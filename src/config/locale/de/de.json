@@ -11,5 +11,9 @@
   },
   "SettingsScreen": {
     "title": "S E T T I N G S",
+    "input": {
+      "label": "Please enter ZIP of your Location",
+      "placeholder": "Zip-Code..."
+    }
   }
 }

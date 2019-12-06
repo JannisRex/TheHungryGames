@@ -115,8 +115,7 @@ class SettingsScreen extends Component<Props, State> {
             <View style={{ flex: 1 }}>
               <Slider
                 value={this.state.sliderValue}
-                onValueChange={(value: number): void => this.setState({ sliderValue: value, sliderDistance: parseInt((value * 100).toFixed(0), 10) },
-                  () => this._storeItem('sliderValue', sliderValue))}
+                onValueChange={(value: number): void => this._setSliderValue(value)}
                 style={{ alignSelf: 'center', width: (maxWidth / maxProportion) * desiredProportion }}
               />
               <Text style={{ alignSelf: 'center' }}>Range in km: {sliderDistance}</Text>
@@ -229,14 +228,9 @@ class SettingsScreen extends Component<Props, State> {
       case 'prefDistance': {
         const b4 = val
         const after = Number(val)
-        const parsed = parseInt(JSON.stringify(val), 10)
-        const wrapper = new Number(JSON.stringify(val))
         console.log('len: ', b4.length, ' at0: ', b4.charCodeAt(0))
         console.log(b4 + ' | ' + typeof b4)
-        console.log(JSON.stringify(b4) + ' | ' + typeof JSON.stringify(b4))
         console.log(after, ' | ' + typeof after)
-        console.log(parsed, ' | ' + typeof parsed)
-        console.log(JSON.stringify(wrapper), ' | ' + typeof wrapper)
 
         this.setState({
           sliderDistance: parseInt((Number(val) * 100).toFixed(0), 10),
@@ -310,6 +304,17 @@ class SettingsScreen extends Component<Props, State> {
     }
 
     return null
+  }
+
+  private readonly _setSliderValue: any = (value: number): void => {
+    console.log('SETTING SLIDER')
+    console.log('type: ', typeof value)
+    console.log('val: ', value)
+    console.log('stringified: ', JSON.stringify(value))
+    this.setState({
+      sliderValue: value,
+      sliderDistance: parseInt((value * 100).toFixed(0), 10)
+    }, () => this._storeItem('sliderValue', this.state.sliderValue))
   }
 
   // gets called when Input changes

@@ -205,48 +205,52 @@ class SettingsScreen extends Component<Props, State> {
   }
 
   private readonly _saveToState: any = (key: string, val: string | number | {}): void => {
-      if (typeof val === 'string') {
-    switch (key) {
-    case 'cityName': {
-      console.log('switch-cityName')
+    if (typeof val === 'string') {
+      switch (key) {
+
+      case 'cityName': {
+        console.log('switch-cityName')
         this.setState({
           inputValue: val
         })
-      break
-    }
-    case 'prefDistance': {
-      console.log('switch-prefDistance')
+        break
+
+      }
+      case 'prefDistance': {
+        console.log('switch-prefDistance')
         this.setState({
           sliderValue: (Number(val) / 100)
         })
-      break
-    }
-    case 'prefPrice': {
-      console.log('switch-prefPrice')
-      if (Number(val) === -1) {
-        this.setState({
-          toggleValue: true,
-          selectedIndex: 1
-        })
+        break
       }
 
-      break
-    }
-    case 'checkBoxes': {
-      console.log('switch-checkBoxes')
+      case 'prefPrice': {
+        console.log('switch-prefPrice')
+        if (Number(val) === -1) {
+          this.setState({
+            toggleValue: true,
+            selectedIndex: 1
+          })
+        }
+        break
+      }
+
+      case 'checkBoxes': {
+        console.log('switch-checkBoxes')
         this.setState({
 
         })
-      break
+        break
+      }
+
+      default: {
+        console.log('SWITCH-DEFAULT ?!?')
+        break
+      }
+      }
+    } else {
+      console.log('key: ' + key + ' | typeof: ', typeof val)
     }
-    default: {
-      console.log('SWITCH-DEFAULT ?!?')
-      break
-    }
-    }
-  }else {
-    console.log('key: '+ key + ' | typeof: ', typeof val)
-  }
   }
 
   // AsyncStorage Basic Store Function

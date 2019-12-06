@@ -11,9 +11,11 @@ type Props = {}
 // or think of something better than
 // 12 states :ccc
 type State = {
+  loadedItems: boolean,
   inputValue: string | null,
   sliderValue: number,
   selectedIndex: number,
+  toggleValue: boolean,
   checkBoxesFood: {
     cB1: boolean,
     cB2: boolean,
@@ -27,11 +29,7 @@ type State = {
     cB10: boolean,
     cB11: boolean,
     cB12: boolean
-  },
-  toggleValue: boolean,
-
-  loadedItems: boolean,
-  savedItems: boolean
+  }
 }
 
 class SettingsScreen extends Component<Props, State> {
@@ -39,9 +37,11 @@ class SettingsScreen extends Component<Props, State> {
     super(props)
 
     this.state = {
+      loadedItems: false,
       inputValue: null,
       sliderValue: 0,
       selectedIndex: 0,
+      toggleValue: false,
       checkBoxesFood: {
         cB1: false,
         cB2: false,
@@ -55,11 +55,7 @@ class SettingsScreen extends Component<Props, State> {
         cB10: false,
         cB11: false,
         cB12: false
-      },
-      toggleValue: false,
-
-      loadedItems: false,
-      savedItems: false
+      }
     }
   }
 

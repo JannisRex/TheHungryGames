@@ -103,8 +103,8 @@ class SettingsScreen extends Component<Props, State> {
             <View style={{ flex: 1 }}>
               <Input
                 ref={zipInput}
-                label={inputName ? inputName : 'Please enter ZIP of your Location'}
-                placeholder={inputZip ? inputZip : 'Zip-Code...'}
+                label={inputName ? inputName : ''}
+                placeholder={inputZip ? inputZip : ''}
                 leftIcon={{ type: 'entypo', name: 'location' }}
                 onChangeText={((input: string): void => this._setInputValue(input))}
               />

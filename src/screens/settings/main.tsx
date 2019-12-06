@@ -106,7 +106,7 @@ class SettingsScreen extends Component<Props, State> {
                 label={inputName ? inputName : 'Please enter ZIP of your Location'}
                 placeholder={inputZip ? inputZip : 'Enter Zip-Code...'}
                 leftIcon={{ type: 'entypo', name: 'location' }}
-                onChangeText={((text: string): void => this._setInputValue(text))}
+                onChangeText={((input: string): void => this._setInputValue(input))}
               />
             </View>
 
@@ -220,7 +220,7 @@ class SettingsScreen extends Component<Props, State> {
 
       case 'cityZip': {
         this.setState({
-          inputName: val
+          inputZip: val
         })
         break
       }
@@ -268,7 +268,6 @@ class SettingsScreen extends Component<Props, State> {
   }
 
   private readonly _isFinishedLoading: any = (bool: boolean): void => {
-    console.log('FINISHING LOADING')
     this.setState({
       loadedItems: bool
     })
@@ -312,9 +311,8 @@ class SettingsScreen extends Component<Props, State> {
   // gets called when Input changes
   // gets passed Input and tries to
   // to find CIty with fitting ZIP
-  private readonly _setInputValue: any = (text: string): void => {
-    const zip = Number(text)
-    this._storeItem('cityZip', zip)
+  private readonly _setInputValue: any = (input: string): void => {
+    const zip = Number(input)
 
     let city = null
     // DO ZIP LOGIC HERE
@@ -333,6 +331,12 @@ class SettingsScreen extends Component<Props, State> {
     this.setState({
       inputName: city
     }, () => this._storeItem('cityName', city))
+
+    if (city) {
+      this._storeItem('cityZip', zip)
+    } else {
+      this._storeItem('cityZip', null)
+    }
   }
 
   // gets passed the name of the checkBox

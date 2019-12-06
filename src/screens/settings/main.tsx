@@ -103,8 +103,8 @@ class SettingsScreen extends Component<Props, State> {
             <View style={{ flex: 1 }}>
               <Input
                 ref={zipInput}
-                label={inputName !== null ? inputName : 'Please enter ZIP of your Location'}
-                placeholder={inputZip !== null ? inputZip : 'Zip-Code...'}
+                label={inputName ? inputName : 'Please enter ZIP of your Location'}
+                placeholder={inputZip ? inputZip : 'Zip-Code...'}
                 leftIcon={{ type: 'entypo', name: 'location' }}
                 onChangeText={((input: string): void => this._setInputValue(input))}
               />
@@ -212,8 +212,10 @@ class SettingsScreen extends Component<Props, State> {
     if (typeof val === 'string') {
       switch (key) {
       case 'cityName': {
+        const newVal = val.replace(/^"|"$/g, '')
+
         this.setState({
-          inputName: val
+          inputName: newVal
         })
         break
       }
@@ -333,7 +335,7 @@ class SettingsScreen extends Component<Props, State> {
         inputName: city
       }, () => this._storeItem('cityName', city))
 
-      if (city) {
+      if (city !== null) {
         this._storeItem('cityZip', zip)
       } else {
         this._storeItem('cityZip', null)

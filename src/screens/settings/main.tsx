@@ -283,14 +283,14 @@ class SettingsScreen extends Component<Props, State> {
   private readonly _updateIndex: any = (selectedIndex: number): void => {
     this.setState({
       selectedIndex
-    })
+    }, this._storePriceRange())
   }
 
   // switches value of Toggle
   private readonly _updateToggle: any = (toggleValue: boolean): void => {
     this.setState({
       toggleValue
-    })
+    }, this._storePriceRange())
   }
 
   private readonly _storePriceRange: any = async (): Promise<void> => {

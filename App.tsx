@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { PreloadSwitchNavigator } from './src/navigation/index'
+import { ErrorBoundary } from './src/components/index'
 import { StatusBar } from 'react-native'
 
 

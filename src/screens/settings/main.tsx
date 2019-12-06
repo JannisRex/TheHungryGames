@@ -71,7 +71,7 @@ class SettingsScreen extends Component<Props, State> {
       await AsyncStorage.getAllKeys().then(async (keys: string[]) => {
         const result = await AsyncStorage.multiGet(keys)
         return result.map((item: string[]) => {
-          console.log(item[0] + '-: ' + item[1] + ' | ' + typeof item[1])
+          // console.log(item[0] + '-: ' + item[1] + ' | ' + typeof item[1])
           this._saveToState(item[0], item[1])
         })
       })
@@ -227,6 +227,15 @@ class SettingsScreen extends Component<Props, State> {
       }
 
       case 'prefDistance': {
+        const b4 = val
+        const after = Number(val)
+        const parsed = parseInt(val, 10)
+        const wrapper = new Number(val)
+        console.log(b4 + ' | ' + typeof b4)
+        console.log(after, ' | ' + typeof after)
+        console.log(parsed, ' | ' + typeof parsed)
+        console.log(wrapper, ' | ' + typeof wrapper)
+
         this.setState({
           sliderDistance: Number(val),
           sliderValue: ((Number(val) / 75) * 100)

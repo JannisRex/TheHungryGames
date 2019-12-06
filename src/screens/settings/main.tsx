@@ -215,7 +215,8 @@ class SettingsScreen extends Component<Props, State> {
   private readonly _storeItem: any = async (key: string, item: {} | number | string): Promise<void> => {
     try {
       const json = await AsyncStorage.setItem(key, JSON.stringify(item))
-      console.log('STORING: ', json)
+      console.log('ITEM: ', item)
+      console.log('STORING: ', JSON.stringify(item))
       return json
     } catch (e) {
       console.log(e)

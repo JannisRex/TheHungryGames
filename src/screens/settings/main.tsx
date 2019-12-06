@@ -355,7 +355,7 @@ class SettingsScreen extends Component<Props, State> {
     if (toggleValue) {
       this._storeItem('prefPrice', '-1')
     } else {
-      this._storeItem('prefPrice', selectedIndex)
+      this._storeItem('prefPrice', String(selectedIndex))
     }
   }
 }

@@ -205,60 +205,52 @@ class SettingsScreen extends Component<Props, State> {
   }
 
   private readonly _saveToState: any = (key: string, val: string | number | {}): void => {
+      if (typeof val === 'string') {
     switch (key) {
     case 'cityName': {
-      if (typeof val === 'string') {
+      console.log('switch-cityName')
         this.setState({
           inputValue: val
         })
-      }
       break
     }
-    case '': {
-      if (typeof val === '') {
+    case 'prefDistance': {
+      console.log('switch-prefDistance')
+        this.setState({
+          sliderValue: (Number(val) / 100)
+        })
+      break
+    }
+    case 'prefPrice': {
+      console.log('switch-prefPrice')
+      if (Number(val) === -1) {
+        this.setState({
+          toggleValue: true,
+          selectedIndex: 1
+        })
+      }
+
+      break
+    }
+    case 'checkBoxes': {
+      console.log('switch-checkBoxes')
         this.setState({
 
         })
-      }
-      break
-    }
-    case '': {
-      if (typeof val === '') {
-        this.setState({
-
-        })
-      }
-      break
-    }
-    case '': {
-      if (typeof val === '') {
-        this.setState({
-
-        })
-      }
-      break
-    }
-    case '': {
-      if (typeof val === '') {
-        this.setState({
-
-        })
-      }
       break
     }
     default: {
-      // statements;
+      console.log('SWITCH-DEFAULT ?!?')
       break
     }
     }
+  }
   }
 
   // AsyncStorage Basic Store Function
   private readonly _storeItem: any = async (key: string, item: {} | number | string): Promise<void> => {
     try {
       const json = await AsyncStorage.setItem(key, JSON.stringify(item))
-      console.log('ITEM: ', item)
-      console.log('STORING: ', JSON.stringify(item))
       return json
     } catch (e) {
       console.log(e)
@@ -303,7 +295,7 @@ class SettingsScreen extends Component<Props, State> {
 
     if (city === null) {
       this.setState({
-        inputValue: 'Please Enter a valid ZIP'
+        inputValue: null
       }, () => this._storeItem('cityName', null))
     } else {
       this.setState({

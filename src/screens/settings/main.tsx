@@ -15,6 +15,7 @@ type State = {
   inputZip: string | null,
   inputName: string | null,
   sliderValue: number,
+  sliderDistance: number,
   selectedIndex: number,
   toggleValue: boolean,
   checkBoxesFood: {
@@ -42,6 +43,7 @@ class SettingsScreen extends Component<Props, State> {
       inputZip: null,
       inputName: null,
       sliderValue: 0,
+      sliderDistance: 0,
       selectedIndex: 0,
       toggleValue: false,
       checkBoxesFood: {
@@ -84,7 +86,7 @@ class SettingsScreen extends Component<Props, State> {
   // everything looks worse than garbage
   render(): JSX.Element {
     const zipInput = React.createRef<Input>()
-    const { checkBoxesFood, loadedItems, inputName, inputZip } = this.state
+    const { checkBoxesFood, loadedItems, inputName, inputZip, sliderDistance } = this.state
     const cBF = checkBoxesFood
     const maxWidth = Dimensions.get('window').width
     const maxProportion = 100
@@ -113,10 +115,11 @@ class SettingsScreen extends Component<Props, State> {
             <View style={{ flex: 1 }}>
               <Slider
                 value={this.state.sliderValue}
-                onValueChange={(value: number): void => this.setState({ sliderValue: value }, () => this._storeItem('prefDistance', (value * 100).toFixed(0)))}
+                onValueChange={(value: number): void => this.setState({ sliderValue: value, sliderDistance: parseInt((value * 100).toFixed(0), 10) },
+                  () => this._storeItem('prefDistance', sliderDistance))}
                 style={{ alignSelf: 'center', width: (maxWidth / maxProportion) * desiredProportion }}
               />
-              <Text style={{ alignSelf: 'center' }}>Range in km: {(this.state.sliderValue * 100).toFixed(0)}</Text>
+              <Text style={{ alignSelf: 'center' }}>Range in km: {sliderDistance}</Text>
             </View>
           </View>
 

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { AsyncStorage } from 'react-native'
 import { FetchGermanCitiesList } from '../service/index'
 
 class ZipHelper extends Component {
@@ -51,14 +52,23 @@ class ZipHelper extends Component {
           isLoading: false,
           data
         })
+
+        this._storeAsyncStorage('zipList', data)
       })
       .catch((error: Error) => {
         console.log(error)
       })
   }
 
-  private readonly _storeAsyncStorage = async () => {
+  private readonly _storeAsyncStorage: any = async (key: string, item: {}[]): Promise<void> => {
+    try {
+      const json = await AsyncStorage.setItem(key, JSON.stringify(item))
+      return json
+    } catch (e) {
+      console.log(e)
+    }
 
+    return null
   }
 }
 

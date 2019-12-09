@@ -66,8 +66,10 @@ class ZipHelper extends Component<Props, State> {
     return null
   }
 
+  // checks wether something is stored @AsyncStorage
+  // or if it needs to be fetched
   async componentDidMount(): Promise<void> {
-    if (this._checkAsyncStorage()) {
+    if (await this._checkAsyncStorage()) {
       return
     }
 
@@ -113,6 +115,7 @@ class ZipHelper extends Component<Props, State> {
       const item: string = await AsyncStorage.getItem(storageKey)
       if (item !== null) {
         this.setState({
+          isLoading: false,
           data: JSON.parse(item)
         })
         return true

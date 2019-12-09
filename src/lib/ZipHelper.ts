@@ -31,5 +31,5 @@ class ZipHelper extends Component {
 
 export default {
   getCity: ZipHelper.getCity,
-  isInRange: true
+  isLoading: ZipHelper.state.isLoading
 }

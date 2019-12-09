@@ -29,14 +29,6 @@ class ZipHelper extends Component<Props, State> {
     }
   }
 
-  isWesselburen: any = (zip: number): boolean => {
-    if (zip === 25764) {
-      return true
-    }
-
-    return false
-  }
-
   // gets passed zip for example and
   // returns city name of corresponding
   getCity: any = (zip: number): string | null => {

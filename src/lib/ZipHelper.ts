@@ -41,6 +41,10 @@ class ZipHelper extends Component {
     this._fetchInitialData()
   }
 
+  private readonly _findZipObject: any = (zip: number) => {
+
+  }
+
   private readonly _checkAsyncStorage = async () => {
 
   }

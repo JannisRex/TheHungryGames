@@ -47,5 +47,7 @@ class ZipHelper extends Component {
 
 export default {
   getCity: ZipHelper.getCity,
+  getState: ZipHelper.getState,
+  getDial: ZipHelper.getDial,
   isLoading: ZipHelper.state.isLoading
 }

@@ -9,7 +9,18 @@ class ZipHelper extends Component {
       data: {}
     }
   }
-  fetchInitialData: any = (): void => {
+
+  // gets passed zip for example and
+  // returns city name of corresponding
+  getCity: any = (zip: number): string => {
+    // do logic
+  }
+
+  componentDidMount(): void {
+    this._fetchInitialData()
+  }
+
+  private readonly _fetchInitialData: any = (): void => {
     FetchGermanCitiesList()
       .then((data: Response) => {
         this.setState({
@@ -20,12 +31,6 @@ class ZipHelper extends Component {
       .catch((error: Error) => {
         console.log(error)
       })
-  }
-
-  getCity: any = (zip: number): string => {
-    // do logic
-    console.log(zip)
-    return 'a'
   }
 }
 

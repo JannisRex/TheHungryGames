@@ -6,7 +6,15 @@ type Props = {}
 
 type State = {
   isLoading: boolean,
-  data: {}
+  data: []
+}
+
+type listEntry = {
+  city: string,
+  additional: string,
+  zip: number,
+  dial: number,
+  state: string
 }
 
 class ZipHelper extends Component<Props, State> {
@@ -15,7 +23,7 @@ class ZipHelper extends Component<Props, State> {
 
     this.state = {
       isLoading: true,
-      data: {}
+      data: []
     }
   }
 
@@ -48,8 +56,11 @@ class ZipHelper extends Component<Props, State> {
     this._fetchInitialData()
   }
 
-  private readonly _findZipObject: any = (zip: number) => {
-    if (!this.state.isLoading) {}
+  private readonly _findZipObject: any = (zip: number): {} => {
+    if (!this.state.isLoading) {
+      const data = this.state.data
+      const pos = data.map((x: {}) => x.zip)
+    }
   }
 
   private readonly _checkAsyncStorage = async () => {

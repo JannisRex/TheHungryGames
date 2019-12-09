@@ -40,6 +40,10 @@ class ZipHelper extends Component {
     this._fetchInitialData()
   }
 
+  private readonly _checkAsyncStorage = async () => {
+
+  }
+
   private readonly _fetchInitialData: any = (): void => {
     FetchGermanCitiesList()
       .then((data: Response) => {
@@ -51,6 +55,10 @@ class ZipHelper extends Component {
       .catch((error: Error) => {
         console.log(error)
       })
+  }
+
+  private readonly _storeAsyncStorage = async () => {
+
   }
 }
 

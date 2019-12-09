@@ -17,6 +17,8 @@ type listEntry = {
   state: string
 }
 
+const storageKey = 'zipList'
+
 class ZipHelper extends Component<Props, State> {
   constructor(props: any) {
     super(props)
@@ -41,7 +43,7 @@ class ZipHelper extends Component<Props, State> {
     const response = this._findZipObject(zip)
 
     if (response) {
-      return response.zip
+      return response.city
     }
 
     return null
@@ -49,15 +51,29 @@ class ZipHelper extends Component<Props, State> {
 
   // gets passed zip for example and
   // returns corresponding state name
-  getState: any = (zip: number): string => {
+  getState: any = (zip: number): string | null => {
+    const response = this._findZipObject(zip)
 
+    if (response) {
+      return response.state
+    }
+
+    return null
   }
+
 
   // gets passed zip for example and
   // returns dial of corresponding state
-  getDial: any = (zip: number): number => {
+  getDial: any = (zip: number): number | null => {
+    const response = this._findZipObject(zip)
 
+    if (response) {
+      return response.dial
+    }
+
+    return null
   }
+
   componentDidMount(): void {
     this._fetchInitialData()
   }
@@ -91,7 +107,7 @@ class ZipHelper extends Component<Props, State> {
           data
         })
 
-        this._storeAsyncStorage('zipList', data)
+        this._storeAsyncStorage(storageKey, data)
       })
       .catch((error: Error) => {
         console.log(error)

@@ -79,7 +79,7 @@ class ZipHelper extends Component<Props, State> {
 
   private readonly _fetchInitialData: any = (): void => {
     FetchGermanCitiesList()
-      .then((data: Response) => {
+      .then((data: []) => {
         this.setState({
           isLoading: false,
           data

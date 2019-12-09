@@ -16,6 +16,17 @@ class ZipHelper extends Component {
     // do logic
   }
 
+  // gets passed zip for example and
+  // returns corresponding state name
+  getState: any = (zip: number): string => {
+
+  }
+
+  // gets passed zip for example and
+  // returns dial of corresponding state
+  getDial: any = (zip: number): number => {
+
+  }
   componentDidMount(): void {
     this._fetchInitialData()
   }

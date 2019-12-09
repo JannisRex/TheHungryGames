@@ -95,7 +95,9 @@ class ZipHelper extends Component<Props, State> {
     return null
   }
 
-  //
+  // if no store @AsyncStorage is present,
+  // it has to fetch data from uri
+  // saves to AsyncStorage After
   private readonly _fetchInitialData: any = (): void => {
     FetchGermanCitiesList()
       .then((data: []) => {
@@ -111,7 +113,9 @@ class ZipHelper extends Component<Props, State> {
       })
   }
 
-  //
+  // looks in AsyncStorage for constKey and fetches,
+  // stores to state and returns true if it occured
+  // otherwise returns false and nothing else
   private readonly _checkAsyncStorage: any = async (): Promise<boolean> => {
     try {
       const item: string = await AsyncStorage.getItem(storageKey)
@@ -129,7 +133,9 @@ class ZipHelper extends Component<Props, State> {
     return false
   }
 
-  //
+  // gets called from _initialFetch() with key+data prop
+  // then data gets stored @key => will make
+  // another call to _initialFetch() unnecessary
   private readonly _storeAsyncStorage: any = async (key: string, item: {}[]): Promise<void> => {
     try {
       const json = await AsyncStorage.setItem(key, JSON.stringify(item))

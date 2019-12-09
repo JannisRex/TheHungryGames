@@ -87,8 +87,20 @@ class ZipHelper extends Component<Props, State> {
     return null
   }
 
-  private readonly _checkAsyncStorage = async () => {
+  private readonly _checkAsyncStorage: any = async (): Promise<{}> => {
+    try {
+      const item: string = await AsyncStorage.getItem(storageKey)
 
+      if (typeof item === typeof Object) {
+        return item
+      } else if (item !== null) {
+        return JSON.parse(item)
+      }
+    } catch (e) {
+      console.log(e)
+    }
+
+    return null
   }
 
   private readonly _fetchInitialData: any = (): void => {

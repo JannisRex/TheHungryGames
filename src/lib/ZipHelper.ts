@@ -1,7 +1,25 @@
 import React, { Component } from 'react'
-import { StyleSheet } from 'react-native'
 import { FetchGermanCitiesList } from '../service/index'
 class ZipHelper extends Component {
+  constructor(props: any) {
+    super(props)
+
+    this.state = {
+      data: {}
+    }
+  }
+  fetchInitialData: any = (): void => {
+    FetchGermanCitiesList()
+      .then((data: Response) => {
+        this.setState({
+          data
+        })
+      })
+      .catch((error: Error) => {
+        console.log(error)
+      })
+  }
+
   getCity: any = (zip: number): string => {
     // do logic
     console.log(zip)

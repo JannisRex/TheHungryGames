@@ -70,9 +70,11 @@ class ZipHelper extends Component<Props, State> {
   // or if it needs to be fetched
   async componentDidMount(): Promise<void> {
     if (await this._checkAsyncStorage()) {
+      console.log('cdm() TRUE')
       return
     }
 
+    console.log('cdm() FALSE')
     this._fetchInitialData()
   }
 

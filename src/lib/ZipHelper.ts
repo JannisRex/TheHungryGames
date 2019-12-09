@@ -5,6 +5,7 @@ class ZipHelper extends Component {
     super(props)
 
     this.state = {
+      isLoading: true,
       data: {}
     }
   }
@@ -12,6 +13,7 @@ class ZipHelper extends Component {
     FetchGermanCitiesList()
       .then((data: Response) => {
         this.setState({
+          isLoading: false,
           data
         })
       })

@@ -1,6 +1,15 @@
 /* eslint-disable */
+
+// url for list of German zip codes, including dialing code, name of city etc.
+export const zipUrl = 'https://gist.githubusercontent.com/JannisRex/fdec2cb0623e0426b299bf0bb02c8d52/raw/7c98d2379a30e55e2e854429f5c46c1732046cd2/German-Zip-Codes.json'
+
+// contains Width and Height
 import Layout from '../lib/Layout'
+
+// returns ISO-Week Number
 import { getWeekNumber } from '../lib/date/getWeekNumber'
+
+// German Calendar (Months and Days)
 import monthArray from '../lib/date/monthArray'
 import dayArray from '../lib/date/dayArray'
 

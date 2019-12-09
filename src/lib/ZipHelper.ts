@@ -66,7 +66,11 @@ class ZipHelper extends Component<Props, State> {
     return null
   }
 
-  componentDidMount(): void {
+  async componentDidMount(): Promise<void> {
+    if (this._checkAsyncStorage()) {
+      return
+    }
+
     this._fetchInitialData()
   }
 
@@ -87,22 +91,7 @@ class ZipHelper extends Component<Props, State> {
     return null
   }
 
-  private readonly _checkAsyncStorage: any = async (): Promise<{}> => {
-    try {
-      const item: string = await AsyncStorage.getItem(storageKey)
-
-      if (typeof item === typeof Object) {
-        return item
-      } else if (item !== null) {
-        return JSON.parse(item)
-      }
-    } catch (e) {
-      console.log(e)
-    }
-
-    return null
-  }
-
+  //
   private readonly _fetchInitialData: any = (): void => {
     FetchGermanCitiesList()
       .then((data: []) => {
@@ -118,6 +107,24 @@ class ZipHelper extends Component<Props, State> {
       })
   }
 
+  //
+  private readonly _checkAsyncStorage: any = async (): Promise<boolean> => {
+    try {
+      const item: string = await AsyncStorage.getItem(storageKey)
+      if (item !== null) {
+        this.setState({
+          data: JSON.parse(item)
+        })
+        return true
+      }
+    } catch (e) {
+      console.log(e)
+    }
+
+    return false
+  }
+
+  //
   private readonly _storeAsyncStorage: any = async (key: string, item: {}[]): Promise<void> => {
     try {
       const json = await AsyncStorage.setItem(key, JSON.stringify(item))

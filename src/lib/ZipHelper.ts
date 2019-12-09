@@ -56,11 +56,21 @@ class ZipHelper extends Component<Props, State> {
     this._fetchInitialData()
   }
 
-  private readonly _findZipObject: any = (zip: number): {} => {
+  // here we filter through our data by zip
+  // return values are:
+  // still loading => null
+  // no entry found => -1
+  // entry found => entry {}
+  private readonly _findZipObject: any = (zip: number): listEntry => {
     if (!this.state.isLoading) {
       const data = this.state.data
-      const pos = data.map((x: {}) => x.zip)
+      const pos = data.map((x: listEntry) => x.zip).indexOf(zip)
+      const obj = data[pos]
+
+      return obj
     }
+
+    return null
   }
 
   private readonly _checkAsyncStorage = async () => {

@@ -30,6 +30,6 @@ class ZipHelper extends Component {
 }
 
 export default {
-  screen: ZipHelper.getCity(),
+  getCity: ZipHelper.getCity,
   isInRange: true
 }

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { FetchGermanCitiesList } from '../service/index'
+
 class ZipHelper extends Component {
   constructor(props: any) {
     super(props)
@@ -8,6 +9,14 @@ class ZipHelper extends Component {
       isLoading: true,
       data: {}
     }
+  }
+
+  isWesselburen: any = (zip: number): boolean => {
+    if (zip === 25764) {
+      return true
+    }
+
+    return false
   }
 
   // gets passed zip for example and
@@ -45,9 +54,4 @@ class ZipHelper extends Component {
   }
 }
 
-export default {
-  getCity: ZipHelper.getCity,
-  getState: ZipHelper.getState,
-  getDial: ZipHelper.getDial,
-  isLoading: ZipHelper.state.isLoading
-}
+export default ZipHelper

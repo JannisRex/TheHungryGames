@@ -37,8 +37,14 @@ class ZipHelper extends Component<Props, State> {
 
   // gets passed zip for example and
   // returns city name of corresponding
-  getCity: any = (zip: number): string => {
-    // do logic
+  getCity: any = (zip: number): string | null => {
+    const response = this._findZipObject(zip)
+
+    if (response) {
+      return response.zip
+    }
+
+    return null
   }
 
   // gets passed zip for example and

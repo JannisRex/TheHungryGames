@@ -2,7 +2,14 @@ import React, { Component } from 'react'
 import { AsyncStorage } from 'react-native'
 import { FetchGermanCitiesList } from '../service/index'
 
-class ZipHelper extends Component {
+type Props = {}
+
+type State = {
+  isLoading: boolean,
+  data: {}
+}
+
+class ZipHelper extends Component<Props, State> {
   constructor(props: any) {
     super(props)
 
@@ -42,7 +49,7 @@ class ZipHelper extends Component {
   }
 
   private readonly _findZipObject: any = (zip: number) => {
-
+    if (!this.state.isLoading) {}
   }
 
   private readonly _checkAsyncStorage = async () => {

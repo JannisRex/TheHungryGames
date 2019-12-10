@@ -117,11 +117,11 @@ export default class LoadingScreen extends React.Component<Props, State> {
        require('../../assets/logo/Ebay(300-120).png')
      ]),
      Font.loadAsync({
-       robotoRegular: require('../../../src/assets/font/Roboto-Regular.ttf'),
-       robotoCondensed: require('../../../src/assets/font/robotoCondensed.ttf'),
-       impact: require('../../../src/assets/font/impact.ttf'),
-       latoLightitalic: require('../../../src/assets/font/Lato-LightItalic.ttf'),
-       latoHairline: require('../../../src/assets/font/Lato-Hairline.ttf')
+       robotoRegular: require('../..//assets/font/Roboto-Regular.ttf'),
+       robotoCondensed: require('../../assets/font/robotoCondensed.ttf'),
+       impact: require('../..//assets/font/impact.ttf'),
+       latoLightitalic: require('../..//assets/font/Lato-LightItalic.ttf'),
+       latoHairline: require('../..//assets/font/Lato-Hairline.ttf')
      })
    ])
  }

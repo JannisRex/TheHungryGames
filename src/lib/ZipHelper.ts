@@ -20,8 +20,8 @@ type listEntry = {
 const storageKey = 'zipList'
 
 class ZipHelper extends Component<Props, State> {
-  constructor(props: any) {
-    super(props)
+  constructor() {
+    super()
 
     this.state = {
       isLoading: true,

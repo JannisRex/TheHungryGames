@@ -118,6 +118,7 @@ class ZipHelper extends Component<Props, State> {
   // stores to state and returns true if it occured
   // otherwise returns false and nothing else
   private readonly _checkAsyncStorage: any = async (): Promise<boolean> => {
+    console.log('checkAsyncStorage()')
     try {
       const item: string = await AsyncStorage.getItem(storageKey)
       if (item !== null) {

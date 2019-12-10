@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { View, Text, Switch, Dimensions, AsyncStorage } from 'react-native'
 import { Activity, DynamicScrollView, Header } from '../../components/index'
 import { Input, Slider, CheckBox, ButtonGroup, Divider } from 'react-native-elements'
+import ZipHelper from '../../lib/ZipHelper'
 import strings from '../../config/strings'
 import styles from './styles'
 

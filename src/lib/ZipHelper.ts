@@ -95,7 +95,7 @@ class ZipHelper extends Component<Props, State> {
 
       return obj
     }
-
+    console.log('type:' + typeof this.state.data, ' | val: ', this.state.data)
     console.log('findZipObject => XXX')
     return null
   }

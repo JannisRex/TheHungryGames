@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { View, Text, Switch, Dimensions, AsyncStorage } from 'react-native'
 import { Activity, DynamicScrollView, Header } from '../../components/index'
 import { Input, Slider, CheckBox, ButtonGroup, Divider } from 'react-native-elements'
-import ZipHelper from '../../lib/ZipHelper'
+import zipHelp from '../../lib/ZipHelper'
 import strings from '../../config/strings'
 import styles from './styles'
 
@@ -38,7 +38,6 @@ type State = {
 class SettingsScreen extends Component<Props, State> {
   constructor(props: any) {
     super(props)
-    const a = new ZipHelper()
 
     this.state = {
       loadedItems: false,
@@ -82,6 +81,9 @@ class SettingsScreen extends Component<Props, State> {
     } finally {
       this._isFinishedLoading(true)
     }
+
+    // console.log(zipHelp.getCity(25764))
+    console.log(zipHelp.abc())
   }
 
   // TODO: everything is present, but
@@ -336,9 +338,9 @@ class SettingsScreen extends Component<Props, State> {
       // AND EVERYTHING IMPORTANT
       // IF THRE ISNT A CITY WITH
       // PASSED ZIP, GIVE ERROR
-      const res = a.getCity(25764)
+      const res = zipHelp.getCity(zip)
       if (res) {
-        city=res
+        city = res
         console.log(zip)
         console.log(city)
       }

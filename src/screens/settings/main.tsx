@@ -32,7 +32,8 @@ type State = {
     cB10: boolean,
     cB11: boolean,
     cB12: boolean
-  }
+  },
+  data: []
 }
 
 class SettingsScreen extends Component<Props, State> {
@@ -60,7 +61,8 @@ class SettingsScreen extends Component<Props, State> {
         cB10: false,
         cB11: false,
         cB12: false
-      }
+      },
+      data: []
     }
   }
 
@@ -82,8 +84,7 @@ class SettingsScreen extends Component<Props, State> {
       this._isFinishedLoading(true)
     }
 
-    // console.log(zipHelp.getCity(25764))
-    console.log(zipHelp.abc())
+    console.log(zipHelp.getCity(25764))
   }
 
   // TODO: everything is present, but
@@ -269,6 +270,13 @@ class SettingsScreen extends Component<Props, State> {
       case 'checkBoxes': {
         this.setState({
           checkBoxesFood: JSON.parse(val)
+        })
+        break
+      }
+
+      case 'zipList': {
+        this.setState({
+          data: JSON.parse(val)
         })
         break
       }

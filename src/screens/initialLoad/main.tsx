@@ -9,6 +9,15 @@ import { FetchGermanCitiesList } from '../../service/index'
 
 const storageKey = 'zipList'
 
+type Props = {
+  navigation: NavigationScreenProp<any>
+}
+
+type State = {
+  isLoadingComplete: boolean,
+  data: []
+}
+
 // here we fetch AsyncStorage and check,
 // if we stored something earlier
 const _getPreferences = async (): Promise<void> => {
@@ -23,11 +32,12 @@ const _getPreferences = async (): Promise<void> => {
 
 // here we execute everything, thats about loading
 // e.g. => Getting Fonts, Images, fetching Data...
-export default class LoadingScreen extends React.Component<{navigation: NavigationScreenProp<any>}> {
+export default class LoadingScreen extends React.Component<Props, State> {
   constructor(props: any) {
     super(props)
     this.state = {
-      isLoadingComplete: false
+      isLoadingComplete: false,
+      data: []
     }
     _getPreferences()
       .catch(Error)
@@ -51,7 +61,6 @@ export default class LoadingScreen extends React.Component<{navigation: Navigati
       const item: string = await AsyncStorage.getItem(key)
       if (item !== null) {
         this.setState({
-          isLoading: false,
           data: JSON.parse(item)
         })
         return true
@@ -85,7 +94,6 @@ export default class LoadingScreen extends React.Component<{navigation: Navigati
     FetchGermanCitiesList()
       .then((data: []) => {
         this.setState({
-          isLoading: false,
           data
         })
 
@@ -103,6 +111,7 @@ export default class LoadingScreen extends React.Component<{navigation: Navigati
      this._fetchInitialData()
    }
 
+   // fetches all Images and Fonts
    await Promise.all([
      Asset.loadAsync([
        require('../../assets/logo/Ebay(300-120).png')

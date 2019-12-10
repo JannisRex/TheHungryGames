@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import { AsyncStorage } from 'react-native'
-import { FetchGermanCitiesList } from '../service/index'
 
 type Props = {}
 
@@ -16,8 +14,6 @@ type listEntry = {
   dial: number,
   state: string
 }
-
-const storageKey = 'zipList'
 
 class ZipHelper extends Component<Props, State> {
   constructor(props: Props) {
@@ -57,7 +53,6 @@ class ZipHelper extends Component<Props, State> {
     return null
   }
 
-
   // gets passed zip for example and
   // returns dial of corresponding state
   getDial: any = (zip: number): number | null => {
@@ -70,17 +65,6 @@ class ZipHelper extends Component<Props, State> {
     return null
   }
 
-  // checks wether something is stored @AsyncStorage
-  // or if it needs to be fetched
-  async componentDidMount(): Promise<void> {
-    if (await this._checkAsyncStorage()) {
-      console.log('cdm() TRUE')
-      return
-    }
-
-    console.log('cdm() FALSE')
-    this._fetchInitialData()
-  }
 
   // here we filter through our data by zip
   // return values are:
@@ -99,26 +83,6 @@ class ZipHelper extends Component<Props, State> {
     console.log('findZipObject => XXX')
     return null
   }
-
-  // if no store @AsyncStorage is present,
-  // it has to fetch data from uri
-  // saves to AsyncStorage After
-  private readonly _fetchInitialData: any = (): void => {
-    console.log('FETCHING...')
-    FetchGermanCitiesList()
-      .then((data: []) => {
-        this.setState({
-          isLoading: false,
-          data
-        })
-
-        this._storeAsyncStorage(storageKey, data)
-      })
-      .catch((error: Error) => {
-        console.log(error)
-      })
-  }
-
 }
 
 const zipHelp = new ZipHelper({})

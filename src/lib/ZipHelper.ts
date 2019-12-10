@@ -7,7 +7,7 @@ type State = {
   data: []
 }
 
-type listEntry = {
+export type listEntry = {
   city: string,
   additional: string,
   zip: number,

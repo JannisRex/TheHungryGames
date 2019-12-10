@@ -134,6 +134,8 @@ export default class LoadingScreen extends React.Component<Props, State> {
    console.log('Loading Finished!')
    console.log('data: ', JSON.stringify(this.state.zipCodeData[1]))
    this.setState({ isLoadingComplete: true })
-   this.props.navigation.navigate('App')
+   this.props.navigation.navigate('App', {
+     zipCodeData: this.state.zipCodeData
+   })
  }
 }

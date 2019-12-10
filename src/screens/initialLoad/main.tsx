@@ -44,6 +44,17 @@ export default class LoadingScreen extends React.Component<{navigation: Navigati
     )
   }
 
+  private readonly _storeAsyncStorage: any = async (key: string, item: {}[]): Promise<void> => {
+    try {
+      const json = await AsyncStorage.setItem(key, JSON.stringify(item))
+      return json
+    } catch (e) {
+      console.log(e)
+    }
+
+    return null
+  }
+
  _loadResourcesAsync: ()=> Promise<void> = async () => {
    await Promise.all([
      Asset.loadAsync([

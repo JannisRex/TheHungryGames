@@ -22,7 +22,6 @@ const storageKey = 'zipList'
 class ZipHelper extends Component<Props, State> {
   constructor(props: Props) {
     super(props)
-    this.cdm()
 
     this.state = {
       isLoading: true,
@@ -74,16 +73,6 @@ class ZipHelper extends Component<Props, State> {
   // checks wether something is stored @AsyncStorage
   // or if it needs to be fetched
   async componentDidMount(): Promise<void> {
-    if (await this._checkAsyncStorage()) {
-      console.log('cdm() TRUE')
-      return
-    }
-
-    console.log('cdm() FALSE')
-    this._fetchInitialData()
-  }
-
-  async cdm(): Promise<void> {
     if (await this._checkAsyncStorage()) {
       console.log('cdm() TRUE')
       return

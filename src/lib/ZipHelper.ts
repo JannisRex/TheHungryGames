@@ -96,6 +96,7 @@ class ZipHelper extends Component<Props, State> {
       return obj
     }
 
+    console.log('findZipObject => XXX')
     return null
   }
 

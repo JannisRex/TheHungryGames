@@ -15,7 +15,7 @@ type Props = {
 
 type State = {
   isLoadingComplete: boolean,
-  data: []
+  zipCodeData: []
 }
 
 // here we fetch AsyncStorage and check,
@@ -37,7 +37,7 @@ export default class LoadingScreen extends React.Component<Props, State> {
     super(props)
     this.state = {
       isLoadingComplete: false,
-      data: []
+      zipCodeData: []
     }
     _getPreferences()
       .catch(Error)
@@ -61,7 +61,7 @@ export default class LoadingScreen extends React.Component<Props, State> {
       const item: string = await AsyncStorage.getItem(key)
       if (item !== null) {
         this.setState({
-          data: JSON.parse(item)
+          zipCodeData: JSON.parse(item)
         })
         return true
       }
@@ -92,12 +92,12 @@ export default class LoadingScreen extends React.Component<Props, State> {
   private readonly _fetchInitialData: any = (): void => {
     console.log('FETCHING...')
     FetchGermanCitiesList()
-      .then((data: []) => {
+      .then((zipCodeData: []) => {
         this.setState({
-          data
+          zipCodeData
         })
 
-        this._storeAsyncStorage(storageKey, data)
+        this._storeAsyncStorage(storageKey, zipCodeData)
       })
       .catch((error: Error) => {
         console.log(error)

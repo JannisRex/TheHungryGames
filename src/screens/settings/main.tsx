@@ -335,8 +335,12 @@ class SettingsScreen extends Component<Props, State> {
       // AND EVERYTHING IMPORTANT
       // IF THRE ISNT A CITY WITH
       // PASSED ZIP, GIVE ERROR
-      if (zip === 25764) {
-        city = 'Wesselburen'
+      const a = new ZipHelper({})
+      const res = a.getCity(25764)
+      if (res) {
+        city=res
+        console.log(zip)
+        console.log(city)
       }
 
       // dont need to nullcheck here

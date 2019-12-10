@@ -99,6 +99,7 @@ class ZipHelper extends Component<Props, State> {
   // it has to fetch data from uri
   // saves to AsyncStorage After
   private readonly _fetchInitialData: any = (): void => {
+    console.log('FETCHING...')
     FetchGermanCitiesList()
       .then((data: []) => {
         this.setState({

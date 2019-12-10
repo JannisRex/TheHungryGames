@@ -1,11 +1,14 @@
 import React, { Component } from 'react'
 import { View, Text, Button } from 'react-native'
 import { Container, Header } from '../../components/index'
+import { NavigationScreenProp } from 'react-navigation'
 import strings from '../../config/strings'
 import theme from '../../config/theme.style'
 import styles from './styles'
 
-type Props = {}
+type Props = {
+  navigation: NavigationScreenProp<any>
+}
 
 type State = {
       isButtonFuchsia: boolean,
@@ -66,6 +69,9 @@ class HomeScreen extends Component<Props, State> {
   }
 
   componentDidMount(): void {
+    const e = this.props.navigation.getParam('zipCodeData', null)
+    console.log('type: ', typeof e)
+    console.log('arr: ', JSON.stringify(e))
   // AsyncStorage Logic Here
   // Check if Settings are fetchable
   // Fetch Or set defaultValues to State

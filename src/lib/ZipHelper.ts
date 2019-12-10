@@ -20,13 +20,17 @@ type listEntry = {
 const storageKey = 'zipList'
 
 class ZipHelper extends Component<Props, State> {
-  constructor() {
-    super()
+  constructor(props: Props) {
+    super(props)
 
     this.state = {
       isLoading: true,
       data: []
     }
+  }
+
+  abc: any = () => {
+    console.log('yes yes yes')
   }
 
   // gets passed zip for example and
@@ -150,4 +154,5 @@ class ZipHelper extends Component<Props, State> {
   }
 }
 
-export default ZipHelper
+const zipHelp = new ZipHelper({})
+export default zipHelp

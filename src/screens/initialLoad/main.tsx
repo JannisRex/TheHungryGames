@@ -5,20 +5,19 @@ import { AppLoading } from 'expo'
 import * as Font from 'expo-font'
 import { Asset } from 'expo-asset'
 import { NavigationScreenProp } from 'react-navigation'
+import { FetchGermanCitiesList } from '../../service/index'
+
+const storageKey = 'zipList'
 
 // here we fetch AsyncStorage and check,
-// if we stored something earlier, then
-// we save it to state and pass to homeScreen
+// if we stored something earlier
 const _getPreferences = async (): Promise<void> => {
   try {
     await AsyncStorage.getItem('@settings').then((result: {}) => {
-      if (typeof result === typeof Object) {
-        console.log('initialLoad->getPreferences()')
-        console.log(result)
-      }
+      console.log('type: ', typeof result, 'result: ', result)
     })
   } catch (e) {
-    console.log('error getting theme-')
+    console.log(e)
   }
 }
 
@@ -48,7 +47,6 @@ export default class LoadingScreen extends React.Component<{navigation: Navigati
   // stores to state and returns true if it occured
   // otherwise returns false and nothing else
   private readonly _checkAsyncStorage: any = async (key: string): Promise<boolean> => {
-    console.log('checkAsyncStorage()')
     try {
       const item: string = await AsyncStorage.getItem(key)
       if (item !== null) {
@@ -79,7 +77,32 @@ export default class LoadingScreen extends React.Component<{navigation: Navigati
     return null
   }
 
+  // if no store @AsyncStorage is present,
+  // it has to fetch data from uri
+  // saves to AsyncStorage After
+  private readonly _fetchInitialData: any = (): void => {
+    console.log('FETCHING...')
+    FetchGermanCitiesList()
+      .then((data: []) => {
+        this.setState({
+          isLoading: false,
+          data
+        })
+
+        this._storeAsyncStorage(storageKey, data)
+      })
+      .catch((error: Error) => {
+        console.log(error)
+      })
+  }
+
  private readonly _loadResourcesAsync: any = async (): Promise<void> => {
+   // checks wether something is stored @AsyncStorage
+   // or if it needs to be fetched
+   if (!(await this._checkAsyncStorage(storageKey))) {
+     this._fetchInitialData()
+   }
+
    await Promise.all([
      Asset.loadAsync([
        require('../../assets/logo/Ebay(300-120).png')

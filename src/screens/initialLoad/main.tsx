@@ -55,7 +55,7 @@ export default class LoadingScreen extends React.Component<{navigation: Navigati
     return null
   }
 
- _loadResourcesAsync: ()=> Promise<void> = async () => {
+ private readonly _loadResourcesAsync: any = async (): Promise<void> => {
    await Promise.all([
      Asset.loadAsync([
        require('../../assets/logo/Ebay(300-120).png')
@@ -70,11 +70,11 @@ export default class LoadingScreen extends React.Component<{navigation: Navigati
    ])
  }
 
- _handleLoadingError: (error: Error)=> void = (error: Error) => {
+ private readonly _handleLoadingError: any = (error: Error): void => {
    console.log(error)
  }
 
- _handleFinishLoading: ()=> void = () => {
+ private readonly _handleFinishLoading: any = (): void => {
    this.setState({ isLoadingComplete: true })
    this.props.navigation.navigate('App')
  }

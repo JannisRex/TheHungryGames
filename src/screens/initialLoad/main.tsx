@@ -6,6 +6,7 @@ import * as Font from 'expo-font'
 import { Asset } from 'expo-asset'
 import { NavigationScreenProp } from 'react-navigation'
 import { FetchGermanCitiesList } from '../../service/index'
+import { listEntry } from '../../lib/ZipHelper'
 
 const storageKey = 'zipList'
 
@@ -15,7 +16,7 @@ type Props = {
 
 type State = {
   isLoadingComplete: boolean,
-  zipCodeData: []
+  zipCodeData: listEntry[]
 }
 
 // here we fetch AsyncStorage and check,
@@ -132,7 +133,9 @@ export default class LoadingScreen extends React.Component<Props, State> {
 
  private readonly _handleFinishLoading: any = (): void => {
    console.log('Loading Finished!')
-   console.log('data: ', JSON.stringify(this.state.zipCodeData[1]))
+   if (this.state.zipCodeData.length > 1) {
+     console.log('data: ', JSON.stringify(this.state.zipCodeData[1]))
+   }
    this.setState({ isLoadingComplete: true })
    this.props.navigation.navigate('App', {
      zipCodeData: this.state.zipCodeData

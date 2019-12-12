@@ -5,7 +5,7 @@
 
 ### todo: 
             * Optimize Store & Fetch Settings from State with AsyncStorage
-            * fix Fetching & Passing zipList
+            * fix Fetching & Passing zipList (from initialLoad to Components)
             
             * Consider Settings when using Button => onPress()
                  => rework ButtonLogic as a Whole

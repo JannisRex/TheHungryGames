@@ -16,19 +16,6 @@ export type listEntry = {
 }
 
 class ZipHelper extends Component<Props, State> {
-  constructor(props: Props) {
-    super(props)
-
-    this.state = {
-      isLoading: true,
-      data: []
-    }
-  }
-
-  abc: any = () => {
-    console.log('yes yes yes')
-  }
-
   // gets passed zip for example and
   // returns city name of corresponding
   getCity: any = (zip: number): string | null => {
@@ -71,9 +58,8 @@ class ZipHelper extends Component<Props, State> {
   // still loading => null
   // no entry found => -1
   // entry found => entry {}
-  private readonly _findZipObject: any = (zip: number): listEntry => {
+  private readonly _findZipObject: any = (zip: number, data: Array<listEntry>): listEntry => {
     if (!this.state.isLoading) {
-      const data = this.state.data
       const pos = data.map((x: listEntry) => x.zip).indexOf(zip)
       const obj = data[pos]
 

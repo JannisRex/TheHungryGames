@@ -36,7 +36,7 @@ type State = {
         typeD: boolean | null // Burger
       },
 
-      zipCodeData: listEntry | null
+      zipCodeData: listEntry[] | null
 }
 
 class HomeScreen extends Component<Props, State> {

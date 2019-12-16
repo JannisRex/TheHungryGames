@@ -4,6 +4,7 @@ import { Container, Header } from '../../components/index'
 import { NavigationScreenProp } from 'react-navigation'
 import strings from '../../config/strings'
 import theme from '../../config/theme.style'
+import { listEntry } from '../../lib/ZipHelper'
 import styles from './styles'
 
 type Props = {
@@ -33,7 +34,9 @@ type State = {
         typeB: boolean | null, // Pizza
         typeC: boolean | null, // Pasta
         typeD: boolean | null // Burger
-      }
+      },
+
+      zipCodeData: listEntry | null
 }
 
 class HomeScreen extends Component<Props, State> {
@@ -64,7 +67,9 @@ class HomeScreen extends Component<Props, State> {
         typeB: null, // Pizza
         typeC: null, // Pasta
         typeD: null // Burger
-      }
+      },
+
+      zipCodeData: null
     }
   }
 
@@ -115,6 +120,16 @@ class HomeScreen extends Component<Props, State> {
       </Container>
     )
   }
+
+private readonly _saveListToState = (data: listEntry | null) => {
+  if (data === null) {
+    console.log('zipListData  is  n u l l')
+    return
+  }
+  this.setState({
+    zipCodeData: data
+  })
+}
 
   // check state, if smth null then refetch list
   // then try to pick a fitting restaurant, matching the criterias

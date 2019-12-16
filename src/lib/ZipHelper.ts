@@ -18,8 +18,8 @@ export type listEntry = {
 class ZipHelper extends Component<Props, State> {
   // gets passed zip for example and
   // returns city name of corresponding
-  getCity: any = (zip: number): string | null => {
-    const response = this._findZipObject(zip)
+  getCity: any = (zip: number, data: listEntry[]): string | null => {
+    const response = this._findZipObject(zip, data)
 
     if (response) {
       return response.city
@@ -30,8 +30,8 @@ class ZipHelper extends Component<Props, State> {
 
   // gets passed zip for example and
   // returns corresponding state name
-  getState: any = (zip: number): string | null => {
-    const response = this._findZipObject(zip)
+  getState: any = (zip: number, data: listEntry[]): string | null => {
+    const response = this._findZipObject(zip, data)
 
     if (response) {
       return response.state
@@ -42,8 +42,8 @@ class ZipHelper extends Component<Props, State> {
 
   // gets passed zip for example and
   // returns dial of corresponding state
-  getDial: any = (zip: number): number | null => {
-    const response = this._findZipObject(zip)
+  getDial: any = (zip: number, data: listEntry[]): number | null => {
+    const response = this._findZipObject(zip, data)
 
     if (response) {
       return response.dial
@@ -58,16 +58,15 @@ class ZipHelper extends Component<Props, State> {
   // still loading => null
   // no entry found => -1
   // entry found => entry {}
-  private readonly _findZipObject: any = (zip: number, data: Array<listEntry>): listEntry => {
-    if (!this.state.isLoading) {
+  private readonly _findZipObject: any = (zip: number, data: listEntry[]): listEntry => {
+    try {
       const pos = data.map((x: listEntry) => x.zip).indexOf(zip)
       const obj = data[pos]
-
       return obj
+    } catch (e) {
+      console.log(e)
+      return null
     }
-    console.log('type:' + typeof this.state.data, ' | val: ', this.state.data)
-    console.log('findZipObject => XXX')
-    return null
   }
 }
 

@@ -22,13 +22,12 @@ type State = {
 // here we fetch AsyncStorage and check,
 // if we stored something earlier
 const _getPreferences = async (): Promise<void> => {
-  try {
-    await AsyncStorage.getItem('@settings').then((result: {}) => {
-      console.log('type: ', typeof result, 'result: ', result)
-    })
-  } catch (e) {
-    console.log(e)
-  }
+  // try {
+  //   await AsyncStorage.getItem('@settings').then((result: {}) => {
+  //   })
+  // } catch (e) {
+  //   console.log(e)
+  // }
 }
 
 // here we execute everything, thats about loading

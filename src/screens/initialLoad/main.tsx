@@ -132,9 +132,9 @@ export default class LoadingScreen extends React.Component<Props, State> {
  }
 
  private readonly _handleFinishLoading: any = (): void => {
-   console.log('Loading Finished!')
    if (this.state.zipCodeData.length > 1) {
-     console.log('data: ', JSON.stringify(this.state.zipCodeData[1]))
+     console.log('X | data: ', JSON.stringify(this.state.zipCodeData[1]))
+     console.log('X | type: ', typeof this.state.zipCodeData)
    }
    this.setState({ isLoadingComplete: true })
    this.props.navigation.navigate('App', {

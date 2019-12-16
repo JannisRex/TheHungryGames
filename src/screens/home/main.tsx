@@ -113,7 +113,7 @@ class HomeScreen extends Component<Props, State> {
     )
   }
 
-private readonly _saveListToState = (data: listEntry | null) => {
+private readonly _saveListToState: any = (data: listEntry | null): void => {
   if (data === null) {
     console.log('zipListData  is  n u l l')
     return

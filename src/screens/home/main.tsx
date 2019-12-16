@@ -70,8 +70,10 @@ class HomeScreen extends Component<Props, State> {
 
   componentDidMount(): void {
     const e = this.props.navigation.getParam('zipCodeData', null)
+    console.log(this.props.navigation.state.params)
+
     console.log('Type: ', typeof e)
-    console.log('First Entry: ', JSON.stringify(e[0]))
+    console.log('First Entry: ', JSON.stringify(e[1]))
   // AsyncStorage Logic Here
   // Check if Settings are fetchable
   // Fetch Or set defaultValues to State

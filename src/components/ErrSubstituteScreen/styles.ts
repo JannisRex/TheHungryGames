@@ -24,7 +24,7 @@ export default StyleSheet.create<Styles>({
     textAlign: 'center'
   } as TextStyle,
   errorHeader: {
-    fontFamily: 'lato_lightitalic',
+    fontFamily: theme.FONT_FAMILY_CAPTION,
     fontSize: theme.FONT_SIZE_LARGE,
     // fontStyle: 'normal',
     fontWeight: theme.FONT_WEIGHT_THIN,
@@ -32,7 +32,7 @@ export default StyleSheet.create<Styles>({
     textAlign: 'center'
   } as TextStyle,
   errorInfo: {
-    fontFamily: 'lato_hairline',
+    fontFamily: theme.FONT_FAMILY_THIN,
     fontSize: theme.FONT_SIZE_SMALL,
     // fontStyle: 'normal',
     fontWeight: theme.FONT_WEIGHT_MEDIUM,

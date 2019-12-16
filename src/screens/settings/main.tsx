@@ -84,7 +84,7 @@ class SettingsScreen extends Component<Props, State> {
       this._isFinishedLoading(true)
     }
 
-    console.log(zipHelp.getCity(25764))
+    console.log('SHOULD BE "WESSELBUREN" :', zipHelp.getCity(25764, this.state.data))
   }
 
   // TODO: everything is present, but
@@ -346,7 +346,7 @@ class SettingsScreen extends Component<Props, State> {
       // AND EVERYTHING IMPORTANT
       // IF THRE ISNT A CITY WITH
       // PASSED ZIP, GIVE ERROR
-      const res = zipHelp.getCity(zip)
+      const res = zipHelp.getCity(zip, this.state.data)
       if (res) {
         city = res
         console.log(zip)

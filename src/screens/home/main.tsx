@@ -74,15 +74,8 @@ class HomeScreen extends Component<Props, State> {
   }
 
   componentDidMount(): void {
-    const e = this.props.navigation.getParam('zipCodeData', null)
-    this._saveListToState(e)
-  // AsyncStorage Logic Here
-  // Check if Settings are fetchable
-  // Fetch Or set defaultValues to State
-  // Also have an indicator if or if not
-  // settings have changed and require reload
-  // prevent reload on every screenSwitch, also
-  // use PureComponent and good safety for AS.
+    const zipCodeData = this.props.navigation.getParam('zipCodeData', null)
+    this._saveListToState(zipCodeData)
   }
 
   render(): JSX.Element {
